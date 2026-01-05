@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeerStylesLibrary | Guia Completo de Estilos de Cerveja</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="module" src="js/app.js" defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header id="main-header" class="main-header"></header>
+
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside id="sidebar" class="sidebar"></aside>
+
+            <!-- Main Content -->
+            <main class="content-area">
+                <div id="reference-rulers"></div>
+                <div id="filters-bar" class="filters-bar"></div>
+                <div id="beer-grid" class="beer-grid"></div>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo"><strong>Beer</strong>SL</span>
+                    <span class="footer-tagline" data-i18n="footer.tagline">Sua biblioteca de estilos de cerveja</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="#sobre" data-i18n="footer.about">Sobre</a>
+                    <a href="#contato" data-i18n="footer.contact">Contato</a>
+                </nav>
+                <div class="footer-copy" data-i18n="footer.copyright">
+                    © 2026 BeerStylesLibrary. Todos os direitos reservados.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-container" class="modal-container hidden"></div>
+</body>
+
+</html>
