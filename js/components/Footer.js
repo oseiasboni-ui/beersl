@@ -20,7 +20,7 @@ export class Footer {
                 
                 <div class="footer-center">
                     <nav class="footer-nav">
-                        <a href="#sobre" data-i18n="footer.about">${i18n.t('footer.about')}</a>
+                        <a href="about.html" data-i18n="footer.about">${i18n.t('footer.about')}</a>
                         <a href="#contato" data-i18n="footer.contact">${i18n.t('footer.contact')}</a>
                     </nav>
                     

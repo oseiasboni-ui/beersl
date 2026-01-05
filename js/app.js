@@ -15,16 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = new Header('main-header');
     header.render();
 
-    const sidebar = new Sidebar('sidebar');
-    sidebar.render();
+    // Initialize Sidebar (if exists)
+    if (document.getElementById('sidebar')) {
+        const sidebar = new Sidebar('sidebar');
+        sidebar.render();
+    }
 
-    // Initialize Reference Rulers
-    const rulers = new ReferenceRulers('reference-rulers');
-    rulers.render();
+    // Initialize Reference Rulers (if exists)
+    if (document.getElementById('reference-rulers')) {
+        const rulers = new ReferenceRulers('reference-rulers');
+        rulers.render();
+    }
 
-    // Initialize Grid with all beers initially
-    const grid = new Grid('beer-grid', beers);
-    grid.render();
+    // Initialize Grid (if exists)
+    if (document.getElementById('beer-grid')) {
+        const grid = new Grid('beer-grid', beers);
+        grid.render();
+    }
 
     // Initialize Modal
     new Modal('modal-container');

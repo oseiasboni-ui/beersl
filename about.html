@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeerStylesLibrary | Sobre</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Playfair Display for Elegant Text (Bonus) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Embedded CSS for About Page Specifics */
+        .about-main {
+            flex: 1;
+            /* Fills remaining space */
+            background-color: var(--color-bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            min-height: calc(100vh - var(--header-height));
+            /* Ensure footer pushes down */
+        }
+
+        .about-container {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .about-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            /* User requested "centralizado no centro" */
+        }
+
+        .about-text:last-of-type {
+            margin-bottom: 3rem;
+        }
+    </style>
+
+    <script type="module" src="js/app.js" defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header (Sticky) -->
+        <header id="main-header" class="main-header"></header>
+
+        <!-- Main Content -->
+        <main class="about-main">
+            <div class="about-container">
+                <h1 class="about-title" data-i18n="about.title"></h1>
+                <p class="about-text" data-i18n="about.p1"></p>
+                <p class="about-text" data-i18n="about.p2"></p>
+                <p class="about-text" data-i18n="about.p3"></p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="main-footer" class="main-footer"></footer>
+    </div>
+
+    <!-- Empty Modal Container just in case app.js references it -->
+    <div id="modal-container" class="modal-container hidden"></div>
+</body>
+
+</html>

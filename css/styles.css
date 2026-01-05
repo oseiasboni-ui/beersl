@@ -117,16 +117,34 @@
 }
 
 .filter-group {
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .filter-group h3 {
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: #95a5a6;
-    margin-bottom: 1rem;
-    font-weight: 600;
+    color: var(--color-primary);
+    /* Orange */
+    margin-bottom: 0.5rem;
+    font-weight: 700;
     letter-spacing: 0.5px;
+
+    /* Box Styling */
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    /* Rounded corners "circled" */
+    padding: 4px 10px;
+    display: inline-block;
+    background-color: rgba(230, 126, 34, 0.1);
+    /* Slight orange tint background */
 }
 
 .filter-list {
@@ -134,7 +152,7 @@
 }
 
 .filter-list li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.4rem;
 }
 
 .filter-list label {
@@ -231,10 +249,13 @@
 }
 
 .rulers-toolbar {
-    background: transparent;
-    border: none;
+    background: rgba(230, 126, 34, 0.15);
+    /* Primary Orange Tint */
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(230, 126, 34, 0.2);
     border-radius: 0;
-    padding: 0.5rem 0;
+    padding: 0.8rem 0;
+    /* Slightly more padding for the bar look */
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -1058,10 +1079,13 @@
 .banner-fade-wrapper.visible {
     opacity: 1;
 }
+
 /* Adjustments for Compact Header */
 .site-subtitle {
-    font-size: 0.8rem; /* Smaller default */
-    padding-left: 1rem; /* Reduced gap */
+    font-size: 0.8rem;
+    /* Smaller default */
+    padding-left: 1rem;
+    /* Reduced gap */
 }
 
 /* Specific adjustment for Portuguese subtitle length */
@@ -1071,10 +1095,47 @@ html[lang="pt-BR"] .site-subtitle {
 }
 
 .site-logo {
-    height: 40px; /* Reduced from 48px to fit 55px header */
+    height: 40px;
+    /* Reduced from 48px to fit 55px header */
 }
 
 .logo-container {
-    gap: 0.8rem; /* Reduced from 1.5rem */
+    gap: 0.8rem;
+    /* Reduced from 1.5rem */
 }
 
+/* Clear Filters Button */
+.clear-filters-wrapper {
+    margin-bottom: 1.5rem;
+    /* Reduced from 2rem */
+    padding-bottom: 0.8rem;
+    /* Reduced from 1rem */
+    border-bottom: 1px solid var(--color-border);
+}
+
+.clear-filters-btn {
+    background-color: #f0f3f4;
+    /* Medium/Light Gray */
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    /* Soft rectangle */
+    color: var(--color-primary);
+    /* Orange */
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 8px 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.clear-filters-btn:hover {
+    background-color: #e0e6e8;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

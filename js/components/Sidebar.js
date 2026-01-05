@@ -10,6 +10,16 @@ export class Sidebar {
 
     render() {
         this.target.innerHTML = `
+            <div class="clear-filters-wrapper">
+                <button id="clear-filters-btn" class="clear-filters-btn">
+                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                     </svg>
+                     <span data-i18n="sidebar.clear_filters">${i18n.t('sidebar.clear_filters')}</span>
+                </button>
+            </div>
+            
             <div class="filter-group">
                 <h3 data-i18n="sidebar.fermentation">${i18n.t('sidebar.fermentation')}</h3>
                 <ul class="filter-list">
@@ -43,5 +53,22 @@ export class Sidebar {
                  </ul>
             </div>
         `;
+
+        this.addEventListeners();
+    }
+
+    addEventListeners() {
+        const clearBtn = this.target.querySelector('#clear-filters-btn');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => this.clearAllFilters());
+        }
+    }
+
+    clearAllFilters() {
+        const checkboxes = this.target.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => cb.checked = false);
+
+        // Dispatch event for other components to listen to
+        window.dispatchEvent(new CustomEvent('filterChanged', { detail: { filters: {} } }));
     }
 }
