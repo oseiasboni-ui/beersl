@@ -8,6 +8,18 @@ export const translations = {
         "header.subtitle": "Biblioteca de Estilos de Cerveja",
         "header.search_placeholder": "Buscar estilos...",
 
+        // Rotating Banner
+        "banner.phrase1.title": "Anuncie conosco",
+        "banner.phrase1.subtitle": "Alcance o público certo hoje.",
+        "banner.phrase2.title": "Coloque sua marca frente a entusiastas",
+        "banner.phrase2.subtitle": "Anuncie onde importa.",
+        "banner.phrase3.title": "Cresça sua marca aqui",
+        "banner.phrase3.subtitle": "Comece a anunciar conosco.",
+        "banner.phrase4.title": "Mostre sua marca para um público premium",
+        "banner.phrase4.subtitle": "Anuncie em nossa plataforma.",
+        "banner.phrase5.title": "Promova sua marca hoje",
+        "banner.phrase5.subtitle": "Rápido. Direcionado. Eficaz.",
+
         // Sidebar - Fermentation
         "sidebar.fermentation": "FERMENTAÇÃO",
         "sidebar.ale": "Ale",
@@ -90,6 +102,18 @@ export const translations = {
         "header.subtitle": "Beer Style Library",
         "header.search_placeholder": "Search styles...",
 
+        // Rotating Banner
+        "banner.phrase1.title": "Advertise with us",
+        "banner.phrase1.subtitle": "Reach the right audience today.",
+        "banner.phrase2.title": "Put your brand in front of enthusiasts",
+        "banner.phrase2.subtitle": "Advertise where it matters.",
+        "banner.phrase3.title": "Grow your brand here",
+        "banner.phrase3.subtitle": "Start advertising with us.",
+        "banner.phrase4.title": "Show your brand to a premium audience",
+        "banner.phrase4.subtitle": "Advertise on our platform.",
+        "banner.phrase5.title": "Promote your brand today",
+        "banner.phrase5.subtitle": "Fast. Targeted. Effective.",
+
         // Sidebar - Fermentation
         "sidebar.fermentation": "FERMENTATION",
         "sidebar.ale": "Ale",
@@ -171,6 +195,18 @@ export const translations = {
         "header.site_name": "BeerSL",
         "header.subtitle": "Bierstil-Bibliothek",
         "header.search_placeholder": "Stile suchen...",
+
+        // Rotating Banner
+        "banner.phrase1.title": "Werben Sie bei uns",
+        "banner.phrase1.subtitle": "Erreichen Sie heute das richtige Publikum.",
+        "banner.phrase2.title": "Präsentieren Sie Ihre Marke vor Enthusiasten",
+        "banner.phrase2.subtitle": "Werben Sie dort, wo es zählt.",
+        "banner.phrase3.title": "Lassen Sie Ihre Marke hier wachsen",
+        "banner.phrase3.subtitle": "Beginnen Sie mit uns zu werben.",
+        "banner.phrase4.title": "Zeigen Sie Ihre Marke einem Premium-Publikum",
+        "banner.phrase4.subtitle": "Werben Sie auf unserer Plattform.",
+        "banner.phrase5.title": "Bewerben Sie Ihre Marke heute",
+        "banner.phrase5.subtitle": "Schnell. Zielgerichtet. Effektiv.",
 
         // Sidebar - Fermentation
         "sidebar.fermentation": "GÄRUNG",

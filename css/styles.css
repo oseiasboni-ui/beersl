@@ -904,6 +904,7 @@
 .header-actions {
     display: none;
 }
+
 /* Updated Header Logo Styles */
 .logo-container {
     display: flex;
@@ -912,7 +913,7 @@
 }
 
 .site-logo {
-    height: 48px; 
+    height: 48px;
     width: auto;
     object-fit: contain;
 }
@@ -923,10 +924,157 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
-    border-left: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
     padding-left: 1.5rem;
     height: 32px;
     display: flex;
     align-items: center;
+}
+
+
+/* Rotating Banner Styles */
+.rotating-banner-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+
+.rotating-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    /* Initial state */
+    width: 100%;
+}
+
+.banner-line.title {
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    margin-bottom: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner-line.subtitle {
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.1;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure Search stays to right */
+.header-search {
+    flex: 0 0 300px;
+    /* Maintain fixed width */
+}
+
+
+/* Rotating Banner Revisions */
+.rotating-text {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    width: 100%;
+}
+
+.rotating-text.visible {
+    opacity: 1;
+}
+
+
+/* Rotating Banner Fixed Box Styles */
+.rotating-banner-container {
+    justify-content: center;
+    /* Ensures the box itself is centered in the flex space */
+}
+
+#rotating-text {
+    background-color: #ffffff;
+    width: 600px;
+    /* Fixed width */
+    height: 60px;
+    /* Fixed height */
+    border-radius: 8px;
+    /* Slight rounding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ensure no padding transition causes jumps */
+    padding: 0 10px;
+}
+
+/* Override previous opacity logic to apply to children or keep container visible? */
+/* User wants background white. If container fades out, background fades out. */
+/* The user said "fundo branco... nao ficar acompanhando o tamanho". */
+/* This implies the white box stays, and text inside fades? */
+/* Or the whole box fades? */
+/* Usually "banner" implies the box is the banner. */
+/* If the box fades, the header looks empty between cycles. */
+/* But the text rotation logic I wrote fades the whole #rotating-text container. */
+/* I should change logic: Fade CONTENT, keep BOX. */
+
+/* I will modify CSS so that #rotating-text is the BOX (always visible) and inner content fades. */
+/* But my JS toggles .visible on #rotating-text. */
+/* I need to update JS or CSS. */
+/* Easiest: modifying CSS to target children of .visible ?? */
+/* No, JS toggles opacity of #rotating-text. */
+
+/* I will update JS to toggle opacity of .banner-content wrapper inside, or just target children. */
+/* Or simply: The user might be fine with the box fading if the whole thing is the "banner". */
+/* But "fundo branco" usually suggests a card-like permanent element. */
+
+/* Let"s assume the box should stay and text fades. */
+/* I will update JS to target a new inner wrapper or children. */
+/* Actually, Header.js structure: 
+   <div id="rotating-text" ...> <div class="title"></div> ... </div>
+*/
+/* I will add a wrapper in JS or just style the text elements to transition? */
+/* Easier: Target .banner-line inside #rotating-text for opacity transition. */
+/* And remove transition from #rotating-text itself. */
+
+
+
+/* Rotating Banner Wrapper Transition */
+.banner-fade-wrapper {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.banner-fade-wrapper.visible {
+    opacity: 1;
+}
+/* Adjustments for Compact Header */
+.site-subtitle {
+    font-size: 0.8rem; /* Smaller default */
+    padding-left: 1rem; /* Reduced gap */
+}
+
+/* Specific adjustment for Portuguese subtitle length */
+html[lang="pt-BR"] .site-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+.site-logo {
+    height: 40px; /* Reduced from 48px to fit 55px header */
+}
+
+.logo-container {
+    gap: 0.8rem; /* Reduced from 1.5rem */
 }
 
