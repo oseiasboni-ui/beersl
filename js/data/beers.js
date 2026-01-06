@@ -1,52 +1,60 @@
 export const beers = [
     {
         id: 'altbier',
-        name: 'Altbier (Ale)',
-        family: 'Ale Britânica', // Note: Image says Ale Brit?nica but Altbier is German. Using image text.
-        tag: 'Maltada',
-        abv: '5.5%',
-        rating: 5.0,
-        image: 'assets/beer-placeholder.png', // We will need a placeholder
-        description: 'Cerveja de Dusseldorf, cor de cobre, fermentada a frio. Amargor firme de lúpulo equilibrado por um corpo de malte rico, mas com final seco e limpo.',
-        category: 'Ales',
+        name: 'Altbier',
+        origin: '🇩🇪',
+        family: 'beer.altbier.family',
+        tag: 'beer.altbier.tag',
+        abv: '4.8%',
+        rating: 4.5,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.altbier.description',
+        category: 'Pale Ale',
         appearance: {
-            color: 'Cobre a marrom claro',
-            colorHex: '#D89E10', // Approximate
-            clarity: 'Brilhante',
-            foam: 'Off-white, persistente'
+            color: 'beer.altbier.appearance.color',
+            colorHex: '#A85E14',
+            clarity: 'beer.altbier.appearance.clarity',
+            foam: 'beer.altbier.appearance.foam'
         },
         sensory: {
-            malte: 50,
-            lupulo: 30,
-            levedura: 10
+            malte: 60,
+            lupulo: 50,
+            levedura: 20
         },
         mouthfeel: {
-            body: 'Médio',
-            carbonation: 'Média',
-            texture: 'Suave',
-            finish: 'Seco e amargo'
+            body: 'beer.altbier.mouthfeel.body',
+            carbonation: 'beer.altbier.mouthfeel.carbonation',
+            texture: 'beer.altbier.mouthfeel.texture',
+            finish: 'beer.altbier.mouthfeel.finish'
         },
-        history: "'Alt' significa 'velho', referindo-se ao método antigo de fermentação alta (Ale) mantido em Dusseldorf.",
+        history: 'beer.altbier.history',
+        comparison: 'beer.altbier.comparison',
         ingredients: {
-            malts: 'Pilsner, Munich, Cara',
-            hops: 'Spalt',
-            yeast: 'Alt (Ale)',
-            adjuncts: 'Nenhum'
+            malts: 'beer.altbier.ingredients.malts',
+            hops: 'beer.altbier.ingredients.hops',
+            yeast: 'beer.altbier.ingredients.yeast',
+            adjuncts: 'beer.altbier.ingredients.adjuncts'
         },
         specs: {
-            abvRange: '4.3-5.5%',
-            ibu: '25-50',
-            srm: '11-17',
-            og: '1.044-1.052',
-            fg: '1.008-1.014'
+            abvRange: '4.3–5.5%',
+            ibu: '25–50',
+            srm: '11–17',
+            og: '1.044–1.052',
+            fg: '1.008–1.014'
         },
-        variations: ['Düsseldorf Alt'],
+        variations: ['Düsseldorfer Altbier', 'Sticke Alt'],
+        examples: [
+            { brand: 'Uerige', name: 'Alt' },
+            { brand: 'Füchschen', name: 'Alt' },
+            { brand: 'Schumacher', name: 'Alt' },
+            { brand: 'Schlüssel', name: 'Alt' }
+        ],
         service: {
-            temperature: '8-10°C',
-            glass: 'Becher (Copo cilíndrico curto)',
-            validity: 'Média'
+            temperature: '7–10°C',
+            glass: 'Becher (200ml)',
+            validity: '3–6 meses'
         },
-        pairing: ['Porco Assado', 'Mostarda Escura']
+        pairing: ['Sauerbraten', 'Bratwurst', 'Queijos suaves']
     },
     {
         id: 'altbier-cold',

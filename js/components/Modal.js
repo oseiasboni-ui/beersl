@@ -53,7 +53,7 @@ export class Modal {
             
             <div class="general-impression">
                 <h4>${i18n.t('modal.general_impression').toUpperCase()}</h4>
-                <p>${beer.description || i18n.t('modal.no_description')}</p>
+                <p>${i18n.t(beer.description) || i18n.t('modal.no_description')}</p>
             </div>
             
             <div class="section-title">${i18n.t('modal.appearance').toUpperCase()}</div>
@@ -61,17 +61,17 @@ export class Modal {
                  <div class="spec-item">
                     <h5>${i18n.t('modal.color').toUpperCase()}</h5>
                     <div style="width: 20px; height: 20px; background: ${beer.appearance?.colorHex || '#ccc'}; border-radius: 50%; margin: 0 auto 5px;"></div>
-                    <span>${beer.appearance?.color || 'N/A'}</span>
+                    <span>${i18n.t(beer.appearance?.color) || 'N/A'}</span>
                  </div>
                  <div class="spec-item">
                     <h5>${i18n.t('modal.clarity_label').toUpperCase()}</h5>
                     <div style="font-size: 1.2rem;">✨</div>
-                    <span>${beer.appearance?.clarity || 'N/A'}</span>
+                    <span>${i18n.t(beer.appearance?.clarity) || 'N/A'}</span>
                  </div>
                  <div class="spec-item">
                     <h5>${i18n.t('modal.foam').toUpperCase()}</h5>
                     <div style="font-size: 1.2rem;">☁️</div>
-                    <span>${beer.appearance?.foam || 'N/A'}</span>
+                    <span>${i18n.t(beer.appearance?.foam) || 'N/A'}</span>
                  </div>
             </div>
 
@@ -86,15 +86,61 @@ export class Modal {
             <div class="specs-grid">
                   <div class="spec-item">
                     <h5>${i18n.t('modal.body').toUpperCase()}</h5>
-                    <span>${beer.mouthfeel?.body || 'N/A'}</span>
+                    <span>${i18n.t(beer.mouthfeel?.body) || 'N/A'}</span>
                  </div>
                   <div class="spec-item">
                     <h5>${i18n.t('modal.carbonation').toUpperCase()}</h5>
-                    <span>${beer.mouthfeel?.carbonation || 'N/A'}</span>
+                    <span>${i18n.t(beer.mouthfeel?.carbonation) || 'N/A'}</span>
                  </div>
                   <div class="spec-item">
                     <h5>${i18n.t('modal.texture').toUpperCase()}</h5>
-                    <span>${beer.mouthfeel?.texture || 'N/A'}</span>
+                    <span>${i18n.t(beer.mouthfeel?.texture) || 'N/A'}</span>
+                 </div>
+            </div>
+
+            <div class="section-title">${i18n.t('modal.comparison').toUpperCase()}</div>
+            <p style="color: #555; line-height: 1.6; margin-bottom: 2rem;">${i18n.t(beer.comparison) || i18n.t('modal.no_comparison')}</p>
+
+            <div class="section-title">${i18n.t('modal.examples').toUpperCase()}</div>
+            <div class="examples-list" style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                ${(beer.examples || []).map(ex => `
+                    <div class="example-tag" style="background: #f8f9fa; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #e9ecef;">
+                        <strong>${ex.brand}</strong> <span style="color: #7f8c8d;">${ex.name}</span>
+                    </div>
+                `).join('') || '<span style="color: #999;">-</span>'}
+            </div>
+
+            <div class="section-title">${i18n.t('modal.history').toUpperCase()}</div>
+            <p style="color: #555; line-height: 1.6; margin-bottom: 2rem;">${i18n.t(beer.history) || i18n.t('modal.no_history')}</p>
+
+            <div class="section-title">${i18n.t('modal.ingredients').toUpperCase()}</div>
+            <div class="ingredients-list" style="margin-bottom: 2rem;">
+                 <p><strong>${i18n.t('modal.malt')}:</strong> ${i18n.t(beer.ingredients?.malts) || '-'}</p>
+                 <p><strong>${i18n.t('modal.hops')}:</strong> ${i18n.t(beer.ingredients?.hops) || '-'}</p>
+                 <p><strong>${i18n.t('modal.yeast')}:</strong> ${i18n.t(beer.ingredients?.yeast) || '-'}</p>
+            </div>
+
+            <div class="section-title">${i18n.t('modal.vital_stats').toUpperCase()}</div>
+            <div class="specs-grid">
+                  <div class="spec-item">
+                    <h5>IBU</h5>
+                    <span>${beer.specs?.ibu || '-'}</span>
+                 </div>
+                  <div class="spec-item">
+                    <h5>SRM</h5>
+                    <span>${beer.specs?.srm || '-'}</span>
+                 </div>
+                  <div class="spec-item">
+                    <h5>ABV</h5>
+                    <span>${beer.specs?.abvRange || '-'}</span>
+                 </div>
+                  <div class="spec-item">
+                    <h5>OG</h5>
+                    <span>${beer.specs?.og || '-'}</span>
+                 </div>
+                  <div class="spec-item">
+                    <h5>FG</h5>
+                    <span>${beer.specs?.fg || '-'}</span>
                  </div>
             </div>
         `;

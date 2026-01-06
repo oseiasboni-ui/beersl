@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeerStylesLibrary | Fale Conosco</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="module" src="js/app.js" defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header (Sticky) -->
+        <header id="main-header" class="main-header"></header>
+
+        <!-- Main Content -->
+        <main class="contact-main">
+            <div class="contact-container">
+                <!-- Left Column: Contact Info -->
+                <div class="contact-info">
+                    <h1 class="contact-title" data-i18n="contact.title"></h1>
+                    <p class="contact-desc" data-i18n="contact.desc"></p>
+
+                    <div class="contact-cards">
+                        <!-- Email -->
+                        <div class="contact-card">
+                            <div class="card-icon">✉️</div>
+                            <div class="card-details">
+                                <h3 data-i18n="contact.email"></h3>
+                                <p>gracexpressbr@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="contact-card">
+                            <div class="card-icon">📱</div>
+                            <div class="card-details">
+                                <h3 data-i18n="contact.whatsapp"></h3>
+                                <p>+55 11 97857-7389</p>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="contact-card">
+                            <div class="card-icon">📍</div>
+                            <div class="card-details">
+                                <h3 data-i18n="contact.location"></h3>
+                                <p>São Paulo, Brasil</p>
+                            </div>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="contact-card">
+                            <div class="card-icon">📸</div>
+                            <div class="card-details">
+                                <h3 data-i18n="contact.instagram"></h3>
+                                <p>@gracexpressbr</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="contact-form-wrapper">
+                    <h2 class="form-title" data-i18n="contact.subtitle_form"></h2>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.label_name"></label>
+                            <input type="text" id="name" data-i18n-placeholder="contact.ph_name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.label_email"></label>
+                            <input type="email" id="email" data-i18n-placeholder="contact.ph_email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.label_message"></label>
+                            <textarea id="message" rows="5" data-i18n-placeholder="contact.ph_message"></textarea>
+                        </div>
+
+                        <div class="form-footer">
+                            <button type="button" class="btn-submit" data-i18n="contact.send_btn"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="main-footer" class="main-footer"></footer>
+    </div>
+
+    <!-- Empty Modal Container -->
+    <div id="modal-container" class="modal-container hidden"></div>
+</body>
+
+</html>

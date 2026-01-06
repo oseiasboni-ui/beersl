@@ -28,10 +28,16 @@ export class Grid {
         return `
             <div class="beer-card" data-id="${beer.id}">
                 <div class="card-header" style="background-color: ${beer.appearance?.colorHex || '#34495e'}">
+                    <span class="origin-flag">${beer.origin || '🇩🇪'}</span>
                     <span class="beer-glass-icon">🍺</span>
                 </div>
                 <div class="card-body">
                     <h3>${displayName}</h3>
+                    <div class="family">${beer.family || beer.category || 'Ale'}</div>
+                    <div class="card-stats">
+                        <span class="stat-badge">ABV: ${beer.abv || '?'}</span>
+                        <span class="stat-badge">IBU: ${beer.specs?.ibu || '?'}</span>
+                    </div>
                 </div>
             </div>
         `;
@@ -40,7 +46,7 @@ export class Grid {
     attachEvents() {
         this.target.querySelectorAll('.beer-card').forEach(card => {
             card.addEventListener('click', () => {
-                const beerId = parseInt(card.dataset.id);
+                const beerId = card.dataset.id;
                 const beer = this.data.find(b => b.id === beerId);
                 if (beer) {
                     document.dispatchEvent(new CustomEvent('openModal', { detail: beer }));
