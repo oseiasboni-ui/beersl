@@ -22,6 +22,7 @@ export class Footer {
                     <nav class="footer-nav">
                         <a href="about.html" data-i18n="footer.about">${i18n.t('footer.about')}</a>
                         <a href="contact.html" data-i18n="footer.contact">${i18n.t('footer.contact')}</a>
+                        <a href="admin.html" style="color: var(--color-primary, #e67e22); font-weight: 600;">🔐 Admin</a>
                     </nav>
                     
                     <div class="language-switcher">

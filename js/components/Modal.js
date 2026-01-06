@@ -1,4 +1,6 @@
 import { i18n } from '../i18n/i18n.js';
+import { isAuthenticated } from '../services/auth.js';
+
 
 export class Modal {
     constructor(targetId) {
@@ -31,12 +33,39 @@ export class Modal {
         `;
     }
 
-    open(beer) {
+    async open(beer) {
         if (!beer) return;
+
+        // Check if user is admin
+        const isAdmin = await isAuthenticated();
+
+        // Determine image URL
+        const hasCustomImage = beer.image && !beer.image.includes('placeholder');
+        const imageUrl = hasCustomImage ? beer.image : null;
 
         const leftContent = `
             <div class="modal-info-tag">${beer.category || 'Ale'}</div>
-            <div class="beer-detail-glass" style="background-color: ${beer.appearance?.colorHex || '#f1c40f'}"></div>
+            
+            ${imageUrl ? `
+                <div style="text-align: center; margin: 2rem 0;">
+                    <img src="${imageUrl}" alt="${beer.name}" 
+                         style="max-width: 100%; max-height: 250px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                </div>
+            ` : `
+                <div class="beer-detail-glass" style="background-color: ${beer.appearance?.colorHex || '#f1c40f'}"></div>
+            `}
+            
+            ${isAdmin ? `
+                <div style="margin-top: 1.5rem; text-align: center;">
+                    <input type="file" id="modal-upload-input" accept="image/*" style="display: none;">
+                    <button id="modal-upload-btn" class="admin-upload-btn" 
+                            style="background: var(--color-primary, #e67e22); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; width: 100%;">
+                        📸 ${hasCustomImage ? 'Trocar Foto' : 'Upload Foto'}
+                    </button>
+                    <div id="modal-upload-progress" style="display: none; margin-top: 0.5rem; font-size: 0.8rem; color: #7f8c8d;"></div>
+                </div>
+            ` : ''}
+            
             <div style="margin-top: 2rem; text-align: center; font-size: 0.8rem; opacity: 0.7;">
                 ${beer.id}/139
             </div>
@@ -148,9 +177,63 @@ export class Modal {
         document.getElementById('modal-left').innerHTML = leftContent;
         document.getElementById('modal-right').innerHTML = rightContent;
 
+        // Add upload handler if admin
+        if (isAdmin) {
+            this.setupUploadHandler(beer);
+        }
+
         this.container.classList.remove('hidden');
         requestAnimationFrame(() => {
             this.container.classList.add('active');
+        });
+    }
+
+    setupUploadHandler(beer) {
+        const uploadBtn = document.getElementById('modal-upload-btn');
+        const fileInput = document.getElementById('modal-upload-input');
+        const progress = document.getElementById('modal-upload-progress');
+
+        if (!uploadBtn || !fileInput) return;
+
+        uploadBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            // Import storage service dynamically
+            const { uploadAndUpdateBeer } = await import('../services/storage.js');
+
+            progress.style.display = 'block';
+            progress.textContent = 'Enviando foto...';
+            progress.style.color = '#7f8c8d';
+            uploadBtn.disabled = true;
+
+            try {
+                const imageUrl = await uploadAndUpdateBeer(beer.id, file);
+
+                progress.textContent = '✓ Foto atualizada!';
+                progress.style.color = '#27ae60';
+
+                // Refresh beer data and reopen modal
+                setTimeout(async () => {
+                    const { fetchBeerById } = await import('../services/supabase.js');
+                    const updatedBeer = await fetchBeerById(beer.id);
+                    if (updatedBeer) {
+                        this.close();
+                        setTimeout(() => this.open(updatedBeer), 300);
+                        // Notify other components (like Grid)
+                        document.dispatchEvent(new CustomEvent('beerUpdated', { detail: updatedBeer }));
+                    }
+                }, 1000);
+            } catch (error) {
+                console.error('Upload error:', error);
+                progress.textContent = `✗ Erro: ${error.message}`;
+                progress.style.color = '#e74c3c';
+                uploadBtn.disabled = false;
+            }
         });
     }
 

@@ -7,6 +7,16 @@ export class Grid {
 
         // Listen for language changes
         window.addEventListener('languageChanged', () => this.render());
+
+        // Listen for beer updates (e.g. from Modal upload)
+        document.addEventListener('beerUpdated', (e) => {
+            const updatedBeer = e.detail;
+            const index = this.data.findIndex(b => b.id === updatedBeer.id);
+            if (index !== -1) {
+                this.data[index] = updatedBeer;
+                this.render();
+            }
+        });
     }
 
     render() {
@@ -25,11 +35,19 @@ export class Grid {
         const translatedName = i18n.t(translationKey);
         const displayName = translatedName !== translationKey ? translatedName : beer.name;
 
+        // Check if beer has a custom uploaded image
+        const hasCustomImage = beer.image && !beer.image.includes('placeholder');
+        const imageUrl = hasCustomImage ? beer.image : null;
+
         return `
-            <div class="beer-card" data-id="${beer.id}">
-                <div class="card-header" style="background-color: ${beer.appearance?.colorHex || '#34495e'}">
-                    <span class="origin-flag">${beer.origin || '🇩🇪'}</span>
-                    <span class="beer-glass-icon">🍺</span>
+                <div class="beer-card" data-id="${beer.id}">
+                    <div class="card-header" style="background-color: ${beer.appearance?.colorHex || '#34495e'}">
+                        <span class="origin-flag">${beer.origin || '🇩🇪'}</span>
+                        ${imageUrl ? `
+                            <img src="${imageUrl}" alt="${displayName}" class="card-beer-image" style="width: 100%; height: 100%; object-fit: cover;">
+                    ` : `
+                        <span class="beer-glass-icon">🍺</span>
+                    `}
                 </div>
                 <div class="card-body">
                     <h3>${displayName}</h3>
