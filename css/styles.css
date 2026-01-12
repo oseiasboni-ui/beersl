@@ -28,7 +28,8 @@ body {
 /* Header Styles */
 .main-header {
     height: var(--header-height);
-    background-color: var(--color-bg-dark);
+    /* Blue Sky Background (Deep/Twilight) */
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
     color: white;
     display: flex;
     align-items: center;
@@ -1083,10 +1084,18 @@ body {
 }
 
 .rotating-text {
-    background-color: white;
-    padding: 6px 16px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: #f1c40f;
+    /* Vibrant Yellow Billboard */
+    padding: 8px 24px;
+    border-radius: 2px;
+    /* Sharper corners for billboard look */
+    border: 4px solid #2c3e50;
+    /* Dark frame */
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        /* Deep shadow */
+        inset 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Inner depth */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1094,10 +1103,76 @@ body {
     text-align: center;
     width: auto;
     min-width: 320px;
-    max-width: 500px;
+    max-width: 600px;
+    /* Allow it to be wider if needed */
     /* Static visibility */
     opacity: 1;
     transition: none;
+    position: relative;
+    transform: translateX(2cm);
+    /* Move 2cm right per user request */
+    /* Billboard "Structure" hint */
+}
+
+/* "Broken Light" Animation */
+@keyframes blink-broken {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 0 transparent;
+    }
+
+    2% {
+        opacity: 0.1;
+    }
+
+    4% {
+        opacity: 1;
+    }
+
+    6% {
+        opacity: 0.1;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    32% {
+        opacity: 0.1;
+    }
+
+    34% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    72% {
+        opacity: 0.6;
+    }
+
+    74% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.rotating-text .banner-line {
+    /* Apply animation to text elements */
+    animation: blink-broken 5s infinite;
+    color: #1a1a1a;
+    /* Dark text for contrast on yellow */
+    text-shadow: none;
+    /* Reset distinct shadow */
 }
 
 .banner-line.title {
@@ -1111,10 +1186,10 @@ body {
 
 .banner-line.subtitle {
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.2;
-    color: #555;
-    /* Dark gray for subtitle on white */
+    color: #2c3e50;
+    /* Dark Grey */
 }
 
 
