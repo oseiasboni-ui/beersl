@@ -1,11 +1,18 @@
 /* Global Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
-    overflow-x: hidden;
-    /* Fix horizontal scroll */
+    overflow-x: hidden !important;
+    /* WAR: Force no scroll */
     width: 100%;
     margin: 0;
     padding: 0;
+    max-width: 100%;
 }
 
 /* Main Layout */
@@ -13,6 +20,9 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
 }
 
 /* Header Styles */
@@ -104,8 +114,12 @@ body {
     display: flex;
     flex: 1;
     overflow: hidden;
+    max-width: 100%;
+    /* Strict limit */
+    width: 100%;
 }
 
+/* Sidebar Styles */
 /* Sidebar Styles */
 .sidebar {
     width: var(--sidebar-width);
@@ -241,9 +255,14 @@ body {
 /* Content Area */
 .content-area {
     flex: 1;
-    padding: 2.5rem 3rem;
+    padding: 2.5rem 2rem;
+    /* Reduced horizontal padding */
     overflow-y: auto;
     background-color: #fdfdfd;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden !important;
+    /* Force clip */
 }
 
 /* Reference Rulers Styles (Slim Redesign) */
@@ -261,7 +280,8 @@ body {
     /* Slightly more padding for the bar look */
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+    /* Reduced gap to fit better */
     height: auto;
     min-height: 50px;
     box-shadow: none;
@@ -269,6 +289,11 @@ body {
     position: sticky;
     top: 0;
     z-index: 5;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    width: 100%;
+    box-sizing: border-box;
+    /* Explicitly ensure border-box */
 }
 
 .ruler-group {
@@ -418,6 +443,9 @@ body {
     font-weight: 500;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    max-width: 200px;
+    white-space: normal;
+    /* Allow text wrapping */
 }
 
 .tooltip::after {
