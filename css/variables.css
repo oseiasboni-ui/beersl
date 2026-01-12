@@ -1,20 +1,16 @@
 :root {
-    /* Colors */
+    /* Colors - Light Theme (Ice White) */
     --color-primary: #e67e22;
-    /* Orange for buttons/highlights */
     --color-primary-hover: #d35400;
 
     --color-bg-dark: #2c3e50;
-    /* Header background */
     --color-bg-darker: #1a252f;
-    /* Very dark blue for modal/sidebar */
 
     --color-text-main: #34495e;
     --color-text-light: #7f8c8d;
     --color-text-white: #ffffff;
 
     --color-bg-light: #f8f9fa;
-    /* Main background */
     --color-bg-white: #ffffff;
 
     --color-border: #ecf0f1;
@@ -30,6 +26,36 @@
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+    /* Theme-specific */
+    --theme-header-bg: #f8f9fa;
+    --theme-header-text: #1a1a1a;
+    --theme-footer-bg: #f8f9fa;
+    --theme-footer-text: #1a1a1a;
+    --theme-content-bg: #f8f9fa;
+    --theme-card-bg: #ffffff;
+    --theme-card-text: #34495e;
+    --theme-sidebar-bg: #ffffff;
+    --theme-sidebar-text: #34495e;
+    --theme-footer-text: #2c3e50;
+}
+
+/* Dark Theme (Matte Black) */
+html[data-theme="dark"] {
+    --theme-header-bg: #1a1a1a;
+    --theme-header-text: #f8f9fa;
+    --theme-footer-bg: #1a1a1a;
+    --theme-footer-text: #f8f9fa;
+    --theme-content-bg: #2d2d2d;
+    --theme-card-bg: #3d3d3d;
+    --theme-card-text: #f8f9fa;
+    --theme-sidebar-bg: #1a1a1a;
+    --theme-sidebar-text: #e0e0e0;
+    --color-bg-light: #2d2d2d;
+    --color-bg-white: #2a2a2a;
+    --color-text-main: #f8f9fa;
+    --color-text-light: #b0b0b0;
+    --color-border: #4d4d4d;
 }
 
 * {
@@ -49,4 +75,46 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.theme-label {
+    color: var(--color-text-light);
+    margin-right: 0.25rem;
+}
+
+.theme-btn-text {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    cursor: pointer;
+    font-size: 0.75rem;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.theme-btn-text:hover {
+    color: var(--color-primary);
+}
+
+.theme-btn-text.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.theme-divider {
+    color: var(--color-text-light);
+    font-size: 0.7rem;
+}
+
+.footer-right {
+    text-align: right;
 }

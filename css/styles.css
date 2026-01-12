@@ -28,9 +28,8 @@ body {
 /* Header Styles */
 .main-header {
     height: var(--header-height);
-    /* Blue Sky Background (Deep/Twilight) */
-    background: linear-gradient(to bottom, #1e3c72, #2a5298);
-    color: white;
+    background: var(--theme-header-bg);
+    color: var(--theme-header-text);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,6 +39,7 @@ body {
     top: 0;
     z-index: 100;
     box-shadow: var(--shadow-sm);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .header-logo {
@@ -47,7 +47,7 @@ body {
     align-items: center;
     gap: 1rem;
     text-decoration: none;
-    color: white;
+    color: var(--theme-header-text);
 }
 
 .site-logo-text {
@@ -132,6 +132,7 @@ body {
     position: sticky;
     top: var(--header-height);
     height: calc(100vh - var(--header-height));
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .filter-group {
@@ -876,10 +877,11 @@ body {
 
 /* Footer Styles */
 .main-footer {
-    background-color: var(--color-bg-dark);
-    color: white;
+    background-color: var(--theme-footer-bg);
+    color: var(--theme-footer-text);
     padding: 2rem 3rem;
     flex-shrink: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 

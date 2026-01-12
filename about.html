@@ -16,31 +16,50 @@
 
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/variables.css?v=18">
-    <link rel="stylesheet" href="css/styles.css?v=18">
+    <link rel="stylesheet" href="css/variables.css?v=23">
+    <link rel="stylesheet" href="css/styles.css?v=23">
     <style>
         /* Embedded CSS for About Page Specifics */
         .about-main {
             flex: 1;
-            /* Fills remaining space */
-            background-color: var(--color-bg-light);
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 4rem 2rem;
             min-height: calc(100vh - var(--header-height));
-            /* Ensure footer pushes down */
+            background-image: url('img/about-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .about-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
         .about-container {
             max-width: 800px;
             text-align: center;
+            position: relative;
+            z-index: 2;
+            background: rgba(128, 128, 128, 0.1);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .about-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            color: var(--color-primary);
+            color: #ffffff;
             margin-bottom: 2rem;
             line-height: 1.2;
             font-weight: 700;
@@ -50,14 +69,29 @@
             font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #4a5568;
+            color: #ffffff;
             margin-bottom: 1.5rem;
             text-align: center;
-            /* User requested "centralizado no centro" */
         }
 
         .about-text:last-of-type {
-            margin-bottom: 3rem;
+            margin-bottom: 0;
+        }
+
+        /* Sticky Footer for About Page */
+        .app-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-main {
+            flex: 1;
+        }
+
+        .main-footer {
+            position: sticky;
+            bottom: 0;
         }
     </style>
 

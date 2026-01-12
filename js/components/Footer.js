@@ -6,10 +6,19 @@ export class Footer {
 
         // Listen for language changes
         window.addEventListener('languageChanged', () => this.render());
+
+        // Initialize theme from localStorage
+        this.initTheme();
+    }
+
+    initTheme() {
+        const savedTheme = localStorage.getItem('beersl-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
     }
 
     render() {
         const currentLang = i18n.getLang();
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
 
         this.target.innerHTML = `
             <div class="footer-content">
@@ -38,8 +47,16 @@ export class Footer {
                     </div>
                 </div>
                 
-                <div class="footer-copy" data-i18n="footer.copyright">
-                    ${i18n.t('footer.copyright')}
+                <div class="footer-right">
+                    <div class="footer-copy" data-i18n="footer.copyright">
+                        ${i18n.t('footer.copyright')}
+                    </div>
+                    <div class="theme-toggle">
+                        <span class="theme-label">Tema:</span>
+                        <button class="theme-btn-text ${currentTheme === 'light' ? 'active' : ''}" data-theme="light">Claro</button>
+                        <span class="theme-divider">|</span>
+                        <button class="theme-btn-text ${currentTheme === 'dark' ? 'active' : ''}" data-theme="dark">Escuro</button>
+                    </div>
                 </div>
             </div>
         `;
@@ -48,14 +65,27 @@ export class Footer {
     }
 
     attachEvents() {
+        // Language buttons
         const langBtns = this.target.querySelectorAll('.lang-btn');
         langBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const lang = btn.dataset.lang;
                 i18n.setLang(lang);
 
-                // Update active state
                 langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Theme buttons
+        const themeBtns = this.target.querySelectorAll('.theme-btn-text');
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('beersl-theme', theme);
+
+                themeBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
             });
         });
