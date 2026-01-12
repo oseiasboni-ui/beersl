@@ -1170,6 +1170,24 @@ body {
     font-size: clamp(2rem, 6vw, 4.5rem);
 }
 
+/* German Positioning Adjustment */
+html[lang="de"] .hero-word-2 {
+    transform: translate(-3cm, -1cm);
+    /* Cumulative: -2.0cm - 1.0cm = -3.0cm */
+}
+
+/* Portuguese Positioning Adjustment */
+html[lang="pt"] .hero-word-2,
+html[lang="pt-BR"] .hero-word-2 {
+    transform: translate(-1cm, -0.5cm);
+}
+
+/* English Positioning Adjustment */
+html[lang="en"] .hero-word-3 {
+    transform: translateX(-4.0cm);
+    /* Cumulative: -2.0cm - 2.0cm = -4.0cm */
+}
+
 .hero-word-3 {
     bottom: 5%;
     right: 5%;
