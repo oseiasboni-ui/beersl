@@ -16,8 +16,8 @@
 
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/variables.css?v=23">
-    <link rel="stylesheet" href="css/styles.css?v=23">
+    <link rel="stylesheet" href="css/variables.css?v=26">
+    <link rel="stylesheet" href="css/styles.css?v=26">
     <style>
         /* Embedded CSS for About Page Specifics */
         .about-main {
@@ -87,11 +87,16 @@
 
         .about-main {
             flex: 1;
+            padding-bottom: 100px;
+            /* Space for fixed footer */
         }
 
         .main-footer {
-            position: sticky;
+            position: fixed;
             bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
         }
     </style>
 
