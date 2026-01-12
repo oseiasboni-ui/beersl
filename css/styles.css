@@ -1168,7 +1168,7 @@ body {
 
 .rotating-text .banner-line {
     /* Apply animation to text elements */
-    animation: blink-broken 5s infinite;
+    animation: blink-broken 8s infinite;
     color: #1a1a1a;
     /* Dark text for contrast on yellow */
     text-shadow: none;
@@ -1176,20 +1176,21 @@ body {
 }
 
 .banner-line.title {
-    font-size: 0.95rem;
+    font-size: 1.235rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1.2;
     margin-bottom: 2px;
+    color: #000000 !important;
 }
 
 .banner-line.subtitle {
-    font-size: 0.8rem;
+    font-size: 1.04rem;
     font-weight: 700;
     line-height: 1.2;
-    color: #2c3e50;
-    /* Dark Grey */
+    color: #000000;
+    /* Black */
 }
 
 
@@ -1200,12 +1201,41 @@ body {
     width: 100%;
 }
 
+@keyframes zoomInBeerSL {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+}
+
+.hero-beersl.animate-zoom {
+    animation: zoomInBeerSL 30s linear forwards;
+}
+
 .hero-image-container {
     width: 100%;
     border-radius: 12px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-banner-container {
+    position: absolute;
+    top: 1rem;
+    right: calc(1rem + 2.5cm);
+    z-index: 10;
+}
+
+.hero-banner-container .rotating-text {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+    box-shadow: none;
 }
 
 .hero-img {

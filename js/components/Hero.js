@@ -4,6 +4,14 @@ export class Hero {
     constructor(targetId) {
         this.target = document.getElementById(targetId);
         this.timers = [];
+        this.bannerIndex = 0;
+        this.phrases = [
+            { id: 'phrase1', color: '#ff9e00' }, // Amber
+            { id: 'phrase2', color: '#ff006e' }, // Hot Pink
+            { id: 'phrase3', color: '#3a86ff' }, // Blue
+            { id: 'phrase4', color: '#8338ec' }, // Purple
+            { id: 'phrase5', color: '#fb5607' }  // Orange Red
+        ];
     }
 
     render() {
@@ -12,6 +20,14 @@ export class Hero {
         this.target.innerHTML = `
             <div class="hero-image-container">
                 <img src="img/hero.png" alt="BeerSL Hero" class="hero-img">
+                
+                <!-- Rotating Banner (Top Left) -->
+                <div class="hero-banner-container">
+                    <div id="hero-rotating-text" class="rotating-text">
+                        <div class="banner-line title"></div>
+                        <div class="banner-line subtitle"></div>
+                    </div>
+                </div>
                 
                 <!-- Animated Text Overlays -->
                 <span class="hero-text-overlay hero-word-1" id="hero-word-1"></span>
@@ -26,9 +42,11 @@ export class Hero {
         // Listen for language changes to update text/restart loop
         window.addEventListener('languageChanged', () => {
             this.restartAnimation();
+            this.updateBannerText();
         });
 
         this.startAnimation();
+        this.startBannerRotation();
     }
 
     updateText() {
@@ -53,7 +71,10 @@ export class Hero {
 
         // Remove visible classes
         const els = this.target.querySelectorAll('.hero-text-overlay');
-        els.forEach(el => el.classList.remove('visible'));
+        els.forEach(el => {
+            el.classList.remove('visible');
+            el.classList.remove('animate-zoom');
+        });
     }
 
     startAnimation() {
@@ -70,18 +91,17 @@ export class Hero {
         // 0: Word 1 Fade In
         // 1: Word 2 Fade In
         // 2: Word 3 Fade In
-        // 6: Start Fade Out (All Words) -> Wait 4s after last fade in (2+4=6)
-        // 7: BEERSL Fade In (1s fade time)
-        // 37: BEERSL Fade Out (30s visible)
-        // 38: Restart
+        // 7: Start Fade Out (All Words)
+        // 8: BEERSL Fade In
+        // 38: BEERSL Fade Out
+        // 39: Restart
 
         // 1. Fade In Sequence
         this.addTimer(() => w1.classList.add('visible'), 0);
         this.addTimer(() => w2.classList.add('visible'), 1000);
         this.addTimer(() => w3.classList.add('visible'), 2000);
 
-        // 2. Fade Out Sequence (Visible for 4s after last word appears)
-        // Last word appears at T=2s + 1s transition = 3s. Pause 4s -> T=7s start fade out.
+        // 2. Fade Out Sequence
         this.addTimer(() => {
             w1.classList.remove('visible');
             w2.classList.remove('visible');
@@ -89,20 +109,54 @@ export class Hero {
         }, 7000);
 
         // 3. Brand Sequence
-        // Fade out takes 1s (7s -> 8s)
-        this.addTimer(() => brand.classList.add('visible'), 8000);
+        this.addTimer(() => {
+            brand.classList.add('visible');
+            brand.classList.add('animate-zoom');
+        }, 8000);
 
         // 4. End Brand Sequence
-        // Visible for 30s (8s -> 38s)
         this.addTimer(() => brand.classList.remove('visible'), 38000);
 
         // 5. Restart Loop
-        // Fade out takes 1s (38s -> 39s)
-        this.addTimer(() => this.startAnimation(), 39000);
+        this.addTimer(() => {
+            brand.classList.remove('animate-zoom');
+            this.startAnimation();
+        }, 39000);
     }
 
     addTimer(fn, delay) {
         const t = setTimeout(fn, delay);
         this.timers.push(t);
+    }
+
+    // --- Banner Rotation ---
+    startBannerRotation() {
+        if (this.bannerTimer) clearTimeout(this.bannerTimer);
+        this.runBannerCycle();
+    }
+
+    runBannerCycle() {
+        const container = this.target.querySelector('#hero-rotating-text');
+        if (!container) return;
+
+        const phrase = this.phrases[this.bannerIndex];
+        const titleEl = container.querySelector('.title');
+        const subtitleEl = container.querySelector('.subtitle');
+
+        const titleText = i18n.t(`banner.${phrase.id}.title`);
+        const subtitleText = i18n.t(`banner.${phrase.id}.subtitle`);
+
+        titleEl.textContent = titleText || "Start Advertising";
+        subtitleEl.textContent = subtitleText || "Grow your brand today.";
+        titleEl.style.color = phrase.color;
+
+        this.bannerTimer = setTimeout(() => {
+            this.bannerIndex = (this.bannerIndex + 1) % this.phrases.length;
+            this.runBannerCycle();
+        }, 6000);
+    }
+
+    updateBannerText() {
+        this.startBannerRotation();
     }
 }
