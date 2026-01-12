@@ -113,10 +113,9 @@ body {
 /* Layout Container */
 .main-layout {
     display: flex;
-    flex: 1;
-    overflow: hidden;
+    flex: 0 0 auto;
+    overflow: visible;
     max-width: 100%;
-    /* Strict limit */
     width: 100%;
 }
 
