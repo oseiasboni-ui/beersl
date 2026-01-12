@@ -2229,5 +2229,2814 @@ export const beers = [
             validity: '6–12 meses'
         },
         pairing: ['Bife defumado', 'Queijo Gruyère', 'Bolo de chocolate']
+    },
+    {
+        id: 'scottish-light',
+        name: 'Scottish Light',
+        origin: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+        family: 'beer.scottish-light.family',
+        tag: 'beer.scottish-light.tag',
+        abv: '2.9%',
+        rating: 3.8,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.scottish-light.description',
+        category: 'Scottish Ale',
+        appearance: {
+            color: 'beer.scottish-light.appearance.color',
+            colorHex: '#8D4004', // Deep copper to dark brown
+            clarity: 'beer.scottish-light.appearance.clarity',
+            foam: 'beer.scottish-light.appearance.foam'
+        },
+        sensory: {
+            malte: 70,
+            lupulo: 10,
+            levedura: 20
+        },
+        mouthfeel: {
+            body: 'beer.scottish-light.mouthfeel.body',
+            carbonation: 'beer.scottish-light.mouthfeel.carbonation',
+            texture: 'beer.scottish-light.mouthfeel.texture',
+            finish: 'beer.scottish-light.mouthfeel.finish'
+        },
+        history: 'beer.scottish-light.history',
+        comparison: 'beer.scottish-light.comparison',
+        ingredients: {
+            malts: 'beer.scottish-light.ingredients.malts',
+            hops: 'beer.scottish-light.ingredients.hops',
+            yeast: 'beer.scottish-light.ingredients.yeast',
+            adjuncts: 'beer.scottish-light.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '2.5–3.3%',
+            ibu: '10–20',
+            srm: '17–22',
+            og: '1.030–1.035',
+            fg: '1.010–1.013'
+        },
+        variations: ['60 Shilling (60/-)'],
+        examples: [
+            { brand: 'Belhaven', name: '60/-' },
+            { brand: 'McEwan’s', name: '60/-' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Thistle ou Pint',
+            validity: '3 meses'
+        },
+        pairing: ['Sanduíche leve', 'Sopa de legumes', 'Shortbread']
+    },
+    {
+        id: 'scottish-heavy',
+        name: 'Scottish Heavy',
+        origin: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+        family: 'beer.scottish-heavy.family',
+        tag: 'beer.scottish-heavy.tag',
+        abv: '3.6%',
+        rating: 4.0,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.scottish-heavy.description',
+        category: 'Scottish Ale',
+        appearance: {
+            color: 'beer.scottish-heavy.appearance.color',
+            colorHex: '#6F3724', // Pale copper to brown
+            clarity: 'beer.scottish-heavy.appearance.clarity',
+            foam: 'beer.scottish-heavy.appearance.foam'
+        },
+        sensory: {
+            malte: 75,
+            lupulo: 10,
+            levedura: 15
+        },
+        mouthfeel: {
+            body: 'beer.scottish-heavy.mouthfeel.body',
+            carbonation: 'beer.scottish-heavy.mouthfeel.carbonation',
+            texture: 'beer.scottish-heavy.mouthfeel.texture',
+            finish: 'beer.scottish-heavy.mouthfeel.finish'
+        },
+        history: 'beer.scottish-heavy.history',
+        comparison: 'beer.scottish-heavy.comparison',
+        ingredients: {
+            malts: 'beer.scottish-heavy.ingredients.malts',
+            hops: 'beer.scottish-heavy.ingredients.hops',
+            yeast: 'beer.scottish-heavy.ingredients.yeast',
+            adjuncts: 'beer.scottish-heavy.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '3.3–3.9%',
+            ibu: '15–25',
+            srm: '12–20',
+            og: '1.035–1.040',
+            fg: '1.010–1.013'
+        },
+        variations: ['70 Shilling (70/-)'],
+        examples: [
+            { brand: 'Tennent’s', name: 'Special Ale' },
+            { brand: 'Orkney', name: 'Raven Ale' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Thistle ou Pint',
+            validity: '4 meses'
+        },
+        pairing: ['Haggis', 'Cordeiro ensopado', 'Pudim de caramelo']
+    },
+    {
+        id: 'scottish-export',
+        name: 'Scottish Export',
+        origin: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+        family: 'beer.scottish-export.family',
+        tag: 'beer.scottish-export.tag',
+        abv: '4.5%',
+        rating: 4.2,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.scottish-export.description',
+        category: 'Scottish Ale',
+        appearance: {
+            color: 'beer.scottish-export.appearance.color',
+            colorHex: '#5D2B15', // Pale copper to brown
+            clarity: 'beer.scottish-export.appearance.clarity',
+            foam: 'beer.scottish-export.appearance.foam'
+        },
+        sensory: {
+            malte: 80,
+            lupulo: 15,
+            levedura: 5
+        },
+        mouthfeel: {
+            body: 'beer.scottish-export.mouthfeel.body',
+            carbonation: 'beer.scottish-export.mouthfeel.carbonation',
+            texture: 'beer.scottish-export.mouthfeel.texture',
+            finish: 'beer.scottish-export.mouthfeel.finish'
+        },
+        history: 'beer.scottish-export.history',
+        comparison: 'beer.scottish-export.comparison',
+        ingredients: {
+            malts: 'beer.scottish-export.ingredients.malts',
+            hops: 'beer.scottish-export.ingredients.hops',
+            yeast: 'beer.scottish-export.ingredients.yeast',
+            adjuncts: 'beer.scottish-export.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '3.9–5.0%',
+            ibu: '15–25',
+            srm: '12–20',
+            og: '1.040–1.050',
+            fg: '1.010–1.014'
+        },
+        variations: ['80 Shilling (80/-)'],
+        examples: [
+            { brand: 'Belhaven', name: 'Scottish Ale' },
+            { brand: 'Broughton', name: 'Exciseman’s 80/-' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Thistle ou Pint',
+            validity: '4–6 meses'
+        },
+        pairing: ['Carne assada', 'Hambúrguer com bacon', 'Queijo defumado']
+    },
+    {
+        id: 'irish-red-ale',
+        name: 'Irish Red Ale',
+        origin: '🇮🇪',
+        family: 'beer.irish-red-ale.family',
+        tag: 'beer.irish-red-ale.tag',
+        abv: '4.4%',
+        rating: 4.1,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.irish-red-ale.description',
+        category: 'Irish Beer',
+        appearance: {
+            color: 'beer.irish-red-ale.appearance.color',
+            colorHex: '#B94E25', // Amber to reddish-copper
+            clarity: 'beer.irish-red-ale.appearance.clarity',
+            foam: 'beer.irish-red-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 50,
+            lupulo: 25,
+            levedura: 25
+        },
+        mouthfeel: {
+            body: 'beer.irish-red-ale.mouthfeel.body',
+            carbonation: 'beer.irish-red-ale.mouthfeel.carbonation',
+            texture: 'beer.irish-red-ale.mouthfeel.texture',
+            finish: 'beer.irish-red-ale.mouthfeel.finish'
+        },
+        history: 'beer.irish-red-ale.history',
+        comparison: 'beer.irish-red-ale.comparison',
+        ingredients: {
+            malts: 'beer.irish-red-ale.ingredients.malts',
+            hops: 'beer.irish-red-ale.ingredients.hops',
+            yeast: 'beer.irish-red-ale.ingredients.yeast',
+            adjuncts: 'beer.irish-red-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '3.8–5.0%',
+            ibu: '18–28',
+            srm: '9–14',
+            og: '1.036–1.046',
+            fg: '1.008–1.012'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Smithwick’s', name: 'Red Ale' },
+            { brand: 'Kilkenny', name: 'Irish Beer' },
+            { brand: 'Murphy’s', name: 'Irish Red' }
+        ],
+        service: {
+            temperature: '7–10°C',
+            glass: 'Pint',
+            validity: '3–5 meses'
+        },
+        pairing: ['Rosbife', 'Queijo Cheddar', 'Torta de frango']
+    },
+    {
+        id: 'irish-stout',
+        name: 'Irish Stout',
+        origin: '🇮🇪',
+        family: 'beer.irish-stout.family',
+        tag: 'beer.irish-stout.tag',
+        abv: '4.2%',
+        rating: 4.6,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.irish-stout.description',
+        category: 'Irish Beer / Stout',
+        appearance: {
+            color: 'beer.irish-stout.appearance.color',
+            colorHex: '#000000', // Jet black
+            clarity: 'beer.irish-stout.appearance.clarity',
+            foam: 'beer.irish-stout.appearance.foam'
+        },
+        sensory: {
+            malte: 65,
+            lupulo: 30,
+            levedura: 5
+        },
+        mouthfeel: {
+            body: 'beer.irish-stout.mouthfeel.body',
+            carbonation: 'beer.irish-stout.mouthfeel.carbonation',
+            texture: 'beer.irish-stout.mouthfeel.texture',
+            finish: 'beer.irish-stout.mouthfeel.finish'
+        },
+        history: 'beer.irish-stout.history',
+        comparison: 'beer.irish-stout.comparison',
+        ingredients: {
+            malts: 'beer.irish-stout.ingredients.malts',
+            hops: 'beer.irish-stout.ingredients.hops',
+            yeast: 'beer.irish-stout.ingredients.yeast',
+            adjuncts: 'beer.irish-stout.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '3.8–5.0%',
+            ibu: '25–45',
+            srm: '25–40+',
+            og: '1.036–1.044',
+            fg: '1.007–1.011'
+        },
+        variations: ['Dry Stout'],
+        examples: [
+            { brand: 'Guinness', name: 'Draught' },
+            { brand: 'Murphy’s', name: 'Irish Stout' },
+            { brand: 'Beamish', name: 'Irish Stout' }
+        ],
+        service: {
+            temperature: '6–8°C',
+            glass: 'Pint (Tulipa)',
+            validity: '6 meses'
+        },
+        pairing: ['Ostras', 'Bife e batata', 'Mousse de chocolate']
+    },
+    {
+        id: 'irish-extra-stout',
+        name: 'Irish Extra Stout',
+        origin: '🇮🇪',
+        family: 'beer.irish-extra-stout.family',
+        tag: 'beer.irish-extra-stout.tag',
+        abv: '6.0%',
+        rating: 4.5,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.irish-extra-stout.description',
+        category: 'Irish Beer / Stout',
+        appearance: {
+            color: 'beer.irish-extra-stout.appearance.color',
+            colorHex: '#000000', // Jet black
+            clarity: 'beer.irish-extra-stout.appearance.clarity',
+            foam: 'beer.irish-extra-stout.appearance.foam'
+        },
+        sensory: {
+            malte: 70,
+            lupulo: 25,
+            levedura: 5
+        },
+        mouthfeel: {
+            body: 'beer.irish-extra-stout.mouthfeel.body',
+            carbonation: 'beer.irish-extra-stout.mouthfeel.carbonation',
+            texture: 'beer.irish-extra-stout.mouthfeel.texture',
+            finish: 'beer.irish-extra-stout.mouthfeel.finish'
+        },
+        history: 'beer.irish-extra-stout.history',
+        comparison: 'beer.irish-extra-stout.comparison',
+        ingredients: {
+            malts: 'beer.irish-extra-stout.ingredients.malts',
+            hops: 'beer.irish-extra-stout.ingredients.hops',
+            yeast: 'beer.irish-extra-stout.ingredients.yeast',
+            adjuncts: 'beer.irish-extra-stout.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.5–6.5%',
+            ibu: '30–50',
+            srm: '30–40+',
+            og: '1.052–1.062',
+            fg: '1.010–1.014'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Guinness', name: 'Extra Stout' },
+            { brand: 'Sheaf', name: 'Stout' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Pint (Tulipa)',
+            validity: 'Mínimo 1 ano (guarda)'
+        },
+        pairing: ['Bife com cerveja preta', 'Queijos fortes', 'Trufa de chocolate']
+    },
+    {
+        id: 'sweet-stout',
+        name: 'Sweet Stout',
+        origin: '🇬🇧',
+        family: 'beer.sweet-stout.family',
+        tag: 'beer.sweet-stout.tag',
+        abv: '5.0%',
+        rating: 4.2,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.sweet-stout.description',
+        category: 'British Stout',
+        appearance: {
+            color: 'beer.sweet-stout.appearance.color',
+            colorHex: '#000000', // Very dark brown to black
+            clarity: 'beer.sweet-stout.appearance.clarity',
+            foam: 'beer.sweet-stout.appearance.foam'
+        },
+        sensory: {
+            malte: 75,
+            lupulo: 15,
+            levedura: 10
+        },
+        mouthfeel: {
+            body: 'beer.sweet-stout.mouthfeel.body',
+            carbonation: 'beer.sweet-stout.mouthfeel.carbonation',
+            texture: 'beer.sweet-stout.mouthfeel.texture',
+            finish: 'beer.sweet-stout.mouthfeel.finish'
+        },
+        history: 'beer.sweet-stout.history',
+        comparison: 'beer.sweet-stout.comparison',
+        ingredients: {
+            malts: 'beer.sweet-stout.ingredients.malts',
+            hops: 'beer.sweet-stout.ingredients.hops',
+            yeast: 'beer.sweet-stout.ingredients.yeast',
+            adjuncts: 'beer.sweet-stout.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.0–6.0%',
+            ibu: '20–40',
+            srm: '30–40',
+            og: '1.044–1.060',
+            fg: '1.012–1.024'
+        },
+        variations: ['Milk Stout', 'Cream Stout'],
+        examples: [
+            { brand: 'Mackeson', name: 'XXX Stout' },
+            { brand: 'Sam Smith', name: 'Organic Chocolate Stout' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Pint',
+            validity: '6–9 meses'
+        },
+        pairing: ['Sobremesas com chocolate', 'Queijo Brie', 'Pudim']
+    },
+    {
+        id: 'oatmeal-stout',
+        name: 'Oatmeal Stout',
+        origin: '🇬🇧',
+        family: 'beer.oatmeal-stout.family',
+        tag: 'beer.oatmeal-stout.tag',
+        abv: '5.0%',
+        rating: 4.3,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.oatmeal-stout.description',
+        category: 'British Stout',
+        appearance: {
+            color: 'beer.oatmeal-stout.appearance.color',
+            colorHex: '#1A1110', // Medium brown to black
+            clarity: 'beer.oatmeal-stout.appearance.clarity',
+            foam: 'beer.oatmeal-stout.appearance.foam'
+        },
+        sensory: {
+            malte: 70,
+            lupulo: 20,
+            levedura: 10
+        },
+        mouthfeel: {
+            body: 'beer.oatmeal-stout.mouthfeel.body',
+            carbonation: 'beer.oatmeal-stout.mouthfeel.carbonation',
+            texture: 'beer.oatmeal-stout.mouthfeel.texture',
+            finish: 'beer.oatmeal-stout.mouthfeel.finish'
+        },
+        history: 'beer.oatmeal-stout.history',
+        comparison: 'beer.oatmeal-stout.comparison',
+        ingredients: {
+            malts: 'beer.oatmeal-stout.ingredients.malts',
+            hops: 'beer.oatmeal-stout.ingredients.hops',
+            yeast: 'beer.oatmeal-stout.ingredients.yeast',
+            adjuncts: 'beer.oatmeal-stout.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.2–5.9%',
+            ibu: '25–40',
+            srm: '22–40',
+            og: '1.048–1.065',
+            fg: '1.010–1.018'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Sam Smith', name: 'Oatmeal Stout' },
+            { brand: 'Anderson Valley', name: 'Barney Flats' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Pint',
+            validity: '6–9 meses'
+        },
+        pairing: ['Cookies de aveia', 'Queijo Cheddar envelhecido', 'Carne assada']
+    },
+    {
+        id: 'tropical-stout',
+        name: 'Tropical Stout',
+        origin: '🇯🇲',
+        family: 'beer.tropical-stout.family',
+        tag: 'beer.tropical-stout.tag',
+        abv: '7.0%',
+        rating: 4.0,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.tropical-stout.description',
+        category: 'Strong Stout',
+        appearance: {
+            color: 'beer.tropical-stout.appearance.color',
+            colorHex: '#000000', // Very deep brown to black
+            clarity: 'beer.tropical-stout.appearance.clarity',
+            foam: 'beer.tropical-stout.appearance.foam'
+        },
+        sensory: {
+            malte: 70,
+            lupulo: 15,
+            levedura: 15
+        },
+        mouthfeel: {
+            body: 'beer.tropical-stout.mouthfeel.body',
+            carbonation: 'beer.tropical-stout.mouthfeel.carbonation',
+            texture: 'beer.tropical-stout.mouthfeel.texture',
+            finish: 'beer.tropical-stout.mouthfeel.finish'
+        },
+        history: 'beer.tropical-stout.history',
+        comparison: 'beer.tropical-stout.comparison',
+        ingredients: {
+            malts: 'beer.tropical-stout.ingredients.malts',
+            hops: 'beer.tropical-stout.ingredients.hops',
+            yeast: 'beer.tropical-stout.ingredients.yeast',
+            adjuncts: 'beer.tropical-stout.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.5–8.0%',
+            ibu: '30–50',
+            srm: '30–40',
+            og: '1.056–1.075',
+            fg: '1.010–1.018'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Dragon', name: 'Stout' },
+            { brand: 'Lion', name: 'Stout' },
+            { brand: 'Royal', name: 'Extra Stout' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Pint ou Snifter',
+            validity: '1 ano+'
+        },
+        pairing: ['Churrasco', 'Bolo de frutas', 'Comida caribenha picante']
+    },
+    {
+        id: 'foreign-extra-stout',
+        name: 'Foreign Extra Stout',
+        origin: '🇬🇧',
+        family: 'beer.foreign-extra-stout.family',
+        tag: 'beer.foreign-extra-stout.tag',
+        abv: '7.0%',
+        rating: 4.4,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.foreign-extra-stout.description',
+        category: 'Strong Stout',
+        appearance: {
+            color: 'beer.foreign-extra-stout.appearance.color',
+            colorHex: '#000000', // Very deep brown to black
+            clarity: 'beer.foreign-extra-stout.appearance.clarity',
+            foam: 'beer.foreign-extra-stout.appearance.foam'
+        },
+        sensory: {
+            malte: 65,
+            lupulo: 30,
+            levedura: 5
+        },
+        mouthfeel: {
+            body: 'beer.foreign-extra-stout.mouthfeel.body',
+            carbonation: 'beer.foreign-extra-stout.mouthfeel.carbonation',
+            texture: 'beer.foreign-extra-stout.mouthfeel.texture',
+            finish: 'beer.foreign-extra-stout.mouthfeel.finish'
+        },
+        history: 'beer.foreign-extra-stout.history',
+        comparison: 'beer.foreign-extra-stout.comparison',
+        ingredients: {
+            malts: 'beer.foreign-extra-stout.ingredients.malts',
+            hops: 'beer.foreign-extra-stout.ingredients.hops',
+            yeast: 'beer.foreign-extra-stout.ingredients.yeast',
+            adjuncts: 'beer.foreign-extra-stout.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '6.3–8.0%',
+            ibu: '50–70',
+            srm: '30–40',
+            og: '1.056–1.075',
+            fg: '1.010–1.018'
+        },
+        variations: ['Export Stout'],
+        examples: [
+            { brand: 'Guinness', name: 'Foreign Extra Stout' },
+            { brand: 'Coopers', name: 'Best Extra Stout' }
+        ],
+        service: {
+            temperature: '12–14°C',
+            glass: 'Snifter ou Pint',
+            validity: '2 anos+ (guarda)'
+        },
+        pairing: ['Ostras fortes', 'Queijo azul', 'Chocolate amargo 80%']
+    },
+    {
+        id: 'british-strong-ale',
+        name: 'British Strong Ale',
+        origin: '🇬🇧',
+        family: 'beer.british-strong-ale.family',
+        tag: 'beer.british-strong-ale.tag',
+        abv: '6.5%',
+        rating: 4.1,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.british-strong-ale.description',
+        category: 'British Strong Ale',
+        appearance: {
+            color: 'beer.british-strong-ale.appearance.color',
+            colorHex: '#9B361E', // Deep gold to dark reddish-brown
+            clarity: 'beer.british-strong-ale.appearance.clarity',
+            foam: 'beer.british-strong-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 70,
+            lupulo: 20,
+            levedura: 10
+        },
+        mouthfeel: {
+            body: 'beer.british-strong-ale.mouthfeel.body',
+            carbonation: 'beer.british-strong-ale.mouthfeel.carbonation',
+            texture: 'beer.british-strong-ale.mouthfeel.texture',
+            finish: 'beer.british-strong-ale.mouthfeel.finish'
+        },
+        history: 'beer.british-strong-ale.history',
+        comparison: 'beer.british-strong-ale.comparison',
+        ingredients: {
+            malts: 'beer.british-strong-ale.ingredients.malts',
+            hops: 'beer.british-strong-ale.ingredients.hops',
+            yeast: 'beer.british-strong-ale.ingredients.yeast',
+            adjuncts: 'beer.british-strong-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.5–8.0%',
+            ibu: '30–60',
+            srm: '8–22',
+            og: '1.055–1.080',
+            fg: '1.015–1.022'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Fuller’s', name: '1845' },
+            { brand: 'Young’s', name: 'Special London Ale' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Snifter ou Pint',
+            validity: '1–2 anos'
+        },
+        pairing: ['Assado de domingo', 'Queijo Stilton', 'Torta de nozes']
+    },
+    {
+        id: 'old-ale',
+        name: 'Old Ale',
+        origin: '🇬🇧',
+        family: 'beer.old-ale.family',
+        tag: 'beer.old-ale.tag',
+        abv: '7.5%',
+        rating: 4.3,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.old-ale.description',
+        category: 'British Strong Ale',
+        appearance: {
+            color: 'beer.old-ale.appearance.color',
+            colorHex: '#522014', // Light amber to very dark reddish-brown
+            clarity: 'beer.old-ale.appearance.clarity',
+            foam: 'beer.old-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 80,
+            lupulo: 10,
+            levedura: 10
+        },
+        mouthfeel: {
+            body: 'beer.old-ale.mouthfeel.body',
+            carbonation: 'beer.old-ale.mouthfeel.carbonation',
+            texture: 'beer.old-ale.mouthfeel.texture',
+            finish: 'beer.old-ale.mouthfeel.finish'
+        },
+        history: 'beer.old-ale.history',
+        comparison: 'beer.old-ale.comparison',
+        ingredients: {
+            malts: 'beer.old-ale.ingredients.malts',
+            hops: 'beer.old-ale.ingredients.hops',
+            yeast: 'beer.old-ale.ingredients.yeast',
+            adjuncts: 'beer.old-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.5–9.0%',
+            ibu: '30–60',
+            srm: '10–22',
+            og: '1.055–1.088',
+            fg: '1.015–1.022'
+        },
+        variations: ['Winter Warmer'],
+        examples: [
+            { brand: 'Theakston', name: 'Old Peculier' },
+            { brand: 'Greene King', name: 'Strong Suffolk' }
+        ],
+        service: {
+            temperature: '12–14°C',
+            glass: 'Snifter',
+            validity: '5 anos+ (envelhecimento)'
+        },
+        pairing: ['Cordeiro', 'Queijos azuis', 'Pão de gengibre']
+    },
+    {
+        id: 'wee-heavy',
+        name: 'Wee Heavy',
+        origin: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+        family: 'beer.wee-heavy.family',
+        tag: 'beer.wee-heavy.tag',
+        abv: '8.0%',
+        rating: 4.5,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.wee-heavy.description',
+        category: 'Scottish Strong Ale',
+        appearance: {
+            color: 'beer.wee-heavy.appearance.color',
+            colorHex: '#6F3724', // Light copper to dark brown
+            clarity: 'beer.wee-heavy.appearance.clarity',
+            foam: 'beer.wee-heavy.appearance.foam'
+        },
+        sensory: {
+            malte: 85,
+            lupulo: 5,
+            levedura: 10
+        },
+        mouthfeel: {
+            body: 'beer.wee-heavy.mouthfeel.body',
+            carbonation: 'beer.wee-heavy.mouthfeel.carbonation',
+            texture: 'beer.wee-heavy.mouthfeel.texture',
+            finish: 'beer.wee-heavy.mouthfeel.finish'
+        },
+        history: 'beer.wee-heavy.history',
+        comparison: 'beer.wee-heavy.comparison',
+        ingredients: {
+            malts: 'beer.wee-heavy.ingredients.malts',
+            hops: 'beer.wee-heavy.ingredients.hops',
+            yeast: 'beer.wee-heavy.ingredients.yeast',
+            adjuncts: 'beer.wee-heavy.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '6.5–10.0%',
+            ibu: '17–35',
+            srm: '14–25',
+            og: '1.070–1.130',
+            fg: '1.018–1.040'
+        },
+        variations: ['Strong Scotch Ale'],
+        examples: [
+            { brand: 'Traquair', name: 'House Ale' },
+            { brand: 'Orkney', name: 'Skull Splitter' }
+        ],
+        service: {
+            temperature: '12–14°C',
+            glass: 'Thistle',
+            validity: '3 anos+ (guarda)'
+        },
+        pairing: ['Sobremesas de caramelo', 'Queijo defumado', 'Shortbread']
+    },
+    {
+        id: 'english-barley-wine',
+        name: 'English Barley Wine',
+        origin: '🇬🇧',
+        family: 'beer.english-barley-wine.family',
+        tag: 'beer.english-barley-wine.tag',
+        abv: '10.0%',
+        rating: 4.7,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.english-barley-wine.description',
+        category: 'Strong Ale',
+        appearance: {
+            color: 'beer.english-barley-wine.appearance.color',
+            colorHex: '#90461F', // Rich gold to dark brown
+            clarity: 'beer.english-barley-wine.appearance.clarity',
+            foam: 'beer.english-barley-wine.appearance.foam'
+        },
+        sensory: {
+            malte: 85,
+            lupulo: 15,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.english-barley-wine.mouthfeel.body',
+            carbonation: 'beer.english-barley-wine.mouthfeel.carbonation',
+            texture: 'beer.english-barley-wine.mouthfeel.texture',
+            finish: 'beer.english-barley-wine.mouthfeel.finish'
+        },
+        history: 'beer.english-barley-wine.history',
+        comparison: 'beer.english-barley-wine.comparison',
+        ingredients: {
+            malts: 'beer.english-barley-wine.ingredients.malts',
+            hops: 'beer.english-barley-wine.ingredients.hops',
+            yeast: 'beer.english-barley-wine.ingredients.yeast',
+            adjuncts: 'beer.english-barley-wine.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '8.0–12.0%',
+            ibu: '35–70',
+            srm: '8–22',
+            og: '1.080–1.120',
+            fg: '1.018–1.030'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Thomas Hardy’s', name: 'Ale' },
+            { brand: 'J.W. Lees', name: 'Harvest Ale' },
+            { brand: 'Fuller’s', name: 'Golden Pride' }
+        ],
+        service: {
+            temperature: '12–14°C',
+            glass: 'Snifter',
+            validity: '10 anos+ (longeva)'
+        },
+        pairing: ['Queijo Stilton', 'Nozes', 'Charuto']
+    },
+    {
+        id: 'blonde-ale',
+        name: 'Blonde Ale',
+        origin: '🇺🇸',
+        family: 'beer.blonde-ale.family',
+        tag: 'beer.blonde-ale.tag',
+        abv: '4.5%',
+        rating: 4.0,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.blonde-ale.description',
+        category: 'American Ale',
+        appearance: {
+            color: 'beer.blonde-ale.appearance.color',
+            colorHex: '#F3D337', // Light yellow to deep gold
+            clarity: 'beer.blonde-ale.appearance.clarity',
+            foam: 'beer.blonde-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 50,
+            lupulo: 30,
+            levedura: 20
+        },
+        mouthfeel: {
+            body: 'beer.blonde-ale.mouthfeel.body',
+            carbonation: 'beer.blonde-ale.mouthfeel.carbonation',
+            texture: 'beer.blonde-ale.mouthfeel.texture',
+            finish: 'beer.blonde-ale.mouthfeel.finish'
+        },
+        history: 'beer.blonde-ale.history',
+        comparison: 'beer.blonde-ale.comparison',
+        ingredients: {
+            malts: 'beer.blonde-ale.ingredients.malts',
+            hops: 'beer.blonde-ale.ingredients.hops',
+            yeast: 'beer.blonde-ale.ingredients.yeast',
+            adjuncts: 'beer.blonde-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '3.8–5.5%',
+            ibu: '15–28',
+            srm: '3–6',
+            og: '1.038–1.054',
+            fg: '1.008–1.013'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Victory', name: 'Summer Love' },
+            { brand: 'Kona', name: 'Big Wave' }
+        ],
+        service: {
+            temperature: '4–7°C',
+            glass: 'Tulipa ou Pint',
+            validity: '3–4 meses'
+        },
+        pairing: ['Frango grelhado', 'Saladas', 'Peixe leve']
+    },
+    {
+        id: 'american-pale-ale',
+        name: 'American Pale Ale',
+        origin: '🇺🇸',
+        family: 'beer.american-pale-ale.family',
+        tag: 'beer.american-pale-ale.tag',
+        abv: '5.0%',
+        rating: 4.4,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.american-pale-ale.description',
+        category: 'American Ale',
+        appearance: {
+            color: 'beer.american-pale-ale.appearance.color',
+            colorHex: '#FBB117', // Pale golden to amber
+            clarity: 'beer.american-pale-ale.appearance.clarity',
+            foam: 'beer.american-pale-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 40,
+            lupulo: 60,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.american-pale-ale.mouthfeel.body',
+            carbonation: 'beer.american-pale-ale.mouthfeel.carbonation',
+            texture: 'beer.american-pale-ale.mouthfeel.texture',
+            finish: 'beer.american-pale-ale.mouthfeel.finish'
+        },
+        history: 'beer.american-pale-ale.history',
+        comparison: 'beer.american-pale-ale.comparison',
+        ingredients: {
+            malts: 'beer.american-pale-ale.ingredients.malts',
+            hops: 'beer.american-pale-ale.ingredients.hops',
+            yeast: 'beer.american-pale-ale.ingredients.yeast',
+            adjuncts: 'beer.american-pale-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.5–6.2%',
+            ibu: '30–50',
+            srm: '5–10',
+            og: '1.045–1.060',
+            fg: '1.010–1.015'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Sierra Nevada', name: 'Pale Ale' },
+            { brand: 'Toppling Goliath', name: 'Pseudo Sue' }
+        ],
+        service: {
+            temperature: '7–10°C',
+            glass: 'Pint (Shaker)',
+            validity: '4–6 meses'
+        },
+        pairing: ['Hambúrguer', 'Queijo Cheddar', 'Torta de limão']
+    },
+    {
+        id: 'american-amber-ale',
+        name: 'American Amber Ale',
+        origin: '🇺🇸',
+        family: 'beer.american-amber-ale.family',
+        tag: 'beer.american-amber-ale.tag',
+        abv: '5.5%',
+        rating: 4.2,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.american-amber-ale.description',
+        category: 'American Ale',
+        appearance: {
+            color: 'beer.american-amber-ale.appearance.color',
+            colorHex: '#C36829', // Amber to coppery-brown
+            clarity: 'beer.american-amber-ale.appearance.clarity',
+            foam: 'beer.american-amber-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 50,
+            lupulo: 50,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.american-amber-ale.mouthfeel.body',
+            carbonation: 'beer.american-amber-ale.mouthfeel.carbonation',
+            texture: 'beer.american-amber-ale.mouthfeel.texture',
+            finish: 'beer.american-amber-ale.mouthfeel.finish'
+        },
+        history: 'beer.american-amber-ale.history',
+        comparison: 'beer.american-amber-ale.comparison',
+        ingredients: {
+            malts: 'beer.american-amber-ale.ingredients.malts',
+            hops: 'beer.american-amber-ale.ingredients.hops',
+            yeast: 'beer.american-amber-ale.ingredients.yeast',
+            adjuncts: 'beer.american-amber-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.5–6.2%',
+            ibu: '25–40',
+            srm: '10–17',
+            og: '1.045–1.060',
+            fg: '1.010–1.015'
+        },
+        variations: ['Red Ale (West Coast)'],
+        examples: [
+            { brand: 'Anderson Valley', name: 'Boont Amber' },
+            { brand: 'Tröegs', name: 'HopBack Amber' }
+        ],
+        service: {
+            temperature: '7–10°C',
+            glass: 'Pint (Shaker)',
+            validity: '4–6 meses'
+        },
+        pairing: ['Queijo Port Salut', 'Frango assado', 'Cozido de carne']
+    },
+    {
+        id: 'california-common',
+        name: 'California Common',
+        origin: '🇺🇸',
+        family: 'beer.california-common.family',
+        tag: 'beer.california-common.tag',
+        abv: '5.0%',
+        rating: 4.1,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.california-common.description',
+        category: 'Hybrid / Steam Beer',
+        appearance: {
+            color: 'beer.california-common.appearance.color',
+            colorHex: '#C56230', // Medium amber to light copper
+            clarity: 'beer.california-common.appearance.clarity',
+            foam: 'beer.california-common.appearance.foam'
+        },
+        sensory: {
+            malte: 50,
+            lupulo: 45,
+            levedura: 5
+        },
+        mouthfeel: {
+            body: 'beer.california-common.mouthfeel.body',
+            carbonation: 'beer.california-common.mouthfeel.carbonation',
+            texture: 'beer.california-common.mouthfeel.texture',
+            finish: 'beer.california-common.mouthfeel.finish'
+        },
+        history: 'beer.california-common.history',
+        comparison: 'beer.california-common.comparison',
+        ingredients: {
+            malts: 'beer.california-common.ingredients.malts',
+            hops: 'beer.california-common.ingredients.hops',
+            yeast: 'beer.california-common.ingredients.yeast',
+            adjuncts: 'beer.california-common.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.5–5.5%',
+            ibu: '30–45',
+            srm: '10–14',
+            og: '1.048–1.054',
+            fg: '1.011–1.014'
+        },
+        variations: ['Steam Beer'],
+        examples: [
+            { brand: 'Anchor', name: 'Steam Beer' },
+            { brand: 'Steamworks', name: 'Steam Engine' }
+        ],
+        service: {
+            temperature: '7–10°C',
+            glass: 'Pint',
+            validity: '3–5 meses'
+        },
+        pairing: ['Churrasco', 'Cozido de coco', 'Culinária cajun']
+    },
+    {
+        id: 'american-brown-ale',
+        name: 'American Brown Ale',
+        origin: '🇺🇸',
+        family: 'beer.american-brown-ale.family',
+        tag: 'beer.american-brown-ale.tag',
+        abv: '5.5%',
+        rating: 4.2,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.american-brown-ale.description',
+        category: 'American Ale',
+        appearance: {
+            color: 'beer.american-brown-ale.appearance.color',
+            colorHex: '#4E2D22', // Dark brown
+            clarity: 'beer.american-brown-ale.appearance.clarity',
+            foam: 'beer.american-brown-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 60,
+            lupulo: 40,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.american-brown-ale.mouthfeel.body',
+            carbonation: 'beer.american-brown-ale.mouthfeel.carbonation',
+            texture: 'beer.american-brown-ale.mouthfeel.texture',
+            finish: 'beer.american-brown-ale.mouthfeel.finish'
+        },
+        history: 'beer.american-brown-ale.history',
+        comparison: 'beer.american-brown-ale.comparison',
+        ingredients: {
+            malts: 'beer.american-brown-ale.ingredients.malts',
+            hops: 'beer.american-brown-ale.ingredients.hops',
+            yeast: 'beer.american-brown-ale.ingredients.yeast',
+            adjuncts: 'beer.american-brown-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.3–6.2%',
+            ibu: '20–30',
+            srm: '18–35',
+            og: '1.045–1.060',
+            fg: '1.010–1.016'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Cigar City', name: 'Maduro Brown Ale' },
+            { brand: 'Brooklyn', name: 'Brown Ale' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Pint',
+            validity: '4–6 meses'
+        },
+        pairing: ['Carne de porco assada', 'Amêndoas', 'Queijo Gouda envelhecido']
+    },
+    {
+        id: 'american-porter',
+        name: 'American Porter',
+        origin: '🇺🇸',
+        family: 'beer.american-porter.family',
+        tag: 'beer.american-porter.tag',
+        abv: '5.5%',
+        rating: 4.3,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.american-porter.description',
+        category: 'American Ale',
+        appearance: {
+            color: 'beer.american-porter.appearance.color',
+            colorHex: '#3B2418', // Medium to very dark brown
+            clarity: 'beer.american-porter.appearance.clarity',
+            foam: 'beer.american-porter.appearance.foam'
+        },
+        sensory: {
+            malte: 55,
+            lupulo: 45,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.american-porter.mouthfeel.body',
+            carbonation: 'beer.american-porter.mouthfeel.carbonation',
+            texture: 'beer.american-porter.mouthfeel.texture',
+            finish: 'beer.american-porter.mouthfeel.finish'
+        },
+        history: 'beer.american-porter.history',
+        comparison: 'beer.american-porter.comparison',
+        ingredients: {
+            malts: 'beer.american-porter.ingredients.malts',
+            hops: 'beer.american-porter.ingredients.hops',
+            yeast: 'beer.american-porter.ingredients.yeast',
+            adjuncts: 'beer.american-porter.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.8–6.5%',
+            ibu: '25–50',
+            srm: '22–40',
+            og: '1.050–1.070',
+            fg: '1.012–1.018'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Deschutes', name: 'Black Butte Porter' },
+            { brand: 'Great Lakes', name: 'Edmund Fitzgerald' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Pint',
+            validity: '6–9 meses'
+        },
+        pairing: ['Costelas defumadas', 'Gruyère', 'Brownies']
+    },
+    {
+        id: 'american-stout',
+        name: 'American Stout',
+        origin: '🇺🇸',
+        family: 'beer.american-stout.family',
+        tag: 'beer.american-stout.tag',
+        abv: '6.0%',
+        rating: 4.4,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.american-stout.description',
+        category: 'American Ale / Stout',
+        appearance: {
+            color: 'beer.american-stout.appearance.color',
+            colorHex: '#000000', // Jet black
+            clarity: 'beer.american-stout.appearance.clarity',
+            foam: 'beer.american-stout.appearance.foam'
+        },
+        sensory: {
+            malte: 50,
+            lupulo: 50,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.american-stout.mouthfeel.body',
+            carbonation: 'beer.american-stout.mouthfeel.carbonation',
+            texture: 'beer.american-stout.mouthfeel.texture',
+            finish: 'beer.american-stout.mouthfeel.finish'
+        },
+        history: 'beer.american-stout.history',
+        comparison: 'beer.american-stout.comparison',
+        ingredients: {
+            malts: 'beer.american-stout.ingredients.malts',
+            hops: 'beer.american-stout.ingredients.hops',
+            yeast: 'beer.american-stout.ingredients.yeast',
+            adjuncts: 'beer.american-stout.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.0–7.0%',
+            ibu: '35–75',
+            srm: '30–40',
+            og: '1.050–1.075',
+            fg: '1.010–1.022'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Obsidian', name: 'Stout' },
+            { brand: 'Sierra Nevada', name: 'Stout' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Pint',
+            validity: '1 ano+'
+        },
+        pairing: ['Carnes grelhadas', 'Ostras', 'Chocolate amargo']
+    },
+    {
+        id: 'imperial-stout',
+        name: 'Imperial Stout',
+        origin: '🇺🇸',
+        family: 'beer.imperial-stout.family',
+        tag: 'beer.imperial-stout.tag',
+        abv: '10.0%',
+        rating: 4.8,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.imperial-stout.description',
+        category: 'Strong Stout',
+        appearance: {
+            color: 'beer.imperial-stout.appearance.color',
+            colorHex: '#000000', // Jet black, opaque
+            clarity: 'beer.imperial-stout.appearance.clarity',
+            foam: 'beer.imperial-stout.appearance.foam'
+        },
+        sensory: {
+            malte: 70,
+            lupulo: 30,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.imperial-stout.mouthfeel.body',
+            carbonation: 'beer.imperial-stout.mouthfeel.carbonation',
+            texture: 'beer.imperial-stout.mouthfeel.texture',
+            finish: 'beer.imperial-stout.mouthfeel.finish'
+        },
+        history: 'beer.imperial-stout.history',
+        comparison: 'beer.imperial-stout.comparison',
+        ingredients: {
+            malts: 'beer.imperial-stout.ingredients.malts',
+            hops: 'beer.imperial-stout.ingredients.hops',
+            yeast: 'beer.imperial-stout.ingredients.yeast',
+            adjuncts: 'beer.imperial-stout.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '8.0–12.0%',
+            ibu: '50–90',
+            srm: '30–40',
+            og: '1.075–1.115',
+            fg: '1.018–1.030'
+        },
+        variations: ['Russian Imperial Stout', 'American Imperial Stout'],
+        examples: [
+            { brand: 'North Coast', name: 'Old Rasputin' },
+            { brand: 'Samuel Smith', name: 'Imperial Stout' }
+        ],
+        service: {
+            temperature: '12–14°C',
+            glass: 'Snifter',
+            validity: 'Muitos anos (guarda)'
+        },
+        pairing: ['Foie gras', 'Trufas de chocolate', 'Queijo Stilton']
+    },
+    {
+        id: 'american-ipa',
+        name: 'American IPA',
+        origin: '🇺🇸',
+        family: 'beer.american-ipa.family',
+        tag: 'beer.american-ipa.tag',
+        abv: '6.5%',
+        rating: 4.6,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.american-ipa.description',
+        category: 'American IPA',
+        appearance: {
+            color: 'beer.american-ipa.appearance.color',
+            colorHex: '#F6C101', // Medium gold to light reddish-amber
+            clarity: 'beer.american-ipa.appearance.clarity',
+            foam: 'beer.american-ipa.appearance.foam'
+        },
+        sensory: {
+            malte: 20,
+            lupulo: 80,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.american-ipa.mouthfeel.body',
+            carbonation: 'beer.american-ipa.mouthfeel.carbonation',
+            texture: 'beer.american-ipa.mouthfeel.texture',
+            finish: 'beer.american-ipa.mouthfeel.finish'
+        },
+        history: 'beer.american-ipa.history',
+        comparison: 'beer.american-ipa.comparison',
+        ingredients: {
+            malts: 'beer.american-ipa.ingredients.malts',
+            hops: 'beer.american-ipa.ingredients.hops',
+            yeast: 'beer.american-ipa.ingredients.yeast',
+            adjuncts: 'beer.american-ipa.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.5–7.5%',
+            ibu: '40–70',
+            srm: '6–14',
+            og: '1.056–1.070',
+            fg: '1.008–1.014'
+        },
+        variations: ['West Coast IPA'],
+        examples: [
+            { brand: 'Bell’s', name: 'Two Hearted Ale' },
+            { brand: 'Russian River', name: 'Blind Pig' }
+        ],
+        service: {
+            temperature: '7–10°C',
+            glass: 'Pint (Shaker) ou IPA Glass',
+            validity: '3–4 meses'
+        },
+        pairing: ['Comida Tailandesa', 'Curry indiano', 'Gorgonzola']
+    },
+    {
+        id: 'hazy-ipa',
+        name: 'Hazy IPA',
+        origin: '🇺🇸',
+        family: 'beer.hazy-ipa.family',
+        tag: 'beer.hazy-ipa.tag',
+        abv: '7.0%',
+        rating: 4.7,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.hazy-ipa.description',
+        category: 'American IPA',
+        appearance: {
+            color: 'beer.hazy-ipa.appearance.color',
+            colorHex: '#FFC83F', // Straw to very light amber, opaque
+            clarity: 'beer.hazy-ipa.appearance.clarity',
+            foam: 'beer.hazy-ipa.appearance.foam'
+        },
+        sensory: {
+            malte: 20,
+            lupulo: 75,
+            levedura: 5
+        },
+        mouthfeel: {
+            body: 'beer.hazy-ipa.mouthfeel.body',
+            carbonation: 'beer.hazy-ipa.mouthfeel.carbonation',
+            texture: 'beer.hazy-ipa.mouthfeel.texture',
+            finish: 'beer.hazy-ipa.mouthfeel.finish'
+        },
+        history: 'beer.hazy-ipa.history',
+        comparison: 'beer.hazy-ipa.comparison',
+        ingredients: {
+            malts: 'beer.hazy-ipa.ingredients.malts',
+            hops: 'beer.hazy-ipa.ingredients.hops',
+            yeast: 'beer.hazy-ipa.ingredients.yeast',
+            adjuncts: 'beer.hazy-ipa.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '6.0–9.0%',
+            ibu: '25–60',
+            srm: '3–7',
+            og: '1.060–1.085',
+            fg: '1.010–1.015'
+        },
+        variations: ['New England IPA (NEIPA)', 'Juicy IPA'],
+        examples: [
+            { brand: 'Tree House', name: 'Julius' },
+            { brand: 'The Alchemist', name: 'Heady Topper' }
+        ],
+        service: {
+            temperature: '7–10°C',
+            glass: 'IPA Glass',
+            validity: '2–3 meses (beber fresco)'
+        },
+        pairing: ['Tacos de peixe', 'Salada de frutas', 'Queijo de cabra']
+    },
+    {
+        id: 'black-ipa',
+        name: 'Black IPA',
+        origin: '🇺🇸',
+        family: 'beer.black-ipa.family',
+        tag: 'beer.black-ipa.tag',
+        abv: '6.5%',
+        rating: 4.4,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.black-ipa.description',
+        category: 'Specialty IPA',
+        appearance: {
+            color: 'beer.black-ipa.appearance.color',
+            colorHex: '#382418', // Dark brown to black
+            clarity: 'beer.black-ipa.appearance.clarity',
+            foam: 'beer.black-ipa.appearance.foam'
+        },
+        sensory: {
+            malte: 40,
+            lupulo: 60,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.black-ipa.mouthfeel.body',
+            carbonation: 'beer.black-ipa.mouthfeel.carbonation',
+            texture: 'beer.black-ipa.mouthfeel.texture',
+            finish: 'beer.black-ipa.mouthfeel.finish'
+        },
+        history: 'beer.black-ipa.history',
+        comparison: 'beer.black-ipa.comparison',
+        ingredients: {
+            malts: 'beer.black-ipa.ingredients.malts',
+            hops: 'beer.black-ipa.ingredients.hops',
+            yeast: 'beer.black-ipa.ingredients.yeast',
+            adjuncts: 'beer.black-ipa.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.5–9.0%',
+            ibu: '50–90',
+            srm: '25–40',
+            og: '1.050–1.085',
+            fg: '1.010–1.018'
+        },
+        variations: ['Cascadian Dark Ale'],
+        examples: [
+            { brand: 'Stone', name: 'Sublimely Self-Righteous' },
+            { brand: 'Firestone Walker', name: 'Wookey Jack' }
+        ],
+        service: {
+            temperature: '7–10°C',
+            glass: 'IPA Glass ou Pint',
+            validity: '3–4 meses'
+        },
+        pairing: ['Costelas barbecue', 'Queijo Azul', 'Hambúrguer de cogumelos']
+    },
+    {
+        id: 'red-ipa',
+        name: 'Red IPA',
+        origin: '🇺🇸',
+        family: 'beer.red-ipa.family',
+        tag: 'beer.red-ipa.tag',
+        abv: '6.5%',
+        rating: 4.3,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.red-ipa.description',
+        category: 'Specialty IPA',
+        appearance: {
+            color: 'beer.red-ipa.appearance.color',
+            colorHex: '#C94F36', // Light reddish-amber to dark reddish-copper
+            clarity: 'beer.red-ipa.appearance.clarity',
+            foam: 'beer.red-ipa.appearance.foam'
+        },
+        sensory: {
+            malte: 45,
+            lupulo: 55,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.red-ipa.mouthfeel.body',
+            carbonation: 'beer.red-ipa.mouthfeel.carbonation',
+            texture: 'beer.red-ipa.mouthfeel.texture',
+            finish: 'beer.red-ipa.mouthfeel.finish'
+        },
+        history: 'beer.red-ipa.history',
+        comparison: 'beer.red-ipa.comparison',
+        ingredients: {
+            malts: 'beer.red-ipa.ingredients.malts',
+            hops: 'beer.red-ipa.ingredients.hops',
+            yeast: 'beer.red-ipa.ingredients.yeast',
+            adjuncts: 'beer.red-ipa.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.5–7.5%',
+            ibu: '40–70',
+            srm: '11–17',
+            og: '1.056–1.070',
+            fg: '1.008–1.016'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Sierra Nevada', name: 'Flipside Red IPA' },
+            { brand: 'Green Flash', name: 'Hop Head Red' }
+        ],
+        service: {
+            temperature: '7–10°C',
+            glass: 'IPA Glass ou Pint',
+            validity: '3–4 meses'
+        },
+        pairing: ['Peito de frango grelhado', 'Queijo Cheddar Forte', 'Pizza de pepperoni']
+    },
+    {
+        id: 'rye-ipa',
+        name: 'Rye IPA',
+        origin: '🇺🇸',
+        family: 'beer.rye-ipa.family',
+        tag: 'beer.rye-ipa.tag',
+        abv: '6.5%',
+        rating: 4.2,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.rye-ipa.description',
+        category: 'Specialty IPA',
+        appearance: {
+            color: 'beer.rye-ipa.appearance.color',
+            colorHex: '#EBB05E', // Medium gold to light reddish-amber
+            clarity: 'beer.rye-ipa.appearance.clarity',
+            foam: 'beer.rye-ipa.appearance.foam'
+        },
+        sensory: {
+            malte: 35,
+            lupulo: 60,
+            levedura: 5
+        },
+        mouthfeel: {
+            body: 'beer.rye-ipa.mouthfeel.body',
+            carbonation: 'beer.rye-ipa.mouthfeel.carbonation',
+            texture: 'beer.rye-ipa.mouthfeel.texture',
+            finish: 'beer.rye-ipa.mouthfeel.finish'
+        },
+        history: 'beer.rye-ipa.history',
+        comparison: 'beer.rye-ipa.comparison',
+        ingredients: {
+            malts: 'beer.rye-ipa.ingredients.malts',
+            hops: 'beer.rye-ipa.ingredients.hops',
+            yeast: 'beer.rye-ipa.ingredients.yeast',
+            adjuncts: 'beer.rye-ipa.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.5–8.0%',
+            ibu: '50–75',
+            srm: '6–14',
+            og: '1.056–1.075',
+            fg: '1.008–1.014'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Bear Republic', name: 'Hop Rod Rye' },
+            { brand: 'Sierra Nevada', name: 'Ruthless Rye' }
+        ],
+        service: {
+            temperature: '7–10°C',
+            glass: 'Pint (Shaker)',
+            validity: '4–6 meses'
+        },
+        pairing: ['Sanduíche de Pastrami', 'Queijos de casca lavada', 'Salsichas alemãs']
+    },
+    {
+        id: 'white-ipa',
+        name: 'White IPA',
+        origin: '🇺🇸',
+        family: 'beer.white-ipa.family',
+        tag: 'beer.white-ipa.tag',
+        abv: '6.2%',
+        rating: 4.1,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.white-ipa.description',
+        category: 'Specialty IPA',
+        appearance: {
+            color: 'beer.white-ipa.appearance.color',
+            colorHex: '#F9E498', // Pale to deep golden
+            clarity: 'beer.white-ipa.appearance.clarity',
+            foam: 'beer.white-ipa.appearance.foam'
+        },
+        sensory: {
+            malte: 25,
+            lupulo: 50,
+            levedura: 25
+        },
+        mouthfeel: {
+            body: 'beer.white-ipa.mouthfeel.body',
+            carbonation: 'beer.white-ipa.mouthfeel.carbonation',
+            texture: 'beer.white-ipa.mouthfeel.texture',
+            finish: 'beer.white-ipa.mouthfeel.finish'
+        },
+        history: 'beer.white-ipa.history',
+        comparison: 'beer.white-ipa.comparison',
+        ingredients: {
+            malts: 'beer.white-ipa.ingredients.malts',
+            hops: 'beer.white-ipa.ingredients.hops',
+            yeast: 'beer.white-ipa.ingredients.yeast',
+            adjuncts: 'beer.white-ipa.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.5–7.0%',
+            ibu: '40–70',
+            srm: '5–8',
+            og: '1.056–1.065',
+            fg: '1.010–1.016'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Deschutes', name: 'Chainbreaker' },
+            { brand: 'Harpoon', name: 'The Long Thaw' }
+        ],
+        service: {
+            temperature: '5–8°C',
+            glass: 'Tulipa ou Pint',
+            validity: '3–4 meses'
+        },
+        pairing: ['Frutos do mar', 'Saladas com vinagrete', 'Mexilhões']
+    },
+    {
+        id: 'belgian-ipa',
+        name: 'Belgian IPA',
+        origin: '🇧🇪',
+        family: 'beer.belgian-ipa.family',
+        tag: 'beer.belgian-ipa.tag',
+        abv: '7.5%',
+        rating: 4.5,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.belgian-ipa.description',
+        category: 'Specialty IPA',
+        appearance: {
+            color: 'beer.belgian-ipa.appearance.color',
+            colorHex: '#EAA95A', // Light golden to amber
+            clarity: 'beer.belgian-ipa.appearance.clarity',
+            foam: 'beer.belgian-ipa.appearance.foam'
+        },
+        sensory: {
+            malte: 30,
+            lupulo: 50,
+            levedura: 20
+        },
+        mouthfeel: {
+            body: 'beer.belgian-ipa.mouthfeel.body',
+            carbonation: 'beer.belgian-ipa.mouthfeel.carbonation',
+            texture: 'beer.belgian-ipa.mouthfeel.texture',
+            finish: 'beer.belgian-ipa.mouthfeel.finish'
+        },
+        history: 'beer.belgian-ipa.history',
+        comparison: 'beer.belgian-ipa.comparison',
+        ingredients: {
+            malts: 'beer.belgian-ipa.ingredients.malts',
+            hops: 'beer.belgian-ipa.ingredients.hops',
+            yeast: 'beer.belgian-ipa.ingredients.yeast',
+            adjuncts: 'beer.belgian-ipa.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '6.2–9.5%',
+            ibu: '50–100',
+            srm: '5–8',
+            og: '1.058–1.080',
+            fg: '1.008–1.016'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Duvel', name: 'Tripel Hop' },
+            { brand: 'Stone', name: 'Cali-Belgique' }
+        ],
+        service: {
+            temperature: '8–12°C',
+            glass: 'Tulipa',
+            validity: '1–2 anos'
+        },
+        pairing: ['Comida indiana cremosa', 'Queijo Brie', 'Carne branca assada']
+    },
+    {
+        id: 'brut-ipa',
+        name: 'Brut IPA',
+        origin: '🇺🇸',
+        family: 'beer.brut-ipa.family',
+        tag: 'beer.brut-ipa.tag',
+        abv: '7.0%',
+        rating: 4.0,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.brut-ipa.description',
+        category: 'Specialty IPA',
+        appearance: {
+            color: 'beer.brut-ipa.appearance.color',
+            colorHex: '#FFF8C7', // Very pale straw
+            clarity: 'beer.brut-ipa.appearance.clarity',
+            foam: 'beer.brut-ipa.appearance.foam'
+        },
+        sensory: {
+            malte: 10,
+            lupulo: 85,
+            levedura: 5
+        },
+        mouthfeel: {
+            body: 'beer.brut-ipa.mouthfeel.body',
+            carbonation: 'beer.brut-ipa.mouthfeel.carbonation',
+            texture: 'beer.brut-ipa.mouthfeel.texture',
+            finish: 'beer.brut-ipa.mouthfeel.finish'
+        },
+        history: 'beer.brut-ipa.history',
+        comparison: 'beer.brut-ipa.comparison',
+        ingredients: {
+            malts: 'beer.brut-ipa.ingredients.malts',
+            hops: 'beer.brut-ipa.ingredients.hops',
+            yeast: 'beer.brut-ipa.ingredients.yeast',
+            adjuncts: 'beer.brut-ipa.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '6.0–7.5%',
+            ibu: '20–40',
+            srm: '2–4',
+            og: '1.045–1.060',
+            fg: '0.990–1.004'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Drake’s', name: 'Brightside Extra Brut' },
+            { brand: 'Ommegang', name: 'Brut IPA' }
+        ],
+        service: {
+            temperature: '4–7°C',
+            glass: 'Taça Flute',
+            validity: '3 meses (beber fresco)'
+        },
+        pairing: ['Salada Caesar', 'Camarão', 'Sushi']
+    },
+    {
+        id: 'double-ipa',
+        name: 'Double IPA',
+        origin: '🇺🇸',
+        family: 'beer.double-ipa.family',
+        tag: 'beer.double-ipa.tag',
+        abv: '8.5%',
+        rating: 4.6,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.double-ipa.description',
+        category: 'American IPA',
+        appearance: {
+            color: 'beer.double-ipa.appearance.color',
+            colorHex: '#E59E49', // Gold to light orange-copper
+            clarity: 'beer.double-ipa.appearance.clarity',
+            foam: 'beer.double-ipa.appearance.foam'
+        },
+        sensory: {
+            malte: 30,
+            lupulo: 90,
+            levedura: 0
+        },
+        mouthfeel: {
+            body: 'beer.double-ipa.mouthfeel.body',
+            carbonation: 'beer.double-ipa.mouthfeel.carbonation',
+            texture: 'beer.double-ipa.mouthfeel.texture',
+            finish: 'beer.double-ipa.mouthfeel.finish'
+        },
+        history: 'beer.double-ipa.history',
+        comparison: 'beer.double-ipa.comparison',
+        ingredients: {
+            malts: 'beer.double-ipa.ingredients.malts',
+            hops: 'beer.double-ipa.ingredients.hops',
+            yeast: 'beer.double-ipa.ingredients.yeast',
+            adjuncts: 'beer.double-ipa.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '7.5–10.0%',
+            ibu: '60–100',
+            srm: '6–14',
+            og: '1.065–1.085',
+            fg: '1.008–1.018'
+        },
+        variations: ['Imperial IPA'],
+        examples: [
+            { brand: 'Russian River', name: 'Pliny the Elder' },
+            { brand: 'Bell’s', name: 'Hopslam' }
+        ],
+        service: {
+            temperature: '8–12°C',
+            glass: 'IPA Glass ou Snifter',
+            validity: '3–4 meses'
+        },
+        pairing: ['Bolo de cenoura', 'Queijo Azul', 'Costelinha de porco']
+    },
+    {
+        id: 'american-strong-ale',
+        name: 'American Strong Ale',
+        origin: '🇺🇸',
+        family: 'beer.american-strong-ale.family',
+        tag: 'beer.american-strong-ale.tag',
+        abv: '8.0%',
+        rating: 4.2,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.american-strong-ale.description',
+        category: 'American Ale',
+        appearance: {
+            color: 'beer.american-strong-ale.appearance.color',
+            colorHex: '#BF6B3E', // Medium amber to deep copper
+            clarity: 'beer.american-strong-ale.appearance.clarity',
+            foam: 'beer.american-strong-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 70,
+            lupulo: 60,
+            levedura: 20
+        },
+        mouthfeel: {
+            body: 'beer.american-strong-ale.mouthfeel.body',
+            carbonation: 'beer.american-strong-ale.mouthfeel.carbonation',
+            texture: 'beer.american-strong-ale.mouthfeel.texture',
+            finish: 'beer.american-strong-ale.mouthfeel.finish'
+        },
+        history: 'beer.american-strong-ale.history',
+        comparison: 'beer.american-strong-ale.comparison',
+        ingredients: {
+            malts: 'beer.american-strong-ale.ingredients.malts',
+            hops: 'beer.american-strong-ale.ingredients.hops',
+            yeast: 'beer.american-strong-ale.ingredients.yeast',
+            adjuncts: 'beer.american-strong-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '6.3–10.0%',
+            ibu: '50–100',
+            srm: '7–18',
+            og: '1.062–1.090',
+            fg: '1.014–1.024'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Stone', name: 'Arrogant Bastard Ale' },
+            { brand: 'Great Lakes', name: 'Nosferatu' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Snifter ou Tulipa',
+            validity: '1–5 anos (guarda)'
+        },
+        pairing: ['Pratos condimentados', 'Queijos fortes', 'Sobremesas com caramelo']
+    },
+    {
+        id: 'american-barleywine',
+        name: 'American Barleywine',
+        origin: '🇺🇸',
+        family: 'beer.american-barleywine.family',
+        tag: 'beer.american-barleywine.tag',
+        abv: '10.0%',
+        rating: 4.7,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.american-barleywine.description',
+        category: 'Strong Ale',
+        appearance: {
+            color: 'beer.american-barleywine.appearance.color',
+            colorHex: '#9E4720', // Light amber to medium copper
+            clarity: 'beer.american-barleywine.appearance.clarity',
+            foam: 'beer.american-barleywine.appearance.foam'
+        },
+        sensory: {
+            malte: 90,
+            lupulo: 75,
+            levedura: 30
+        },
+        mouthfeel: {
+            body: 'beer.american-barleywine.mouthfeel.body',
+            carbonation: 'beer.american-barleywine.mouthfeel.carbonation',
+            texture: 'beer.american-barleywine.mouthfeel.texture',
+            finish: 'beer.american-barleywine.mouthfeel.finish'
+        },
+        history: 'beer.american-barleywine.history',
+        comparison: 'beer.american-barleywine.comparison',
+        ingredients: {
+            malts: 'beer.american-barleywine.ingredients.malts',
+            hops: 'beer.american-barleywine.ingredients.hops',
+            yeast: 'beer.american-barleywine.ingredients.yeast',
+            adjuncts: 'beer.american-barleywine.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '8.0–12.0%',
+            ibu: '60–100',
+            srm: '9–18',
+            og: '1.080–1.120',
+            fg: '1.016–1.030'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Sierra Nevada', name: 'Bigfoot' },
+            { brand: 'Anchor', name: 'Old Foghorn' }
+        ],
+        service: {
+            temperature: '12–15°C',
+            glass: 'Snifter',
+            validity: '5–10 anos (guarda)'
+        },
+        pairing: ['Queijo Stilton', 'Nozes', 'Sobremesas ricas']
+    },
+    {
+        id: 'wheatwine',
+        name: 'Wheatwine',
+        origin: '🇺🇸',
+        family: 'beer.wheatwine.family',
+        tag: 'beer.wheatwine.tag',
+        abv: '9.5%',
+        rating: 4.1,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.wheatwine.description',
+        category: 'Strong Ale',
+        appearance: {
+            color: 'beer.wheatwine.appearance.color',
+            colorHex: '#DFAF4C', // Gold to deep amber
+            clarity: 'beer.wheatwine.appearance.clarity',
+            foam: 'beer.wheatwine.appearance.foam'
+        },
+        sensory: {
+            malte: 60,
+            lupulo: 40,
+            levedura: 10
+        },
+        mouthfeel: {
+            body: 'beer.wheatwine.mouthfeel.body',
+            carbonation: 'beer.wheatwine.mouthfeel.carbonation',
+            texture: 'beer.wheatwine.mouthfeel.texture',
+            finish: 'beer.wheatwine.mouthfeel.finish'
+        },
+        history: 'beer.wheatwine.history',
+        comparison: 'beer.wheatwine.comparison',
+        ingredients: {
+            malts: 'beer.wheatwine.ingredients.malts',
+            hops: 'beer.wheatwine.ingredients.hops',
+            yeast: 'beer.wheatwine.ingredients.yeast',
+            adjuncts: 'beer.wheatwine.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '8.0–12.0%',
+            ibu: '30–60',
+            srm: '6–14',
+            og: '1.080–1.120',
+            fg: '1.016–1.030'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Rubicon', name: 'Winter Wheat Wine' },
+            { brand: 'The Bruery', name: 'White Oak' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Snifter',
+            validity: '1–5 anos'
+        },
+        pairing: ['Pastelaria fina', 'Frutas secas', 'Creme brûlée']
+    },
+    {
+        id: 'berliner-weisse',
+        name: 'Berliner Weisse',
+        origin: '🇩🇪',
+        family: 'beer.berliner-weisse.family',
+        tag: 'beer.berliner-weisse.tag',
+        abv: '3.0%',
+        rating: 4.0,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.berliner-weisse.description',
+        category: 'Sour Ale',
+        appearance: {
+            color: 'beer.berliner-weisse.appearance.color',
+            colorHex: '#F6F3CB', // Very pale straw
+            clarity: 'beer.berliner-weisse.appearance.clarity',
+            foam: 'beer.berliner-weisse.appearance.foam'
+        },
+        sensory: {
+            malte: 20,
+            lupulo: 0,
+            levedura: 80
+        },
+        mouthfeel: {
+            body: 'beer.berliner-weisse.mouthfeel.body',
+            carbonation: 'beer.berliner-weisse.mouthfeel.carbonation',
+            texture: 'beer.berliner-weisse.mouthfeel.texture',
+            finish: 'beer.berliner-weisse.mouthfeel.finish'
+        },
+        history: 'beer.berliner-weisse.history',
+        comparison: 'beer.berliner-weisse.comparison',
+        ingredients: {
+            malts: 'beer.berliner-weisse.ingredients.malts',
+            hops: 'beer.berliner-weisse.ingredients.hops',
+            yeast: 'beer.berliner-weisse.ingredients.yeast',
+            adjuncts: 'beer.berliner-weisse.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '2.8–3.8%',
+            ibu: '3–8',
+            srm: '2–3',
+            og: '1.028–1.032',
+            fg: '1.003–1.006'
+        },
+        variations: ['Com xarope (Himbeer/Waldmeister)', 'Florida Weisse (frutada)'],
+        examples: [
+            { brand: 'Berliner Kindl', name: 'Weisse' },
+            { brand: 'Bayerischer Bahnhof', name: 'Berliner Style Weisse' }
+        ],
+        service: {
+            temperature: '4–7°C',
+            glass: 'Cálice (Goblet)',
+            validity: '6–12 meses'
+        },
+        pairing: ['Cheesecake', 'Saladas leves', 'Aperitivos salgados']
+    },
+    {
+        id: 'flanders-red-ale',
+        name: 'Flanders Red Ale',
+        origin: '🇧🇪',
+        family: 'beer.flanders-red-ale.family',
+        tag: 'beer.flanders-red-ale.tag',
+        abv: '5.5%',
+        rating: 4.5,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.flanders-red-ale.description',
+        category: 'Sour Ale',
+        appearance: {
+            color: 'beer.flanders-red-ale.appearance.color',
+            colorHex: '#7B2A2F', // Deep red/burgundy
+            clarity: 'beer.flanders-red-ale.appearance.clarity',
+            foam: 'beer.flanders-red-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 40,
+            lupulo: 10,
+            levedura: 90
+        },
+        mouthfeel: {
+            body: 'beer.flanders-red-ale.mouthfeel.body',
+            carbonation: 'beer.flanders-red-ale.mouthfeel.carbonation',
+            texture: 'beer.flanders-red-ale.mouthfeel.texture',
+            finish: 'beer.flanders-red-ale.mouthfeel.finish'
+        },
+        history: 'beer.flanders-red-ale.history',
+        comparison: 'beer.flanders-red-ale.comparison',
+        ingredients: {
+            malts: 'beer.flanders-red-ale.ingredients.malts',
+            hops: 'beer.flanders-red-ale.ingredients.hops',
+            yeast: 'beer.flanders-red-ale.ingredients.yeast',
+            adjuncts: 'beer.flanders-red-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.6–6.5%',
+            ibu: '10–25',
+            srm: '10–17',
+            og: '1.048–1.057',
+            fg: '1.002–1.012'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Rodenbach', name: 'Grand Cru' },
+            { brand: 'Duchesse de Bourgogne', name: 'Verhaeghe' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Tulipa ou Snifter',
+            validity: '2–5 anos (guarda)'
+        },
+        pairing: ['Bife com molho béarnaise', 'Queijo de Cabra', 'Torta de frutas vermelhas']
+    },
+    {
+        id: 'oud-bruin',
+        name: 'Oud Bruin',
+        origin: '🇧🇪',
+        family: 'beer.oud-bruin.family',
+        tag: 'beer.oud-bruin.tag',
+        abv: '6.0%',
+        rating: 4.2,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.oud-bruin.description',
+        category: 'Sour Ale',
+        appearance: {
+            color: 'beer.oud-bruin.appearance.color',
+            colorHex: '#5A3A29', // Dark reddish-brown
+            clarity: 'beer.oud-bruin.appearance.clarity',
+            foam: 'beer.oud-bruin.appearance.foam'
+        },
+        sensory: {
+            malte: 60,
+            lupulo: 15,
+            levedura: 80
+        },
+        mouthfeel: {
+            body: 'beer.oud-bruin.mouthfeel.body',
+            carbonation: 'beer.oud-bruin.mouthfeel.carbonation',
+            texture: 'beer.oud-bruin.mouthfeel.texture',
+            finish: 'beer.oud-bruin.mouthfeel.finish'
+        },
+        history: 'beer.oud-bruin.history',
+        comparison: 'beer.oud-bruin.comparison',
+        ingredients: {
+            malts: 'beer.oud-bruin.ingredients.malts',
+            hops: 'beer.oud-bruin.ingredients.hops',
+            yeast: 'beer.oud-bruin.ingredients.yeast',
+            adjuncts: 'beer.oud-bruin.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.0–8.0%',
+            ibu: '20–25',
+            srm: '15–22',
+            og: '1.040–1.074',
+            fg: '1.008–1.012'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Liefmans', name: 'Goudenband' },
+            { brand: 'VanderGhinste', name: 'Roodbruin' }
+        ],
+        service: {
+            temperature: '10–12°C',
+            glass: 'Tulipa',
+            validity: '2–5 anos'
+        },
+        pairing: ['Carne de porco assada', 'Queijo Muenster', 'Crème Brûlée']
+    },
+    {
+        id: 'lambic',
+        name: 'Lambic',
+        origin: '🇧🇪',
+        family: 'beer.lambic.family',
+        tag: 'beer.lambic.tag',
+        abv: '5.5%',
+        rating: 4.4,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.lambic.description',
+        category: 'Wild Ale',
+        appearance: {
+            color: 'beer.lambic.appearance.color',
+            colorHex: '#F2C94C', // Pale to deep golden
+            clarity: 'beer.lambic.appearance.clarity',
+            foam: 'beer.lambic.appearance.foam'
+        },
+        sensory: {
+            malte: 20,
+            lupulo: 0,
+            levedura: 100
+        },
+        mouthfeel: {
+            body: 'beer.lambic.mouthfeel.body',
+            carbonation: 'beer.lambic.mouthfeel.carbonation',
+            texture: 'beer.lambic.mouthfeel.texture',
+            finish: 'beer.lambic.mouthfeel.finish'
+        },
+        history: 'beer.lambic.history',
+        comparison: 'beer.lambic.comparison',
+        ingredients: {
+            malts: 'beer.lambic.ingredients.malts',
+            hops: 'beer.lambic.ingredients.hops',
+            yeast: 'beer.lambic.ingredients.yeast',
+            adjuncts: 'beer.lambic.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.0–6.5%',
+            ibu: '0–10',
+            srm: '3–6',
+            og: '1.040–1.054',
+            fg: '1.001–1.010'
+        },
+        variations: ['Faro (adocicada)'],
+        examples: [
+            { brand: 'Cantillon', name: 'Grand Cru Bruocsella' },
+            { brand: 'Boon', name: 'Lambic' }
+        ],
+        service: {
+            temperature: '10–12°C',
+            glass: 'Tumbler ou Tulipa',
+            validity: '3–10 anos (depende)'
+        },
+        pairing: ['Mexilhões', 'Queijo Brie jovem', 'Omeletes']
+    },
+    {
+        id: 'gueuze',
+        name: 'Gueuze',
+        origin: '🇧🇪',
+        family: 'beer.gueuze.family',
+        tag: 'beer.gueuze.tag',
+        abv: '6.5%',
+        rating: 4.8,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.gueuze.description',
+        category: 'Wild Ale',
+        appearance: {
+            color: 'beer.gueuze.appearance.color',
+            colorHex: '#EBB05E', // Golden
+            clarity: 'beer.gueuze.appearance.clarity',
+            foam: 'beer.gueuze.appearance.foam'
+        },
+        sensory: {
+            malte: 25,
+            lupulo: 5,
+            levedura: 100
+        },
+        mouthfeel: {
+            body: 'beer.gueuze.mouthfeel.body',
+            carbonation: 'beer.gueuze.mouthfeel.carbonation',
+            texture: 'beer.gueuze.mouthfeel.texture',
+            finish: 'beer.gueuze.mouthfeel.finish'
+        },
+        history: 'beer.gueuze.history',
+        comparison: 'beer.gueuze.comparison',
+        ingredients: {
+            malts: 'beer.gueuze.ingredients.malts',
+            hops: 'beer.gueuze.ingredients.hops',
+            yeast: 'beer.gueuze.ingredients.yeast',
+            adjuncts: 'beer.gueuze.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.0–8.0%',
+            ibu: '0–10',
+            srm: '5–6',
+            og: '1.040–1.054',
+            fg: '1.000–1.006'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Cantillon', name: 'Gueuze' },
+            { brand: '3 Fonteinen', name: 'Oude Geuze' }
+        ],
+        service: {
+            temperature: '8–12°C',
+            glass: 'Taça Flute ou Tulipa',
+            validity: '10–20 anos (envelhece bem)'
+        },
+        pairing: ['Ostras', 'Mexilhões fritos', 'Waffles sem doce']
+    },
+    {
+        id: 'fruit-lambic',
+        name: 'Fruit Lambic',
+        origin: '🇧🇪',
+        family: 'beer.fruit-lambic.family',
+        tag: 'beer.fruit-lambic.tag',
+        abv: '6.0%',
+        rating: 4.6,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.fruit-lambic.description',
+        category: 'Wild Ale',
+        appearance: {
+            color: 'beer.fruit-lambic.appearance.color',
+            colorHex: '#D13239', // Depends on fruit (e.g. Raspberry red)
+            clarity: 'beer.fruit-lambic.appearance.clarity',
+            foam: 'beer.fruit-lambic.appearance.foam'
+        },
+        sensory: {
+            malte: 20,
+            lupulo: 5,
+            levedura: 95
+        },
+        mouthfeel: {
+            body: 'beer.fruit-lambic.mouthfeel.body',
+            carbonation: 'beer.fruit-lambic.mouthfeel.carbonation',
+            texture: 'beer.fruit-lambic.mouthfeel.texture',
+            finish: 'beer.fruit-lambic.mouthfeel.finish'
+        },
+        history: 'beer.fruit-lambic.history',
+        comparison: 'beer.fruit-lambic.comparison',
+        ingredients: {
+            malts: 'beer.fruit-lambic.ingredients.malts',
+            hops: 'beer.fruit-lambic.ingredients.hops',
+            yeast: 'beer.fruit-lambic.ingredients.yeast',
+            adjuncts: 'beer.fruit-lambic.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.0–7.0%',
+            ibu: '0–10',
+            srm: '3–7',
+            og: '1.040–1.060',
+            fg: '1.000–1.010'
+        },
+        variations: ['Kriek (Cereja)', 'Framboise (Framboesa)', 'Pêche (Pêssego)'],
+        examples: [
+            { brand: 'Cantillon', name: 'Kriek' },
+            { brand: '3 Fonteinen', name: 'Schaerbeekse Kriek' }
+        ],
+        service: {
+            temperature: '8–12°C',
+            glass: 'Taça Flute',
+            validity: '2–10 anos'
+        },
+        pairing: ['Salada de frutas', 'Cheesecake', 'Chocolate amargo']
+    },
+    {
+        id: 'gose',
+        name: 'Gose',
+        origin: '🇩🇪',
+        family: 'beer.gose.family',
+        tag: 'beer.gose.tag',
+        abv: '4.5%',
+        rating: 4.1,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.gose.description',
+        category: 'Sour Ale',
+        appearance: {
+            color: 'beer.gose.appearance.color',
+            colorHex: '#F6E58D', // Yellow/Gold
+            clarity: 'beer.gose.appearance.clarity',
+            foam: 'beer.gose.appearance.foam'
+        },
+        sensory: {
+            malte: 30,
+            lupulo: 0,
+            levedura: 70
+        },
+        mouthfeel: {
+            body: 'beer.gose.mouthfeel.body',
+            carbonation: 'beer.gose.mouthfeel.carbonation',
+            texture: 'beer.gose.mouthfeel.texture',
+            finish: 'beer.gose.mouthfeel.finish'
+        },
+        history: 'beer.gose.history',
+        comparison: 'beer.gose.comparison',
+        ingredients: {
+            malts: 'beer.gose.ingredients.malts',
+            hops: 'beer.gose.ingredients.hops',
+            yeast: 'beer.gose.ingredients.yeast',
+            adjuncts: 'beer.gose.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.2–4.8%',
+            ibu: '5–12',
+            srm: '3–4',
+            og: '1.036–1.056',
+            fg: '1.006–1.010'
+        },
+        variations: ['Gose com frutas', 'Imperial Gose'],
+        examples: [
+            { brand: 'Bayerischer Bahnhof', name: 'Leipziger Gose' },
+            { brand: 'Westbrook', name: 'Gose' }
+        ],
+        service: {
+            temperature: '4–7°C',
+            glass: 'Copo Stange ou Pint',
+            validity: '6 meses (fresco)'
+        },
+        pairing: ['Omelete de ervas', 'Saladas frescas', 'Peixe grelhado']
+    },
+    {
+        id: 'witbier',
+        name: 'Witbier',
+        origin: '🇧🇪',
+        family: 'beer.witbier.family',
+        tag: 'beer.witbier.tag',
+        abv: '5.0%',
+        rating: 4.3,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.witbier.description',
+        category: 'Belgian Ale',
+        appearance: {
+            color: 'beer.witbier.appearance.color',
+            colorHex: '#F9F1A5', // Pale straw to deep yellow
+            clarity: 'beer.witbier.appearance.clarity',
+            foam: 'beer.witbier.appearance.foam'
+        },
+        sensory: {
+            malte: 30,
+            lupulo: 15,
+            levedura: 60
+        },
+        mouthfeel: {
+            body: 'beer.witbier.mouthfeel.body',
+            carbonation: 'beer.witbier.mouthfeel.carbonation',
+            texture: 'beer.witbier.mouthfeel.texture',
+            finish: 'beer.witbier.mouthfeel.finish'
+        },
+        history: 'beer.witbier.history',
+        comparison: 'beer.witbier.comparison',
+        ingredients: {
+            malts: 'beer.witbier.ingredients.malts',
+            hops: 'beer.witbier.ingredients.hops',
+            yeast: 'beer.witbier.ingredients.yeast',
+            adjuncts: 'beer.witbier.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.5–5.5%',
+            ibu: '10–20',
+            srm: '2–4',
+            og: '1.044–1.052',
+            fg: '1.006–1.012'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Hoegaarden', name: 'Wit' },
+            { brand: 'St. Bernardus', name: 'Wit' }
+        ],
+        service: {
+            temperature: '4–7°C',
+            glass: 'Tumbler',
+            validity: '6–12 meses'
+        },
+        pairing: ['Mexilhões ao vapor', 'Salada Caprese', 'Queijo de cabra']
+    },
+    {
+        id: 'belgian-pale-ale',
+        name: 'Belgian Pale Ale',
+        origin: '🇧🇪',
+        family: 'beer.belgian-pale-ale.family',
+        tag: 'beer.belgian-pale-ale.tag',
+        abv: '5.3%',
+        rating: 4.1,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.belgian-pale-ale.description',
+        category: 'Belgian Ale',
+        appearance: {
+            color: 'beer.belgian-pale-ale.appearance.color',
+            colorHex: '#C67A38', // Amber to copper
+            clarity: 'beer.belgian-pale-ale.appearance.clarity',
+            foam: 'beer.belgian-pale-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 60,
+            lupulo: 30,
+            levedura: 40
+        },
+        mouthfeel: {
+            body: 'beer.belgian-pale-ale.mouthfeel.body',
+            carbonation: 'beer.belgian-pale-ale.mouthfeel.carbonation',
+            texture: 'beer.belgian-pale-ale.mouthfeel.texture',
+            finish: 'beer.belgian-pale-ale.mouthfeel.finish'
+        },
+        history: 'beer.belgian-pale-ale.history',
+        comparison: 'beer.belgian-pale-ale.comparison',
+        ingredients: {
+            malts: 'beer.belgian-pale-ale.ingredients.malts',
+            hops: 'beer.belgian-pale-ale.ingredients.hops',
+            yeast: 'beer.belgian-pale-ale.ingredients.yeast',
+            adjuncts: 'beer.belgian-pale-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.8–5.5%',
+            ibu: '20–30',
+            srm: '8–14',
+            og: '1.048–1.054',
+            fg: '1.010–1.014'
+        },
+        variations: [],
+        examples: [
+            { brand: 'De Koninck', name: 'Bolleke' },
+            { brand: 'Palm', name: 'Speciale' }
+        ],
+        service: {
+            temperature: '8–12°C',
+            glass: 'Tulipa',
+            validity: '6–12 meses'
+        },
+        pairing: ['Frango assado', 'Batata frita', 'Queijos semiduros']
+    },
+    {
+        id: 'biere-de-garde',
+        name: 'Bière de Garde',
+        origin: '🇫🇷',
+        family: 'beer.biere-de-garde.family',
+        tag: 'beer.biere-de-garde.tag',
+        abv: '7.5%',
+        rating: 4.4,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.biere-de-garde.description',
+        category: 'Farmhouse Ale',
+        appearance: {
+            color: 'beer.biere-de-garde.appearance.color',
+            colorHex: '#BF7836', // Variável (ambrée é comum)
+            clarity: 'beer.biere-de-garde.appearance.clarity',
+            foam: 'beer.biere-de-garde.appearance.foam'
+        },
+        sensory: {
+            malte: 70,
+            lupulo: 15,
+            levedura: 40
+        },
+        mouthfeel: {
+            body: 'beer.biere-de-garde.mouthfeel.body',
+            carbonation: 'beer.biere-de-garde.mouthfeel.carbonation',
+            texture: 'beer.biere-de-garde.mouthfeel.texture',
+            finish: 'beer.biere-de-garde.mouthfeel.finish'
+        },
+        history: 'beer.biere-de-garde.history',
+        comparison: 'beer.biere-de-garde.comparison',
+        ingredients: {
+            malts: 'beer.biere-de-garde.ingredients.malts',
+            hops: 'beer.biere-de-garde.ingredients.hops',
+            yeast: 'beer.biere-de-garde.ingredients.yeast',
+            adjuncts: 'beer.biere-de-garde.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '6.0–8.5%',
+            ibu: '18–28',
+            srm: '6–19',
+            og: '1.060–1.080',
+            fg: '1.008–1.016'
+        },
+        variations: ['Blonde', 'Ambrée', 'Brune'],
+        examples: [
+            { brand: 'Jenlain', name: 'Ambrée' },
+            { brand: 'Ch’Ti', name: 'Blonde' }
+        ],
+        service: {
+            temperature: '10–12°C',
+            glass: 'Tulipa ou Taça',
+            validity: '1–3 anos'
+        },
+        pairing: ['Coelho estufado', 'Queijos de casca lavada (Maroilles)', 'Terrine']
+    },
+    {
+        id: 'belgian-blond-ale',
+        name: 'Belgian Blond Ale',
+        origin: '🇧🇪',
+        family: 'beer.belgian-blond-ale.family',
+        tag: 'beer.belgian-blond-ale.tag',
+        abv: '6.8%',
+        rating: 4.3,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.belgian-blond-ale.description',
+        category: 'Belgian Ale',
+        appearance: {
+            color: 'beer.belgian-blond-ale.appearance.color',
+            colorHex: '#F4C430', // Deep gold
+            clarity: 'beer.belgian-blond-ale.appearance.clarity',
+            foam: 'beer.belgian-blond-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 40,
+            lupulo: 20,
+            levedura: 60
+        },
+        mouthfeel: {
+            body: 'beer.belgian-blond-ale.mouthfeel.body',
+            carbonation: 'beer.belgian-blond-ale.mouthfeel.carbonation',
+            texture: 'beer.belgian-blond-ale.mouthfeel.texture',
+            finish: 'beer.belgian-blond-ale.mouthfeel.finish'
+        },
+        history: 'beer.belgian-blond-ale.history',
+        comparison: 'beer.belgian-blond-ale.comparison',
+        ingredients: {
+            malts: 'beer.belgian-blond-ale.ingredients.malts',
+            hops: 'beer.belgian-blond-ale.ingredients.hops',
+            yeast: 'beer.belgian-blond-ale.ingredients.yeast',
+            adjuncts: 'beer.belgian-blond-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '6.0–7.5%',
+            ibu: '15–30',
+            srm: '4–7',
+            og: '1.062–1.075',
+            fg: '1.008–1.015'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Leffe', name: 'Blonde' },
+            { brand: 'Affligem', name: 'Blonde' }
+        ],
+        service: {
+            temperature: '6–10°C',
+            glass: 'Tulipa',
+            validity: '1–2 anos'
+        },
+        pairing: ['Frango grelhado', 'Queijo Brie', 'Massas leves']
+    },
+    {
+        id: 'saison',
+        name: 'Saison',
+        origin: '🇧🇪',
+        family: 'beer.saison.family',
+        tag: 'beer.saison.tag',
+        abv: '6.5%',
+        rating: 4.6,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.saison.description',
+        category: 'Farmhouse Ale',
+        appearance: {
+            color: 'beer.saison.appearance.color',
+            colorHex: '#F3A346', // Deep gold to light amber
+            clarity: 'beer.saison.appearance.clarity',
+            foam: 'beer.saison.appearance.foam'
+        },
+        sensory: {
+            malte: 30,
+            lupulo: 40,
+            levedura: 100
+        },
+        mouthfeel: {
+            body: 'beer.saison.mouthfeel.body',
+            carbonation: 'beer.saison.mouthfeel.carbonation',
+            texture: 'beer.saison.mouthfeel.texture',
+            finish: 'beer.saison.mouthfeel.finish'
+        },
+        history: 'beer.saison.history',
+        comparison: 'beer.saison.comparison',
+        ingredients: {
+            malts: 'beer.saison.ingredients.malts',
+            hops: 'beer.saison.ingredients.hops',
+            yeast: 'beer.saison.ingredients.yeast',
+            adjuncts: 'beer.saison.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '5.0–9.5%',
+            ibu: '20–35',
+            srm: '5–14',
+            og: '1.048–1.065',
+            fg: '1.002–1.008'
+        },
+        variations: ['Table Saison', 'Super Saison', 'Dark Saison'],
+        examples: [
+            { brand: 'Saison Dupont', name: 'Vieille Provision' },
+            { brand: 'Fantôme', name: 'Saison' }
+        ],
+        service: {
+            temperature: '8–12°C',
+            glass: 'Tulipa ou Goblet',
+            validity: '1–3 anos'
+        },
+        pairing: ['Salmão fumado', 'Aspargos', 'Queijos de cabra frescos']
+    },
+    {
+        id: 'belgian-golden-strong-ale',
+        name: 'Belgian Golden Strong Ale',
+        origin: '🇧🇪',
+        family: 'beer.belgian-golden-strong-ale.family',
+        tag: 'beer.belgian-golden-strong-ale.tag',
+        abv: '8.5%',
+        rating: 4.7,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.belgian-golden-strong-ale.description',
+        category: 'Strong Ale',
+        appearance: {
+            color: 'beer.belgian-golden-strong-ale.appearance.color',
+            colorHex: '#F6E58D', // Yellow to gold (very pale)
+            clarity: 'beer.belgian-golden-strong-ale.appearance.clarity',
+            foam: 'beer.belgian-golden-strong-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 25,
+            lupulo: 30,
+            levedura: 85
+        },
+        mouthfeel: {
+            body: 'beer.belgian-golden-strong-ale.mouthfeel.body',
+            carbonation: 'beer.belgian-golden-strong-ale.mouthfeel.carbonation',
+            texture: 'beer.belgian-golden-strong-ale.mouthfeel.texture',
+            finish: 'beer.belgian-golden-strong-ale.mouthfeel.finish'
+        },
+        history: 'beer.belgian-golden-strong-ale.history',
+        comparison: 'beer.belgian-golden-strong-ale.comparison',
+        ingredients: {
+            malts: 'beer.belgian-golden-strong-ale.ingredients.malts',
+            hops: 'beer.belgian-golden-strong-ale.ingredients.hops',
+            yeast: 'beer.belgian-golden-strong-ale.ingredients.yeast',
+            adjuncts: 'beer.belgian-golden-strong-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '7.5–10.5%',
+            ibu: '22–35',
+            srm: '3–6',
+            og: '1.070–1.095',
+            fg: '1.005–1.016'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Duvel', name: 'Original' },
+            { brand: 'Delirium Tremens', name: 'Huyghe' }
+        ],
+        service: {
+            temperature: '5–10°C',
+            glass: 'Tulipa',
+            validity: '1–3 anos'
+        },
+        pairing: ['Peixe e batata frita', 'Queijos fortes', 'Sobremesas de limão']
+    },
+    {
+        id: 'belgian-single',
+        name: 'Belgian Single',
+        origin: '🇧🇪',
+        family: 'beer.belgian-single.family',
+        tag: 'beer.belgian-single.tag',
+        abv: '5.0%',
+        rating: 4.2,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.belgian-single.description',
+        category: 'Trappist Ale',
+        appearance: {
+            color: 'beer.belgian-single.appearance.color',
+            colorHex: '#F9E076', // Pale yellow to medium gold
+            clarity: 'beer.belgian-single.appearance.clarity',
+            foam: 'beer.belgian-single.appearance.foam'
+        },
+        sensory: {
+            malte: 30,
+            lupulo: 40,
+            levedura: 80
+        },
+        mouthfeel: {
+            body: 'beer.belgian-single.mouthfeel.body',
+            carbonation: 'beer.belgian-single.mouthfeel.carbonation',
+            texture: 'beer.belgian-single.mouthfeel.texture',
+            finish: 'beer.belgian-single.mouthfeel.finish'
+        },
+        history: 'beer.belgian-single.history',
+        comparison: 'beer.belgian-single.comparison',
+        ingredients: {
+            malts: 'beer.belgian-single.ingredients.malts',
+            hops: 'beer.belgian-single.ingredients.hops',
+            yeast: 'beer.belgian-single.ingredients.yeast',
+            adjuncts: 'beer.belgian-single.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '4.8–6.0%',
+            ibu: '25–45',
+            srm: '3–5',
+            og: '1.044–1.054',
+            fg: '1.004–1.010'
+        },
+        variations: ['Patersbier', 'Enkel'],
+        examples: [
+            { brand: 'Westmalle', name: 'Extra' },
+            { brand: 'St. Bernardus', name: 'Extra 4' }
+        ],
+        service: {
+            temperature: '4–7°C',
+            glass: 'Cálice (Goblet)',
+            validity: '3–6 meses'
+        },
+        pairing: ['Saladas leves', 'Queijo de cabra fresco', 'Frutos do mar']
+    },
+    {
+        id: 'belgian-dubbel',
+        name: 'Belgian Dubbel',
+        origin: '🇧🇪',
+        family: 'beer.belgian-dubbel.family',
+        tag: 'beer.belgian-dubbel.tag',
+        abv: '7.0%',
+        rating: 4.5,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.belgian-dubbel.description',
+        category: 'Trappist Ale',
+        appearance: {
+            color: 'beer.belgian-dubbel.appearance.color',
+            colorHex: '#9E4723', // Dark amber to copper
+            clarity: 'beer.belgian-dubbel.appearance.clarity',
+            foam: 'beer.belgian-dubbel.appearance.foam'
+        },
+        sensory: {
+            malte: 70,
+            lupulo: 20,
+            levedura: 50
+        },
+        mouthfeel: {
+            body: 'beer.belgian-dubbel.mouthfeel.body',
+            carbonation: 'beer.belgian-dubbel.mouthfeel.carbonation',
+            texture: 'beer.belgian-dubbel.mouthfeel.texture',
+            finish: 'beer.belgian-dubbel.mouthfeel.finish'
+        },
+        history: 'beer.belgian-dubbel.history',
+        comparison: 'beer.belgian-dubbel.comparison',
+        ingredients: {
+            malts: 'beer.belgian-dubbel.ingredients.malts',
+            hops: 'beer.belgian-dubbel.ingredients.hops',
+            yeast: 'beer.belgian-dubbel.ingredients.yeast',
+            adjuncts: 'beer.belgian-dubbel.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '6.0–7.6%',
+            ibu: '15–25',
+            srm: '10–17',
+            og: '1.062–1.075',
+            fg: '1.008–1.018'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Westmalle', name: 'Dubbel' },
+            { brand: 'Chimay', name: 'Red (Première)' }
+        ],
+        service: {
+            temperature: '10–13°C',
+            glass: 'Cálice (Goblet)',
+            validity: '2–5 anos'
+        },
+        pairing: ['Ensopado de carne', 'Queijo Washed-Rind', 'Chocolate ao leite']
+    },
+    {
+        id: 'belgian-tripel',
+        name: 'Belgian Tripel',
+        origin: '🇧🇪',
+        family: 'beer.belgian-tripel.family',
+        tag: 'beer.belgian-tripel.tag',
+        abv: '8.5%',
+        rating: 4.8,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.belgian-tripel.description',
+        category: 'Trappist Ale',
+        appearance: {
+            color: 'beer.belgian-tripel.appearance.color',
+            colorHex: '#F4C430', // Deep yellow to pale amber
+            clarity: 'beer.belgian-tripel.appearance.clarity',
+            foam: 'beer.belgian-tripel.appearance.foam'
+        },
+        sensory: {
+            malte: 40,
+            lupulo: 30,
+            levedura: 70
+        },
+        mouthfeel: {
+            body: 'beer.belgian-tripel.mouthfeel.body',
+            carbonation: 'beer.belgian-tripel.mouthfeel.carbonation',
+            texture: 'beer.belgian-tripel.mouthfeel.texture',
+            finish: 'beer.belgian-tripel.mouthfeel.finish'
+        },
+        history: 'beer.belgian-tripel.history',
+        comparison: 'beer.belgian-tripel.comparison',
+        ingredients: {
+            malts: 'beer.belgian-tripel.ingredients.malts',
+            hops: 'beer.belgian-tripel.ingredients.hops',
+            yeast: 'beer.belgian-tripel.ingredients.yeast',
+            adjuncts: 'beer.belgian-tripel.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '7.5–9.5%',
+            ibu: '20–40',
+            srm: '4.5–7',
+            og: '1.075–1.085',
+            fg: '1.008–1.014'
+        },
+        variations: [],
+        examples: [
+            { brand: 'Westmalle', name: 'Tripel' },
+            { brand: 'Chimay', name: 'White (Cinq Cents)' }
+        ],
+        service: {
+            temperature: '8–12°C',
+            glass: 'Cálice (Goblet)',
+            validity: '2–5 anos'
+        },
+        pairing: ['Espargos', 'Manjericão', 'Queijo Tripel']
+    },
+    {
+        id: 'belgian-dark-strong-ale',
+        name: 'Belgian Dark Strong Ale',
+        origin: '🇧🇪',
+        family: 'beer.belgian-dark-strong-ale.family',
+        tag: 'beer.belgian-dark-strong-ale.tag',
+        abv: '10.0%',
+        rating: 4.9,
+        image: 'assets/beer-placeholder.png',
+        description: 'beer.belgian-dark-strong-ale.description',
+        category: 'Trappist Ale',
+        appearance: {
+            color: 'beer.belgian-dark-strong-ale.appearance.color',
+            colorHex: '#4B3621', // Deep amber to deep copper-brown
+            clarity: 'beer.belgian-dark-strong-ale.appearance.clarity',
+            foam: 'beer.belgian-dark-strong-ale.appearance.foam'
+        },
+        sensory: {
+            malte: 60,
+            lupulo: 20,
+            levedura: 80
+        },
+        mouthfeel: {
+            body: 'beer.belgian-dark-strong-ale.mouthfeel.body',
+            carbonation: 'beer.belgian-dark-strong-ale.mouthfeel.carbonation',
+            texture: 'beer.belgian-dark-strong-ale.mouthfeel.texture',
+            finish: 'beer.belgian-dark-strong-ale.mouthfeel.finish'
+        },
+        history: 'beer.belgian-dark-strong-ale.history',
+        comparison: 'beer.belgian-dark-strong-ale.comparison',
+        ingredients: {
+            malts: 'beer.belgian-dark-strong-ale.ingredients.malts',
+            hops: 'beer.belgian-dark-strong-ale.ingredients.hops',
+            yeast: 'beer.belgian-dark-strong-ale.ingredients.yeast',
+            adjuncts: 'beer.belgian-dark-strong-ale.ingredients.adjuncts'
+        },
+        specs: {
+            abvRange: '8.0–12.0%',
+            ibu: '20–35',
+            srm: '12–22',
+            og: '1.075–1.110',
+            fg: '1.010–1.024'
+        },
+        variations: ['Quadrupel'],
+        examples: [
+            { brand: 'Westvleteren', name: '12' },
+            { brand: 'Rochefort', name: '10' }
+        ],
+        service: {
+            temperature: '12–16°C',
+            glass: 'Cálice (Goblet)',
+            validity: '5–20 anos (guarda)'
+        },
+        pairing: ['Churrasco', 'Queijo Azul Forte', 'Chocolate Amargo']
     }
 ];
