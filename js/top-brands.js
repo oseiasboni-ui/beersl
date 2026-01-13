@@ -121,7 +121,7 @@ function getFilteredBeers() {
         }
 
         return true;
-    });
+    }).sort((a, b) => a.localeCompare(b, 'pt-BR'));
 }
 
 function renderGrid() {
