@@ -1,107 +1,98 @@
 export const top250Beers = [
-    // A
-    "Affligem", "Aguila", "Alexander Keith's", "Almaza", "Alpha Beer", "Amstel", "Amstel Light", "Amstel Malta",
-    "Anchor Beer (Cambodia)", "Anchor Strong", "Angkor", "Antarctica", "Ariana", "Arctic Lager", "Asahi Super Dry", "Asahi Black",
+    // A (18)
+    "Affligem", "Aguila", "Alexander Keith's", "Almaza", "Alpha Beer", "Amstel", "Amstel Light",
+    "Anchor Beer (Cambodia)", "Angkor", "Antarctica", "Ariana", "Arctic Lager", "Asahi Super Dry",
     "Augustiner", "Ayinger",
 
-    // B
-    "Baden-Baden", "Baltika (various)", "Baltika 7", "Baltika 9", "Banks Beer", "Bavaria (Middle East)", "Beck's", "Beer 333",
-    "Beerlao", "Bell Lager", "Bergenbier", "Bia Hanoi", "Bia Saigon", "Bintang", "Birra Messina", "Birra Moretti",
-    "Bitburger", "Black Label", "Blue Moon", "Bohemia", "Bohemia (Mexico)", "Brahma", "Brahma Extra", "Budweiser",
-    "Bud Light", "Budějovický Budvar", "Busch", "Busch Light",
+    // B (24)
+    "Baltika", "Banks Beer", "Bavaria", "Beck's", "Beer 333", "Beerlao", "Bell Lager", "Bia Hanoi",
+    "Bia Saigon", "Bintang", "Birra Moretti", "Bitburger", "Blue Moon", "Bohemia", "Brahma",
+    "Budweiser", "Bud Light", "Budějovický Budvar", "Busch", "Busch Light",
 
-    // C
-    "Carlsberg", "Carlsberg Elephant", "Carlton Draught", "Carling", "Carling Black Label", "Cass (Korea)", "Castel Beer",
-    "Castle Lager", "Castle Lite", "Castle Milk Stout", "Castle Milk Stout (Ref)", "Chang", "Chimay (various)", "Ciuc",
-    "Cisk", "Club Beer (Cameroon)", "Club Colombia", "Coopers", "Coors Banquet", "Coors Light", "Corona Extra", "Corona Light",
-    "Cristal (Chile)", "Cruzcampo", "Crystal (Brazil)", "Cusqueña",
+    // C (22)
+    "Carlsberg", "Carlton Draught", "Carling", "Cass", "Castel Beer", "Castle Lager", "Castle Lite",
+    "Castle Milk Stout", "Chang", "Chimay", "Ciuc", "Cisk", "Club Colombia", "Coopers", "Coors",
+    "Coors Light", "Corona Extra", "Corona Light", "Cristal", "Cruzcampo", "Crystal", "Cusqueña",
 
-    // D
+    // D (5)
     "Dashen", "Devassa", "Dos Equis", "Dreher", "Duvel",
 
-    // E
+    // E (6)
     "Efes Pilsen", "Egger", "Eisenbahn", "Erdinger", "Estrella Damm", "Estrella Galicia",
 
-    // F
+    // F (7)
     "Fayrouz", "Feldschlösschen", "Fix Hellas", "Flag Speciale", "Flying Fish", "Foster's", "Franziskaner",
 
-    // G
-    "Gambrinus", "Genesee", "Gold Star Beer", "Goldstar (Ghana)", "Gösser", "Great Northern", "Grimbergen", "Grolsch",
-    "Gulder", "Guinness", "Guinness Foreign Extra",
+    // G (11)
+    "Gambrinus", "Genesee", "Gold Star Beer", "Goldstar", "Gösser", "Great Northern", "Grimbergen",
+    "Grolsch", "Gulder", "Guinness",
 
-    // H
-    "Hacker-Pschorr", "Hahn Premium", "Hansa", "Harbin Beer", "Harbin Premium", "Haywards 5000", "Heineken", "Heineken Light",
-    "Hero Beer", "Hero Lager", "Hite (Korea)", "Hite Extra Cold", "Hoegaarden", "Hoegaarden Wit", "Hoegaarden Grand Cru",
+    // H (13)
+    "Hacker-Pschorr", "Hahn Premium", "Hansa", "Harbin", "Haywards 5000", "Heineken", "Heineken Light",
+    "Hero Beer", "Hite", "Hoegaarden",
 
-    // I
+    // I (3)
     "Ichnusa", "Indio", "Itaipava",
 
-    // J
-    "Jelen", "Jelen Pivo", "Jever", "Jupiler",
+    // J (4)
+    "Jelen", "Jever", "Jupiler",
 
-    // K
-    "Kaiser", "Kalik", "Kamenitza", "Karlovačko", "Keo", "Keystone", "Keystone Light", "Kilimanjaro Premium",
-    "Kilimanjaro Premium Lager (Ref)", "Kingfisher", "Kingfisher Premium", "Kirin Ichiban", "Kloud", "Koff", "Kokanee",
-    "Kozel", "Köstritzer", "Krombacher", "Kronenbourg 1664",
+    // K (14)
+    "Kaiser", "Kalik", "Kamenitza", "Karlovačko", "Keo", "Keystone", "Keystone Light", "Kilimanjaro",
+    "Kingfisher", "Kirin Ichiban", "Kloud", "Kokanee", "Kozel", "Krombacher", "Kronenbourg 1664",
 
-    // L
-    "Labatt Blue", "Labatt Blue Light", "Lapin Kulta", "Larue", "Laško", "Lech", "Leffe", "Legend Extra Stout",
-    "Leo Beer", "Lion Ice", "Lion Lager", "Lion Red", "Löwenbräu",
+    // L (12)
+    "Labatt Blue", "Lapin Kulta", "Larue", "Laško", "Lech", "Leffe", "Legend Extra Stout",
+    "Leo Beer", "Lion Lager", "Lion Red", "Löwenbräu",
 
-    // M
-    "Maccabee", "Madrí Excepcional", "Mahou", "Maisel's Weisse", "Malta Guinness", "Meister (Israel)", "Menabrea",
-    "Meta Beer", "Michelob", "Michelob Ultra", "Miller Genuine Draft", "Miller High Life", "Miller Lite", "Modelo Especial",
-    "Modelo Negra", "Molson Canadian", "Molson Export", "Moosehead", "Mutzig", "Mythos",
+    // M (17)
+    "Maccabee", "Madrí Excepcional", "Mahou", "Maisel's Weisse", "Malta Guinness", "Menabrea",
+    "Meta Beer", "Michelob", "Michelob Ultra", "Miller", "Miller Lite", "Modelo Especial",
+    "Modelo Negra", "Molson Canadian", "Moosehead", "Mutzig", "Mythos",
 
-    // N
+    // N (5)
     "Natural Light", "Negra Modelo", "Nikšićko", "Nile Special", "Noroc",
 
-    // O
-    "OB Cass Fresh", "OB Lager", "Obolon", "Okhota", "Okocim", "Old Milwaukee", "Olvi", "Oranjeboom", "Orion Draft", "Orval", "Ottakringer",
+    // O (9)
+    "OB Lager", "Obolon", "Okhota", "Okocim", "Old Milwaukee", "Olvi", "Oranjeboom", "Orion Draft", "Orval",
 
-    // P
-    "Pabst Blue Ribbon", "Paceña", "Pacifico", "Palm", "Paulaner", "Paulaner Salvator", "Pearl River Beer", "Perła",
-    "Peroni Nastro Azzurro", "Petra", "Pilsen Callao", "Pilsner Urquell", "Poker (Colombia)", "Polar", "Polar Pilsen",
-    "Presidente", "Primus (Africa)", "Primus (Belgium)", "Puntigamer", "Pure Blonde",
+    // P (18)
+    "Pabst Blue Ribbon", "Paceña", "Pacifico", "Palm", "Paulaner", "Pearl River Beer", "Perła",
+    "Peroni Nastro Azzurro", "Petra", "Pilsen Callao", "Pilsner Urquell", "Poker", "Polar",
+    "Presidente", "Primus", "Puntigamer", "Pure Blonde",
 
-    // Q
-    "Qingdao Pure Draft", "Quilmes",
+    // Q (2)
+    "Qingdao", "Quilmes",
 
-    // R
-    "Radeberger", "Red Horse Beer", "Red Horse Extra Strong", "Red Stripe", "Ringnes", "Rochefort Trappist", "Rolling Rock", "Royal Challenge Beer",
+    // R (8)
+    "Radeberger", "Red Horse Beer", "Red Stripe", "Ringnes", "Rochefort", "Rolling Rock", "Royal Challenge Beer",
 
-    // S
-    "Safari Lager", "Sagres", "Saigon Export", "Sakara", "Samuel Adams Boston Lager", "San Miguel", "San Miguel Light",
-    "San Miguel Pale Pilsen", "San Miguel (Spain)", "Sapporo", "Sapporo Premium", "Šariš", "Schneider Weisse", "Sedrin",
-    "Serengeti Premium", "Shiner Bock", "Sinebrychoff", "Singha", "Skol", "Skol Beats", "Sleeman", "Snow Beer",
-    "Snow Brave the World", "Sol", "Solera", "Spaten", "St. George Beer", "Star Lager", "Starobrno", "Staropramen",
-    "Staropramen Dark", "Steinlager", "Stella Artois", "Stella (Egypt)", "Stiegl", "Suntory Premium Malt's", "Superior",
+    // S (29)
+    "Safari Lager", "Sagres", "Saigon Export", "Sakara", "Samuel Adams", "San Miguel",
+    "Sapporo", "Šariš", "Schneider Weisse", "Sedrin", "Serengeti Premium",
+    "Shiner Bock", "Sinebrychoff", "Singha", "Skol", "Sleeman", "Snow Beer", "Sol",
+    "Solera", "Spaten", "St. George Beer", "Star Lager", "Starobrno", "Staropramen", "Steinlager",
+    "Stella Artois", "Stiegl", "Suntory Premium Malt's", "Superior",
 
-    // T
-    "Taedonggang (N. Korea)", "Taiwan Beer", "Taybeh", "Tecate", "Tecate (Heineken)", "Tecate Light", "Tennent's",
-    "Tennent's Super", "Terra (Korea)", "Tiger Beer", "Tiger Crystal", "Timișoreana", "Topvar", "Tooheys New",
-    "Tooheys Old", "Trophy Lager", "Tsingtao", "Tui", "Tuborg", "Tuborg Green", "Tusker", "Tusker Lite", "Tyskie",
+    // T (18)
+    "Taedonggang", "Taiwan Beer", "Taybeh", "Tecate", "Tennent's", "Terra", "Tiger Beer", "Timișoreana",
+    "Topvar", "Tooheys New", "Tooheys Old", "Trophy Lager", "Tsingtao", "Tui", "Tuborg", "Tusker", "Tyskie",
 
-    // U
+    // U (1)
     "Ursus",
 
-    // V
-    "Velkopopovický Kozel", "Veltins", "Victoria", "Victoria (Mexico)", "Victoria Bitter (VB)",
+    // V (4)
+    "Veltins", "Victoria", "Victoria Bitter",
 
-    // W
+    // W (5)
     "Warsteiner", "Weihenstephaner", "Westmalle", "Windhoek Lager", "Wusu",
 
-    // X
+    // X (1)
     "XXXX Gold",
 
-    // Y
-    "Yanjing", "Yanjing Draft", "Yarpivo", "Yebisu", "Yuengling Traditional Lager",
+    // Y (5)
+    "Yanjing", "Yarpivo", "Yebisu", "Yuengling",
 
-    // Z
-    "Zagorka", "Zaječarsko", "Zhaojin", "Zipfer", "Zlatý Bažant", "Żywiec",
-
-    // Additional from user's list
-    "1664 Blanc", "33 Export", "333 Export", "Aass", "Coors", "Flying Horse", "La Trappe", "Miller",
-    "Saigon Beer", "Zhigulevskoye", "Nigerian Breweries Star", "Mythos Radler", "Mythos Ice", "Yebisu",
-    "Taiwan Beer", "Anchor (Asia)", "Solera", "San Miguel (Spain)", "Bintang (Vietnam)", "Stella Artois (Africa)"
+    // Z (6)
+    "Zagorka", "Zaječarsko", "Zhaojin", "Zipfer", "Zlatý Bažant", "Żywiec"
 ];
