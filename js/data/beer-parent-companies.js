@@ -444,7 +444,19 @@ export const beerParentCompanies = {
     "Carlsberg Elephant": { parent: "Carlsberg", color: "#eab308", region: "Europe", origin: "Denmark 🇩🇰", year: 1959 },
     "Staropramen Dark": { parent: "Molson Coors", color: "#ef4444", region: "Europe", origin: "Czech Republic 🇨🇿", year: 1869 },
     "Jelen Pivo": { parent: "Molson Coors", color: "#ef4444", region: "Europe", origin: "Serbia 🇷🇸", year: 1963 },
-    "Velkopopovický Kozel": { parent: "Asahi", color: "#f97316", region: "Europe", origin: "Czech Republic 🇨🇿", year: 1874 }
+    "Velkopopovický Kozel": { parent: "Asahi", color: "#f97316", region: "Europe", origin: "Czech Republic 🇨🇿", year: 1874 },
+    "Saigon Beer": { parent: "Sabeco", color: "#65a30d", region: "Vietnam", origin: "Vietnam 🇻🇳", year: 1875 },
+    "Zhigulevskoye": { parent: "Various", color: "#65a30d", region: "Russia", origin: "Russia 🇷🇺", year: 1935, description: "Estilo de cerveja padronizado na era soviética." },
+    "Nigerian Breweries Star": { parent: "Heineken", color: "#22c55e", region: "Africa", origin: "Nigeria 🇳🇬", year: 1949 },
+    "Mythos Radler": { parent: "Heineken", color: "#22c55e", region: "Europe", origin: "Greece 🇬🇷", year: 2012 },
+    "Mythos Ice": { parent: "Heineken", color: "#22c55e", region: "Europe", origin: "Greece 🇬🇷", year: 2014 },
+    "Yebisu": { parent: "Sapporo", color: "#78716c", region: "Japan", origin: "Japan 🇯🇵", year: 1890 },
+    "Taiwan Beer": { parent: "Taiwan Tobacco & Liquor", color: "#65a30d", region: "Asia", origin: "Taiwan 🇹🇼", year: 1922 },
+    "Anchor (Asia)": { parent: "Heineken", color: "#22c55e", region: "Asia", origin: "Singapore 🇸🇬", year: 1933 },
+    "Solera": { parent: "Polar", color: "#65a30d", region: "Latin America", origin: "Venezuela 🇻🇪", year: 1925 },
+    "San Miguel (Spain)": { parent: "Mahou-San Miguel", color: "#65a30d", region: "Europe", origin: "Spain 🇪🇸", year: 1890 },
+    "Bintang (Vietnam)": { parent: "Various", color: "#65a30d", region: "Asia", origin: "Vietnam 🇻🇳", year: 1993 },
+    "Stella Artois (Africa)": { parent: "AB InBev", color: "#3b82f6", region: "Africa", origin: "Belgium 🇧🇪", year: 1926 }
 
 };
 

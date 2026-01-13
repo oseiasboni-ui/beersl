@@ -101,5 +101,7 @@ export const top250Beers = [
     "Zagorka", "Zaječarsko", "Zhaojin", "Zipfer", "Zlatý Bažant", "Żywiec",
 
     // Additional from user's list
-    "1664 Blanc", "33 Export", "333 Export", "Aass", "Coors", "Flying Horse", "La Trappe", "Miller"
+    "1664 Blanc", "33 Export", "333 Export", "Aass", "Coors", "Flying Horse", "La Trappe", "Miller",
+    "Saigon Beer", "Zhigulevskoye", "Nigerian Breweries Star", "Mythos Radler", "Mythos Ice", "Yebisu",
+    "Taiwan Beer", "Anchor (Asia)", "Solera", "San Miguel (Spain)", "Bintang (Vietnam)", "Stella Artois (Africa)"
 ];
