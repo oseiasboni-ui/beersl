@@ -58,12 +58,10 @@
             flex-direction: column;
         }
 
+        /* Footer - not sticky */
         .main-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
+            position: relative;
+            margin-top: auto;
         }
 
         /* Filter Controls */
@@ -137,6 +135,25 @@
             background: #fef3c7;
             border-radius: 20px;
             align-self: flex-end;
+        }
+
+        .filter-search {
+            padding: 0.5rem 0.8rem;
+            border: 1px solid var(--border-color, #ddd);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            min-width: 200px;
+        }
+
+        .filter-search:focus {
+            outline: none;
+            border-color: var(--color-primary, #f59e0b);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+
+        .search-group {
+            flex-grow: 1;
+            max-width: 300px;
         }
 
         /* 8 Column Grid Styles - 1:1 Aspect Ratio */
@@ -319,6 +336,10 @@
 
                 <!-- Filter Controls -->
                 <div class="filter-controls">
+                    <div class="filter-group search-group">
+                        <label class="filter-label">🔍 Search</label>
+                        <input type="text" id="search-filter" class="filter-search" placeholder="Search beers...">
+                    </div>
                     <div class="filter-group">
                         <label class="filter-label">🌍 Country of Origin</label>
                         <select id="country-filter" class="filter-select">

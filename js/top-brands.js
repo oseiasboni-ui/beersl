@@ -6,7 +6,7 @@ const v = new Date().getTime();
 
 let hoverTimeout = null;
 let currentPopup = null;
-let currentFilters = { country: 'all', parent: 'all' };
+let currentFilters = { country: 'all', parent: 'all', search: '' };
 
 function getUniqueValues() {
     const countries = new Set();
@@ -68,9 +68,20 @@ function populateFilters() {
     const clearBtn = document.getElementById('clear-filters');
     if (clearBtn) {
         clearBtn.addEventListener('click', () => {
-            currentFilters = { country: 'all', parent: 'all' };
+            currentFilters = { country: 'all', parent: 'all', search: '' };
             if (countrySelect) countrySelect.value = 'all';
             if (parentSelect) parentSelect.value = 'all';
+            const searchInput = document.getElementById('search-filter');
+            if (searchInput) searchInput.value = '';
+            renderGrid();
+        });
+    }
+
+    // Search input
+    const searchInput = document.getElementById('search-filter');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            currentFilters.search = e.target.value.toLowerCase();
             renderGrid();
         });
     }
@@ -79,6 +90,20 @@ function populateFilters() {
 function getFilteredBeers() {
     return top250Beers.filter(beer => {
         const info = getBeerInfo(beer);
+
+        // Search filter
+        if (currentFilters.search) {
+            const searchTerm = currentFilters.search.toLowerCase();
+            const beerName = beer.toLowerCase();
+            const parentName = (info.parent || '').toLowerCase();
+            const originName = (info.origin || '').toLowerCase();
+
+            if (!beerName.includes(searchTerm) &&
+                !parentName.includes(searchTerm) &&
+                !originName.includes(searchTerm)) {
+                return false;
+            }
+        }
 
         // Country filter
         if (currentFilters.country !== 'all') {
