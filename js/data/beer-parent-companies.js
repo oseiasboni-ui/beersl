@@ -430,7 +430,21 @@ export const beerParentCompanies = {
     "Zagorka": { parent: "Heineken", color: "#22c55e", region: "Europe", origin: "Bulgaria 🇧🇬", year: 1902 },
     "Jelen": { parent: "Molson Coors", color: "#ef4444", region: "Europe", origin: "Serbia 🇷🇸", year: 1963 },
     "Karlovačko": { parent: "Heineken", color: "#22c55e", region: "Europe", origin: "Croatia 🇭🇷", year: 1854 },
-    "Laško": { parent: "Heineken", color: "#22c55e", region: "Europe", origin: "Slovenia 🇸🇮", year: 1825 }
+    "Laško": { parent: "Heineken", color: "#22c55e", region: "Europe", origin: "Slovenia 🇸🇮", year: 1825 },
+
+    // Additional beers from user's list
+    "Coors": { parent: "Molson Coors", color: "#ef4444", region: "North America", origin: "USA 🇺🇸", year: 1873 },
+    "Miller": { parent: "Molson Coors", color: "#ef4444", region: "North America", origin: "USA 🇺🇸", year: 1855 },
+    "Aass": { parent: "Aass Brewery", color: "#65a30d", region: "Europe", origin: "Norway 🇳🇴", year: 1834 },
+    "Flying Horse": { parent: "United Breweries", color: "#65a30d", region: "India", origin: "India 🇮🇳", year: 1963 },
+    "Pilsen Callao": { parent: "Backus (AB InBev)", color: "#3b82f6", region: "Latin America", origin: "Peru 🇵🇪", year: 1863 },
+    "Superior": { parent: "Heineken", color: "#22c55e", region: "Mexico", origin: "Mexico 🇲🇽", year: 1924 },
+    "333 Export": { parent: "Sabeco", color: "#65a30d", region: "Vietnam", origin: "Vietnam 🇻🇳", year: 1893 },
+    "Tuborg Green": { parent: "Carlsberg", color: "#eab308", region: "Europe", origin: "Denmark 🇩🇰", year: 1880 },
+    "Carlsberg Elephant": { parent: "Carlsberg", color: "#eab308", region: "Europe", origin: "Denmark 🇩🇰", year: 1959 },
+    "Staropramen Dark": { parent: "Molson Coors", color: "#ef4444", region: "Europe", origin: "Czech Republic 🇨🇿", year: 1869 },
+    "Jelen Pivo": { parent: "Molson Coors", color: "#ef4444", region: "Europe", origin: "Serbia 🇷🇸", year: 1963 },
+    "Velkopopovický Kozel": { parent: "Asahi", color: "#f97316", region: "Europe", origin: "Czech Republic 🇨🇿", year: 1874 }
 
 };
 
