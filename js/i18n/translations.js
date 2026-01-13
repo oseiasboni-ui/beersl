@@ -12,6 +12,25 @@ export const translations = {
         "menu.theme": "Tema",
         "theme.light": "Claro",
         "theme.dark": "Escuro",
+        "header.title": "Top Marcas",
+        "header.language": "Idioma",
+        "nav.home": "Início (Estilos)",
+        "nav.brands": "Top Marcas",
+        "brands.hero.title": "Top Marcas de Cerveja",
+        "brands.hero.subtitle": "Descubra as cervejarias que definem os estilos.",
+        "footer.rights": "Todos os direitos reservados.",
+        "footer.top_brands": "Top Marcas de Cerveja",
+        "top_brands.content_placeholder": "Conteúdo em breve...",
+
+        // Brand Descriptions (PT)
+        "brand.weihenstephaner.description": "A cervejaria mais antiga do mundo ainda em operação. Referência absoluta em estilos de trigo (Weissbier).",
+        "brand.guinness.description": "Ícone irlandês. Famosa por sua Stout cremosa e nitrogenada.",
+        "brand.sierra-nevada.description": "Pioneira da revolução artesanal americana. Sua Pale Ale é um marco histórico.",
+        "brand.chimay.description": "Uma das autênticas cervejarias Trapistas. Produz cervejas complexas e potentes na Bélgica.",
+        "brand.pilsner-urquell.description": "A criadora do estilo Pilsner. O padrão ouro para lagers claras em todo o mundo.",
+        "brand.duvel.description": "Mestra das Belgian Golden Strong Ales. Enganosa em sua leveza e perigosa em seu teor alcoólico.",
+        "brand.fullers.description": "A quintessência das Ales britânicas. Conhecida pela London Pride e ESB.",
+        "brand.stone.description": "Arrogante e agressiva. Famosa por IPAs intensas que desafiam o paladar.",
 
         // Rotating Banner
         "banner.phrase1.title": "Anuncie conosco",
@@ -2667,6 +2686,25 @@ export const translations = {
         "menu.theme": "Theme",
         "theme.light": "Light",
         "theme.dark": "Dark",
+        "header.title": "Top Brands",
+        "header.language": "Language",
+        "nav.home": "Home (Styles)",
+        "nav.brands": "Top Brands",
+        "brands.hero.title": "Top Beer Brands",
+        "brands.hero.subtitle": "Discover the breweries that define the styles.",
+        "footer.rights": "All rights reserved.",
+        "footer.top_brands": "Top Beer Brands",
+        "top_brands.content_placeholder": "Content coming soon...",
+
+        // Brand Descriptions (EN)
+        "brand.weihenstephaner.description": "The oldest brewery in the world still in operation. Absolute reference in wheat styles (Weissbier).",
+        "brand.guinness.description": "Irish icon. Famous for its creamy, nitrogenated Stout.",
+        "brand.sierra-nevada.description": "Pioneer of the American craft revolution. Its Pale Ale is a historic landmark.",
+        "brand.chimay.description": "One of the authentic Trappist breweries. Produces complex and potent beers in Belgium.",
+        "brand.pilsner-urquell.description": "The creator of the Pilsner style. The gold standard for pale lagers worldwide.",
+        "brand.duvel.description": "Master of Belgian Golden Strong Ales. Deceptive in lightness, dangerous in alcohol.",
+        "brand.fullers.description": "The quintessence of British Ales. Known for London Pride and ESB.",
+        "brand.stone.description": "Arrogant and aggressive. Famous for intense IPAs that challenge the palate.",
 
         // Rotating Banner
         "banner.phrase1.title": "Advertise with us",
@@ -5320,6 +5358,25 @@ export const translations = {
         "menu.theme": "Thema",
         "theme.light": "Hell",
         "theme.dark": "Dunkel",
+        "header.title": "Top Marken",
+        "header.language": "Sprache",
+        "nav.home": "Startseite (Stile)",
+        "nav.brands": "Top Marken",
+        "brands.hero.title": "Top Biermarken",
+        "brands.hero.subtitle": "Entdecken Sie die Brauereien, die die Stile definieren.",
+        "footer.rights": "Alle Rechte vorbehalten.",
+        "footer.top_brands": "Top Biermarken",
+        "top_brands.content_placeholder": "Inhalt kommt bald...",
+
+        // Brand Descriptions (DE)
+        "brand.weihenstephaner.description": "Die älteste noch bestehende Brauerei der Welt. Absolute Referenz für Weizenstile (Weissbier).",
+        "brand.guinness.description": "Irische Ikone. Berühmt für sein cremiges, stickstoffhaltiges Stout.",
+        "brand.sierra-nevada.description": "Pionier der amerikanischen Craft-Revolution. Ihr Pale Ale ist ein historischer Meilenstein.",
+        "brand.chimay.description": "Eine der authentischen Trappistenbrauereien. Produziert komplexe und starke Biere in Belgien.",
+        "brand.pilsner-urquell.description": "Der Schöpfer des Pilsner-Stils. Der Goldstandard für helle Lagerbiere weltweit.",
+        "brand.duvel.description": "Meister der Belgian Golden Strong Ales. Trügerisch leicht und gefährlich im Alkoholgehalt.",
+        "brand.fullers.description": "Die Quintessenz britischer Ales. Bekannt für London Pride und ESB.",
+        "brand.stone.description": "Arrogant und aggressiv. Berühmt für intensive IPAs, die den Gaumen herausfordern.",
 
         // Rotating Banner
         "banner.phrase1.title": "Werben Sie bei uns",

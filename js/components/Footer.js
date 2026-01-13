@@ -37,6 +37,7 @@ export class Footer {
                         <h4 data-i18n="footer.about">${i18n.t('footer.about')}</h4>
                         <a href="about.html" data-i18n="footer.about">${i18n.t('footer.about')}</a>
                         <a href="contact.html" data-i18n="footer.contact">${i18n.t('footer.contact')}</a>
+                        <a href="top-brands.html" data-i18n="footer.top_brands">${i18n.t('footer.top_brands')}</a>
                     </div>
                     <div class="footer-column">
                         <h4>Admin</h4>

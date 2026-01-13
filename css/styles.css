@@ -1719,3 +1719,124 @@ html[lang="pt-BR"] .site-subtitle {
 .btn-submit:active {
     transform: translateY(0);
 }
+
+/* Brands Page Specific Styles */
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.brand-card {
+    background: var(--surface-color); /* e.g., #1E1E1E */
+    border: 1px solid var(--border-color); /* e.g., #333 */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+}
+
+.brand-image-container {
+    height: 180px;
+    background: #fff; /* Brands often have logos that need white bg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.brand-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.brand-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.brand-origin {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background: var(--surface-hover);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.brand-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.brand-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    align-self: flex-start;
+}
+
+.brand-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Sidebar Nav styling for active state */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 8px;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 12px 24px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    background: var(--surface-hover);
+    color: var(--primary-color);
+}

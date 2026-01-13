@@ -10,6 +10,13 @@ export class Sidebar {
 
     render() {
         this.target.innerHTML = `
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" class="active" id="nav-home">${i18n.t('nav.home') || 'Home (Beer Styles)'}</a></li>
+                    <li><a href="brands.html" id="nav-brands">${i18n.t('nav.brands') || 'Top Brands'}</a></li>
+                </ul>
+            </nav>
+
             <div class="clear-filters-wrapper">
                 <button id="clear-filters-btn" class="clear-filters-btn">
                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
