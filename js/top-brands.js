@@ -6,6 +6,98 @@ const v = new Date().getTime();
 
 let hoverTimeout = null;
 let currentPopup = null;
+let currentFilters = { country: 'all', parent: 'all' };
+
+function getUniqueValues() {
+    const countries = new Set();
+    const parents = new Set();
+
+    top250Beers.forEach(beer => {
+        const info = getBeerInfo(beer);
+        if (info.origin) {
+            // Extract country name without emoji
+            const countryName = info.origin.replace(/[\u{1F1E0}-\u{1F1FF}][\u{1F1E0}-\u{1F1FF}]/gu, '').trim();
+            countries.add(countryName);
+        }
+        if (info.parent) {
+            parents.add(info.parent);
+        }
+    });
+
+    return {
+        countries: Array.from(countries).sort(),
+        parents: Array.from(parents).sort()
+    };
+}
+
+function populateFilters() {
+    const { countries, parents } = getUniqueValues();
+
+    const countrySelect = document.getElementById('country-filter');
+    const parentSelect = document.getElementById('parent-filter');
+
+    if (countrySelect) {
+        countries.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country;
+            option.textContent = country;
+            countrySelect.appendChild(option);
+        });
+
+        countrySelect.addEventListener('change', (e) => {
+            currentFilters.country = e.target.value;
+            renderGrid();
+        });
+    }
+
+    if (parentSelect) {
+        parents.forEach(parent => {
+            const option = document.createElement('option');
+            option.value = parent;
+            option.textContent = parent;
+            parentSelect.appendChild(option);
+        });
+
+        parentSelect.addEventListener('change', (e) => {
+            currentFilters.parent = e.target.value;
+            renderGrid();
+        });
+    }
+
+    // Clear filters button
+    const clearBtn = document.getElementById('clear-filters');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            currentFilters = { country: 'all', parent: 'all' };
+            if (countrySelect) countrySelect.value = 'all';
+            if (parentSelect) parentSelect.value = 'all';
+            renderGrid();
+        });
+    }
+}
+
+function getFilteredBeers() {
+    return top250Beers.filter(beer => {
+        const info = getBeerInfo(beer);
+
+        // Country filter
+        if (currentFilters.country !== 'all') {
+            const countryName = (info.origin || '').replace(/[\u{1F1E0}-\u{1F1FF}][\u{1F1E0}-\u{1F1FF}]/gu, '').trim();
+            if (countryName !== currentFilters.country) {
+                return false;
+            }
+        }
+
+        // Parent company filter
+        if (currentFilters.parent !== 'all') {
+            if (info.parent !== currentFilters.parent) {
+                return false;
+            }
+        }
+
+        return true;
+    });
+}
 
 function renderGrid() {
     const mainContainer = document.querySelector('.top-brands-container');
@@ -20,8 +112,16 @@ function renderGrid() {
         mainContainer.appendChild(grid);
     }
 
+    const filteredBeers = getFilteredBeers();
+
+    // Update count
+    const countEl = document.getElementById('filter-count');
+    if (countEl) {
+        countEl.textContent = `${filteredBeers.length} beers`;
+    }
+
     // Only beer name with hover handler for popup
-    grid.innerHTML = top250Beers.map(beer => {
+    grid.innerHTML = filteredBeers.map(beer => {
         const info = getBeerInfo(beer);
         return `
             <div class="brand-item" data-beer="${beer}" style="border-left: 4px solid ${info.color};">
@@ -29,6 +129,11 @@ function renderGrid() {
             </div>
         `;
     }).join('');
+
+    // Show message if no results
+    if (filteredBeers.length === 0) {
+        grid.innerHTML = '<div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 2rem; color: #6b7280;">No beers match the selected filters.</div>';
+    }
 
     // Add hover handlers with 500ms delay
     grid.querySelectorAll('.brand-item').forEach(item => {
@@ -180,6 +285,6 @@ function adjustPopupPosition(popup, targetElement) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Force module reload if needed, but import updates usually handle it
+    populateFilters();
     renderGrid();
 });
