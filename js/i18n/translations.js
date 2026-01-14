@@ -5414,6 +5414,27 @@ export const translations = {
         "footer.top_brands": "Top Biermarken",
         "top_brands.content_placeholder": "Inhalt kommt bald...",
 
+        // Top Brands Filters & UI
+        "filters.search_label": "Suche",
+        "filters.search_placeholder": "Biere suchen...",
+        "filters.order_label": "Sortieren",
+        "filters.order_az": "A-Z",
+        "filters.order_pop": "Beliebtheit",
+        "filters.country_label": "Herkunftsland",
+        "filters.country_all": "Alle Länder",
+        "filters.parent_label": "Muttergesellschaft",
+        "filters.parent_all": "Alle Unternehmen",
+        "filters.clear": "Filter löschen",
+        "brands.count_suffix": "Biere",
+        "brands.no_results": "Keine Biere entsprechen den gewählten Filtern.",
+
+        // Popup Details
+        "popup.parent": "Muttergesellschaft",
+        "popup.region": "Region",
+        "popup.origin": "Herkunft",
+        "popup.founded": "Gegründet",
+        "popup.history": "Geschichte",
+        "popup.unknown": "Unbekannt",
         // Brand Descriptions (DE)
         "brand.weihenstephaner.description": "Die älteste noch bestehende Brauerei der Welt. Absolute Referenz für Weizenstile (Weissbier).",
         "brand.guinness.description": "Irische Ikone. Berühmt für sein cremiges, stickstoffhaltiges Stout.",

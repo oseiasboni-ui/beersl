@@ -8,7 +8,7 @@ export const regionMap = {
     "Middle East": "Oriente Médio",
     "Caribbean": "Caribe",
     "Central America": "América Central",
-    "Global": "Global" // Same
+    "Global": "Global"
 };
 
 export const countryMap = {
@@ -110,34 +110,150 @@ export const countryMap = {
     "Unknown": "Desconhecido"
 };
 
+export const regionMapDe = {
+    "Europe": "Europa",
+    "North America": "Nordamerika",
+    "South America": "Südamerika",
+    "Asia": "Asien",
+    "Africa": "Afrika",
+    "Oceania": "Ozeanien",
+    "Middle East": "Naher Osten",
+    "Caribbean": "Karibik",
+    "Central America": "Zentralamerika",
+    "Global": "Global"
+};
+
+export const countryMapDe = {
+    "USA": "USA",
+    "Germany": "Deutschland",
+    "Belgium": "Belgien",
+    "Mexico": "Mexiko",
+    "Netherlands": "Niederlande",
+    "Ireland": "Irland",
+    "UK": "Großbritannien",
+    "China": "China",
+    "Japan": "Japan",
+    "Czech Republic": "Tschechische Republik",
+    "France": "Frankreich",
+    "Italy": "Italien",
+    "Brazil": "Brasilien",
+    "Australia": "Australien",
+    "Canada": "Kanada",
+    "Spain": "Spanien",
+    "Russia": "Russland",
+    "South Korea": "Südkorea",
+    "Poland": "Polen",
+    "Denmark": "Dänemark",
+    "Austria": "Österreich",
+    "Thailand": "Thailand",
+    "Philippines": "Philippinen",
+    "India": "Indien",
+    "South Africa": "Südafrika",
+    "Colombia": "Kolumbien",
+    "Argentina": "Argentinien",
+    "Vietnam": "Vietnam",
+    "Turkey": "Türkei",
+    "Jamaica": "Jamaika",
+    "Singapore": "Singapur",
+    "Finland": "Finnland",
+    "Greece": "Griechenland",
+    "Portugal": "Portugal",
+    "Indonesia": "Indonesien",
+    "Peru": "Peru",
+    "Kenya": "Kenia",
+    "Nigeria": "Nigeria",
+    "Venezuela": "Venezuela",
+    "Chile": "Chile",
+    "Taiwan": "Taiwan",
+    "Ethiopia": "Äthiopien",
+    "Norway": "Norwegen",
+    "Israel": "Israel",
+    "Tanzania": "Tansania",
+    "Switzerland": "Schweiz",
+    "New Zealand": "Neuseeland",
+    "Uganda": "Uganda",
+    "Croatia": "Kroatien",
+    "Romania": "Rumänien",
+    "Bulgaria": "Bulgarien",
+    "Slovakia": "Slowakei",
+    "Hungary": "Ungarn",
+    "Sweden": "Schweden",
+    "Ukraine": "Ukraine",
+    "Serbia": "Serbien",
+    "Latvia": "Lettland",
+    "Estonia": "Estland",
+    "Lithuania": "Litauen",
+    "Iceland": "Island",
+    "Malta": "Malta",
+    "Cyprus": "Zypern",
+    "Lebanon": "Libanon",
+    "Jordan": "Jordanien",
+    "Namibia": "Namibia",
+    "Scotland": "Schottland",
+    "England": "England",
+    "Wales": "Wales",
+    "North Korea": "Nordkorea",
+    "Cambodia": "Kambodscha",
+    "Laos": "Laos",
+    "Myanmar": "Myanmar",
+    "Egypt": "Ägypten",
+    "Morocco": "Marokko",
+    "Senegal": "Senegal",
+    "Tunisia": "Tunesien",
+    "Barbados": "Barbados",
+    "Bahamas": "Bahamas",
+    "Trinidad and Tobago": "Trinidad und Tobago",
+    "Dominican Republic": "Dominikanische Republik",
+    "Costa Rica": "Costa Rica",
+    "Panama": "Panama",
+    "Puerto Rico": "Puerto Rico",
+    "Honduras": "Honduras",
+    "El Salvador": "El Salvador",
+    "Guatemala": "Guatemala",
+    "Nicaragua": "Nicaragua",
+    "Bolivia": "Bolivien",
+    "Paraguay": "Paraguay",
+    "Uruguay": "Uruguay",
+    "Iran": "Iran",
+    "Saudi Arabia": "Saudi-Arabien",
+    "Palestine": "Palästina",
+    "North Macedonia": "Nordmazedonien",
+    "Bosnia and Herzegovina": "Bosnien und Herzegowina",
+    "Unknown": "Unbekannt"
+};
+
 export function translateRegion(region, lang) {
     if (lang === 'pt-BR') {
         return regionMap[region] || region;
+    }
+    if (lang === 'de') {
+        return regionMapDe[region] || region;
     }
     return region;
 }
 
 export function translateOrigin(origin, lang) {
     if (lang === 'pt-BR') {
-        // Assume format "Name Flag" or just "Name"
-        // Try to find the name in the map
-
-        // 1. Check exact match
         if (countryMap[origin]) return countryMap[origin];
-
-        // 2. Check if it ends with a flag (approximate check: non-ascii at end)
-        // We'll split by space and try to match the prefix
         const parts = origin.split(' ');
         if (parts.length > 1) {
-            // Try matching everything except the last part
             const nameCandidate = parts.slice(0, -1).join(' ');
             if (countryMap[nameCandidate]) {
                 return countryMap[nameCandidate] + ' ' + parts[parts.length - 1];
             }
         }
-
-        // 3. Fallback: return original
-        return origin;
     }
+
+    if (lang === 'de') {
+        if (countryMapDe[origin]) return countryMapDe[origin];
+        const parts = origin.split(' ');
+        if (parts.length > 1) {
+            const nameCandidate = parts.slice(0, -1).join(' ');
+            if (countryMapDe[nameCandidate]) {
+                return countryMapDe[nameCandidate] + ' ' + parts[parts.length - 1];
+            }
+        }
+    }
+
     return origin;
 }

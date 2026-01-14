@@ -1,5 +1,5 @@
 // Internationalization (i18n) Module for BeerStylesLibrary
-import { translations } from './translations.js?v=30';
+import { translations } from './translations.js?v=31';
 
 class I18n {
     constructor() {

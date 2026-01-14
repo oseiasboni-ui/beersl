@@ -3,6 +3,7 @@ import { getBeerInfo } from './data/beer-parent-companies.js';
 import { popularityRanking } from './data/ranking.js';
 import { i18n } from './i18n/i18n.js';
 import { beerHistoriesEn } from './data/beer-histories-en.js';
+import { beerHistoriesDe } from './data/beer-histories-de.js';
 import { translateRegion, translateOrigin } from './i18n/data-translations.js';
 
 // Cache busting for data updates
@@ -254,6 +255,8 @@ function showPopup(beerName, targetElement) {
     let historyText = info.history; // Default to existing (Portuguese)
     if (i18n.currentLang === 'en' && beerHistoriesEn[beerName]) {
         historyText = beerHistoriesEn[beerName];
+    } else if (i18n.currentLang === 'de' && beerHistoriesDe[beerName]) {
+        historyText = beerHistoriesDe[beerName];
     }
 
     // Create popup

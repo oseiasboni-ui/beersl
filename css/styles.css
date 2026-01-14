@@ -1731,8 +1731,10 @@ html[lang="pt-BR"] .site-subtitle {
 }
 
 .brand-card {
-    background: var(--surface-color); /* e.g., #1E1E1E */
-    border: 1px solid var(--border-color); /* e.g., #333 */
+    background: var(--surface-color);
+    /* e.g., #1E1E1E */
+    border: 1px solid var(--border-color);
+    /* e.g., #333 */
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -1748,7 +1750,8 @@ html[lang="pt-BR"] .site-subtitle {
 
 .brand-image-container {
     height: 180px;
-    background: #fff; /* Brands often have logos that need white bg */
+    background: #fff;
+    /* Brands often have logos that need white bg */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1836,10 +1839,13 @@ html[lang="pt-BR"] .site-subtitle {
     transition: all 0.2s;
 }
 
-.sidebar-nav a:hover, .sidebar-nav a.active {
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
     background: var(--surface-hover);
     color: var(--primary-color);
-}/* Founding Section Styles */
+}
+
+/* Founding Section Styles */
 .popup-founding-section {
     background: #f8f9fa;
     border-radius: 6px;
@@ -1863,7 +1869,9 @@ html[lang="pt-BR"] .site-subtitle {
     border-top: 1px solid #e5e7eb;
     margin-top: 0.2rem;
     font-style: italic;
-}/* History Section Styles */
+}
+
+/* History Section Styles */
 .popup-history {
     margin-top: 0.8rem;
     padding-top: 0.8rem;
@@ -1884,4 +1892,46 @@ html[lang="pt-BR"] .site-subtitle {
     line-height: 1.5;
     margin: 0;
     text-align: justify;
+}
+
+/* Brand Grid Styling */
+/* Brand Grid Styling */
+.brands-grid-250 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.8rem;
+    padding: 1rem 0;
+}
+
+.brand-item {
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    user-select: none;
+    will-change: transform;
+}
+
+/* Hover Effect: Scale 10% */
+.brand-item:hover {
+    transform: scale(1.1) !important;
+    z-index: 50 !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+    border-color: #bdc3c7 !important;
+}
+
+.brand-name {
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
