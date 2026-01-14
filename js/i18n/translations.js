@@ -49,6 +49,10 @@ export const translations = {
         "brands.count_suffix": "cervejas",
         "brands.no_results": "Nenhuma cerveja encontrada com os filtros selecionados.",
 
+        // Search Bar
+        "search.placeholder": "Pesquisar estilos de cerveja...",
+        "search.results": "{count} estilos encontrados",
+
         // Popup Details
         "popup.parent": "Empresa Mãe",
         "popup.region": "Região",

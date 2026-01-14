@@ -36,9 +36,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Initialize Grid with beer data
+    let gridInstance = null;
     if (document.getElementById('beer-grid')) {
-        const grid = new Grid('beer-grid', beers);
-        grid.render();
+        gridInstance = new Grid('beer-grid', beers);
+        gridInstance.render();
     }
 
     // Initialize Modal
@@ -61,5 +62,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Re-translate on language change
     window.addEventListener('languageChanged', () => {
         i18n.translatePage();
+    });
+
+    // Handle Search from Sidebar
+    document.addEventListener('searchChanged', (e) => {
+        const query = e.detail.query;
+        let filteredBeers = beers;
+
+        if (query) {
+            const lowerQuery = query.toLowerCase();
+            filteredBeers = beers.filter(beer => {
+                // Search in name
+                const nameMatch = beer.name.toLowerCase().includes(lowerQuery);
+
+                // Search in translated name
+                const translationKey = `beer.${beer.id}`;
+                const translatedName = i18n.t(translationKey);
+                const translatedMatch = translatedName !== translationKey &&
+                    translatedName.toLowerCase().includes(lowerQuery);
+
+                // Search in category
+                const categoryMatch = beer.category &&
+                    beer.category.toLowerCase().includes(lowerQuery);
+
+                return nameMatch || translatedMatch || categoryMatch;
+            });
+        }
+
+        // Update grid
+        if (gridInstance) {
+            gridInstance.update(filteredBeers);
+        }
     });
 });

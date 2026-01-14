@@ -10,12 +10,27 @@ export class Sidebar {
 
     render() {
         this.target.innerHTML = `
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="index.html" class="active" id="nav-home">${i18n.t('nav.home') || 'Home (Beer Styles)'}</a></li>
-                    <li><a href="brands.html" id="nav-brands">${i18n.t('nav.brands') || 'Top Brands'}</a></li>
-                </ul>
-            </nav>
+            <!-- Search Bar in Sidebar -->
+            <div class="sidebar-search-wrapper">
+                <div class="sidebar-search-container">
+                    <svg class="sidebar-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input 
+                        type="text" 
+                        id="sidebar-search-input" 
+                        class="sidebar-search-input"
+                        placeholder="${i18n.t('search.placeholder') || 'Pesquisar estilos...'}"
+                        autocomplete="off"
+                    >
+                    <button id="sidebar-search-clear" class="sidebar-search-clear" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6 6 18M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
             <div class="clear-filters-wrapper">
                 <button id="clear-filters-btn" class="clear-filters-btn">
@@ -70,13 +85,66 @@ export class Sidebar {
         if (clearBtn) {
             clearBtn.addEventListener('click', () => this.clearAllFilters());
         }
+
+        // Search Bar Logic
+        const searchInput = this.target.querySelector('#sidebar-search-input');
+        const searchClear = this.target.querySelector('#sidebar-search-clear');
+        let debounceTimer;
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.trim();
+
+                // Show/hide clear button
+                if (searchClear) {
+                    searchClear.style.display = query ? 'flex' : 'none';
+                }
+
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => {
+                    // Dispatch search event
+                    document.dispatchEvent(new CustomEvent('searchChanged', {
+                        detail: { query: query }
+                    }));
+                }, 300);
+            });
+
+            // Handle Escape key
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    searchInput.value = '';
+                    if (searchClear) searchClear.style.display = 'none';
+                    document.dispatchEvent(new CustomEvent('searchChanged', { detail: { query: '' } }));
+                }
+            });
+        }
+
+        if (searchClear) {
+            searchClear.addEventListener('click', () => {
+                if (searchInput) {
+                    searchInput.value = '';
+                    searchInput.focus();
+                }
+                searchClear.style.display = 'none';
+                document.dispatchEvent(new CustomEvent('searchChanged', { detail: { query: '' } }));
+            });
+        }
     }
 
     clearAllFilters() {
         const checkboxes = this.target.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(cb => cb.checked = false);
 
-        // Dispatch event for other components to listen to
+        // Also clear search
+        const searchInput = this.target.querySelector('#sidebar-search-input');
+        const searchClear = this.target.querySelector('#sidebar-search-clear');
+        if (searchInput) {
+            searchInput.value = '';
+            if (searchClear) searchClear.style.display = 'none';
+            document.dispatchEvent(new CustomEvent('searchChanged', { detail: { query: '' } }));
+        }
+
+        // Dispatch filter event
         window.dispatchEvent(new CustomEvent('filterChanged', { detail: { filters: {} } }));
     }
 }
