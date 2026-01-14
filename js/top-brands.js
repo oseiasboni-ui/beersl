@@ -14,58 +14,199 @@ let currentPopup = null;
 let currentFilters = { country: 'all', parent: 'all', search: '', sort: 'alphabetical' };
 
 function getUniqueValues() {
-    const countries = new Set();
-    const parents = new Set();
+    const countryCount = {};
+    const parentCount = {};
 
     top250Beers.forEach(beer => {
         const info = getBeerInfo(beer);
         if (info.origin) {
             // Extract country name without emoji
             const countryName = info.origin.replace(/[\u{1F1E0}-\u{1F1FF}][\u{1F1E0}-\u{1F1FF}]/gu, '').trim();
-            countries.add(countryName);
+            countryCount[countryName] = (countryCount[countryName] || 0) + 1;
         }
         if (info.parent) {
-            parents.add(info.parent);
+            parentCount[info.parent] = (parentCount[info.parent] || 0) + 1;
         }
     });
 
+    // Sort countries by count (descending) for popularity ordering
+    const countriesSorted = Object.entries(countryCount)
+        .sort((a, b) => b[1] - a[1])
+        .map(([country, count]) => ({ name: country, count }));
+
+    // Sort parents by count (descending) for popularity ordering
+    const parentsSorted = Object.entries(parentCount)
+        .sort((a, b) => b[1] - a[1])
+        .map(([parent, count]) => ({ name: parent, count }));
+
     return {
-        countries: Array.from(countries).sort(),
-        parents: Array.from(parents).sort()
+        countries: countriesSorted,
+        parents: parentsSorted
     };
 }
 
 function populateFilters() {
     const { countries, parents } = getUniqueValues();
 
-    const countrySelect = document.getElementById('country-filter');
+    const countryFilterGroup = document.querySelector('#country-filter')?.closest('.filter-group');
     const parentSelect = document.getElementById('parent-filter');
 
-    if (countrySelect) {
-        countries.forEach(country => {
-            const option = document.createElement('option');
-            option.value = country;
-            option.textContent = translateOrigin(country, i18n.currentLang);
-            countrySelect.appendChild(option);
+    // Custom Country Dropdown with Search
+    if (countryFilterGroup) {
+        const oldSelect = document.getElementById('country-filter');
+        if (oldSelect) oldSelect.remove();
+
+        // Create custom dropdown structure
+        const dropdown = document.createElement('div');
+        dropdown.className = 'custom-dropdown';
+        dropdown.id = 'country-dropdown';
+        dropdown.innerHTML = `
+            <div class="dropdown-selected" id="country-selected">
+                <span class="dropdown-selected-text">${i18n.t('filters.country_all') || 'Todos os Países'}</span>
+                <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"/>
+                </svg>
+            </div>
+            <div class="dropdown-menu" id="country-menu">
+                <div class="dropdown-search-wrapper">
+                    <input type="text" class="dropdown-search" id="country-search" placeholder="${i18n.t('filters.search_country') || 'Pesquisar país...'}" autocomplete="off">
+                </div>
+                <div class="dropdown-list" id="country-list">
+                    <div class="dropdown-item selected" data-value="all">${i18n.t('filters.country_all') || 'Todos os Países'}</div>
+                    ${countries.map(c => `
+                        <div class="dropdown-item" data-value="${c.name}">
+                            <span class="country-name">${translateOrigin(c.name, i18n.currentLang)}</span>
+                            <span class="country-count">${c.count}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+        countryFilterGroup.appendChild(dropdown);
+
+        // Dropdown toggle logic
+        const selected = dropdown.querySelector('#country-selected');
+        const menu = dropdown.querySelector('#country-menu');
+        const searchInput = dropdown.querySelector('#country-search');
+        const list = dropdown.querySelector('#country-list');
+
+        selected.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+            if (dropdown.classList.contains('open')) {
+                searchInput.focus();
+            }
         });
 
-        countrySelect.addEventListener('change', (e) => {
-            currentFilters.country = e.target.value;
-            renderGrid();
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('open');
+            }
+        });
+
+        // Search functionality
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            list.querySelectorAll('.dropdown-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+
+        // Item selection
+        list.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', () => {
+                list.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('selected'));
+                item.classList.add('selected');
+                const value = item.dataset.value;
+                currentFilters.country = value;
+                selected.querySelector('.dropdown-selected-text').textContent =
+                    value === 'all'
+                        ? (i18n.t('filters.country_all') || 'Todos os Países')
+                        : item.querySelector('.country-name')?.textContent || item.textContent;
+                dropdown.classList.remove('open');
+                searchInput.value = '';
+                list.querySelectorAll('.dropdown-item').forEach(i => i.style.display = '');
+                renderGrid();
+            });
         });
     }
 
-    if (parentSelect) {
-        parents.forEach(parent => {
-            const option = document.createElement('option');
-            option.value = parent;
-            option.textContent = parent;
-            parentSelect.appendChild(option);
+    // Custom Parent Company Dropdown with Search
+    const parentFilterGroup = document.querySelector('#parent-filter')?.closest('.filter-group');
+    if (parentFilterGroup) {
+        const oldSelect = document.getElementById('parent-filter');
+        if (oldSelect) oldSelect.remove();
+
+        const dropdown = document.createElement('div');
+        dropdown.className = 'custom-dropdown';
+        dropdown.id = 'parent-dropdown';
+        dropdown.innerHTML = `
+            <div class="dropdown-selected" id="parent-selected">
+                <span class="dropdown-selected-text">${i18n.t('filters.parent_all') || 'Todas as Empresas'}</span>
+                <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"/>
+                </svg>
+            </div>
+            <div class="dropdown-menu" id="parent-menu">
+                <div class="dropdown-search-wrapper">
+                    <input type="text" class="dropdown-search" id="parent-search" placeholder="${i18n.t('filters.search_parent') || 'Pesquisar empresa...'}" autocomplete="off">
+                </div>
+                <div class="dropdown-list" id="parent-list">
+                    <div class="dropdown-item selected" data-value="all">${i18n.t('filters.parent_all') || 'Todas as Empresas'}</div>
+                    ${parents.map(p => `
+                        <div class="dropdown-item" data-value="${p.name}">
+                            <span class="country-name">${p.name}</span>
+                            <span class="country-count">${p.count}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+        parentFilterGroup.appendChild(dropdown);
+
+        const selected = dropdown.querySelector('#parent-selected');
+        const searchInput = dropdown.querySelector('#parent-search');
+        const list = dropdown.querySelector('#parent-list');
+
+        selected.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+            if (dropdown.classList.contains('open')) {
+                searchInput.focus();
+            }
         });
 
-        parentSelect.addEventListener('change', (e) => {
-            currentFilters.parent = e.target.value;
-            renderGrid();
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('open');
+            }
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            list.querySelectorAll('.dropdown-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+
+        list.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', () => {
+                list.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('selected'));
+                item.classList.add('selected');
+                const value = item.dataset.value;
+                currentFilters.parent = value;
+                selected.querySelector('.dropdown-selected-text').textContent =
+                    value === 'all'
+                        ? (i18n.t('filters.parent_all') || 'Todas as Empresas')
+                        : item.querySelector('.country-name')?.textContent || item.textContent;
+                dropdown.classList.remove('open');
+                searchInput.value = '';
+                list.querySelectorAll('.dropdown-item').forEach(i => i.style.display = '');
+                renderGrid();
+            });
         });
     }
 
@@ -74,8 +215,26 @@ function populateFilters() {
     if (clearBtn) {
         clearBtn.addEventListener('click', () => {
             currentFilters = { country: 'all', parent: 'all', search: '', sort: 'alphabetical' };
-            if (countrySelect) countrySelect.value = 'all';
-            if (parentSelect) parentSelect.value = 'all';
+            // Reset custom country dropdown
+            const countryDropdown = document.getElementById('country-dropdown');
+            if (countryDropdown) {
+                const selectedText = countryDropdown.querySelector('.dropdown-selected-text');
+                if (selectedText) selectedText.textContent = i18n.t('filters.country_all') || 'Todos os Países';
+                countryDropdown.querySelectorAll('.dropdown-item').forEach(i => {
+                    i.classList.remove('selected');
+                    if (i.dataset.value === 'all') i.classList.add('selected');
+                });
+            }
+            // Reset custom parent dropdown
+            const parentDropdown = document.getElementById('parent-dropdown');
+            if (parentDropdown) {
+                const selectedText = parentDropdown.querySelector('.dropdown-selected-text');
+                if (selectedText) selectedText.textContent = i18n.t('filters.parent_all') || 'Todas as Empresas';
+                parentDropdown.querySelectorAll('.dropdown-item').forEach(i => {
+                    i.classList.remove('selected');
+                    if (i.dataset.value === 'all') i.classList.add('selected');
+                });
+            }
             const sortSelect = document.getElementById('sort-filter');
             if (sortSelect) sortSelect.value = 'alphabetical';
             const searchInput = document.getElementById('search-filter');
