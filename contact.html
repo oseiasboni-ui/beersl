@@ -62,7 +62,7 @@
                 </nav>
             </div>
             <div class="header-right">
-                <button class="menu-toggle" id="menu-toggle">
+                <button class="menu-toggle" id="menu-toggle" onclick="window.beerslOpenMenu()">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -169,11 +169,10 @@
     <!-- Empty Modal Container -->
     <div id="modal-container" class="modal-container hidden"></div>
     <!-- Mobile Sidebar -->
-    <aside id="mobile-sidebar" class="mobile-sidebar"
-        style="position: fixed; top: 0; right: -300px; width: 300px; height: 100vh; background: var(--theme-sidebar-bg); box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column;">
+    <aside id="mobile-sidebar" class="mobile-sidebar">
         <div class="sidebar-header">
             <span class="sidebar-title">Menu</span>
-            <button class="sidebar-close" id="sidebar-close">✕</button>
+            <button class="sidebar-close" id="sidebar-close" onclick="window.beerslCloseMenu()">✕</button>
         </div>
         <nav class="sidebar-nav">
             <a href="index.html" class="sidebar-link">📊 <span data-i18n="nav.styles">Estilos</span></a>
@@ -191,46 +190,33 @@
         </div>
         <!-- Theme menu removed -->
     </aside>
-    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="window.beerslCloseMenu()"></div>
 
     <script type="module">
-        import { i18n } from './js/i18n/i18n.js?v=100';
+        import { i18n } from './js/i18n/i18n.js?v=101';
 
-        // Execute immediately
+        // Define Globals immediately
+        window.beerslOpenMenu = function () {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            if (sidebar) sidebar.classList.add('open');
+            if (overlay) overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            console.log('Menu Open (Global)');
+        };
+
+        window.beerslCloseMenu = function () {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            if (sidebar) sidebar.classList.remove('open');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            console.log('Menu Close (Global)');
+        };
+
+        // Execute initialization
         (function () {
-            // Remove any legacy theme
             document.documentElement.removeAttribute('data-theme');
-
-            // Menu Toggle (Delegation for robustness)
-            document.body.addEventListener('click', (e) => {
-                const toggleBtn = e.target.closest('#menu-toggle');
-                const closeBtn = e.target.closest('#sidebar-close');
-                const overlay = e.target.id === 'sidebar-overlay';
-
-                if (toggleBtn) {
-                    e.stopPropagation();
-                    toggleSidebar(true);
-                } else if (closeBtn || overlay) {
-                    e.stopPropagation();
-                    toggleSidebar(false);
-                }
-            });
-
-            function toggleSidebar(open) {
-                const sidebar = document.getElementById('mobile-sidebar');
-                const overlay = document.getElementById('sidebar-overlay');
-                if (!sidebar || !overlay) return;
-
-                if (open) {
-                    sidebar.classList.add('open');
-                    overlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    sidebar.classList.remove('open');
-                    overlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            }
 
             // Language Buttons
             const sidebarLangBtns = document.querySelectorAll('.lang-btn-sidebar');
