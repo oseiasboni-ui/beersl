@@ -40,6 +40,7 @@ export class Sidebar {
                      </svg>
                      <span data-i18n="sidebar.clear_filters">${i18n.t('sidebar.clear_filters')}</span>
                 </button>
+                <div id="active-ruler-filters" class="active-ruler-filters"></div>
             </div>
             
             <div class="filter-group">
@@ -70,9 +71,6 @@ export class Sidebar {
                     <li><label><span class="ibu-indicator" style="background: #a5d6a7;"></span> <input type="checkbox" value="15-25"> 15 – 25</label></li>
                     <li><label><span class="ibu-indicator" style="background: #81c784;"></span> <input type="checkbox" value="25-40"> 25 – 40</label></li>
                     <li><label><span class="ibu-indicator" style="background: #66bb6a;"></span> <input type="checkbox" value="40-60"> 40 – 60</label></li>
-                    <li><label><span class="ibu-indicator" style="background: #4caf50;"></span> <input type="checkbox" value="60-80"> 60 – 80</label></li>
-                    <li><label><span class="ibu-indicator" style="background: #43a047;"></span> <input type="checkbox" value="80-120"> 80 – 120</label></li>
-                    <li><label><span class="ibu-indicator" style="background: #2e7d32;"></span> <input type="checkbox" value="120+"> 120+</label></li>
                  </ul>
             </div>
         `;
@@ -129,6 +127,88 @@ export class Sidebar {
                 document.dispatchEvent(new CustomEvent('searchChanged', { detail: { query: '' } }));
             });
         }
+
+        // Checkbox filters (Fermentation, ABV, IBU)
+        const checkboxes = this.target.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => this.emitCheckboxFilters());
+        });
+    }
+
+    emitCheckboxFilters() {
+        const fermentationFilters = [];
+        const abvFilters = [];
+        const ibuFilters = [];
+
+        // Get fermentation filters
+        this.target.querySelectorAll('.filter-group:nth-child(3) input[type="checkbox"]:checked').forEach(cb => {
+            fermentationFilters.push(cb.value);
+        });
+
+        // Get ABV filters
+        this.target.querySelectorAll('.filter-group:nth-child(4) input[type="checkbox"]:checked').forEach(cb => {
+            abvFilters.push(cb.value);
+        });
+
+        // Get IBU filters
+        this.target.querySelectorAll('.filter-group:nth-child(5) input[type="checkbox"]:checked').forEach(cb => {
+            ibuFilters.push(cb.value);
+        });
+
+        document.dispatchEvent(new CustomEvent('sidebarFilterChanged', {
+            detail: {
+                fermentation: fermentationFilters,
+                abv: abvFilters,
+                ibu: ibuFilters
+            }
+        }));
+
+        // Update active filters display
+        this.updateActiveFiltersDisplay(fermentationFilters, abvFilters, ibuFilters);
+    }
+
+    updateActiveFiltersDisplay(fermentation, abv, ibu) {
+        const container = document.getElementById('active-ruler-filters');
+        const clearBtn = document.getElementById('clear-filters-btn');
+
+        if (!container) return;
+
+        // Get existing ruler filter badges
+        const existingBadges = container.querySelectorAll('.ruler-badge');
+        const rulerBadgesHtml = Array.from(existingBadges).map(b => b.outerHTML).join('');
+
+        let badges = [];
+
+        // Add fermentation badges
+        fermentation.forEach(f => {
+            const label = f.charAt(0).toUpperCase() + f.slice(1);
+            badges.push(`<span class="active-filter-badge sidebar-badge"><strong>Ferm:</strong> ${label}</span>`);
+        });
+
+        // Add ABV badges
+        abv.forEach(f => {
+            const labels = { 'session': '<4%', 'standard': '4-6%', 'high': '6-9%', 'very-high': '9%+' };
+            badges.push(`<span class="active-filter-badge sidebar-badge"><strong>ABV:</strong> ${labels[f] || f}</span>`);
+        });
+
+        // Add IBU badges
+        ibu.forEach(f => {
+            badges.push(`<span class="active-filter-badge sidebar-badge"><strong>IBU:</strong> ${f}</span>`);
+        });
+
+        container.innerHTML = rulerBadgesHtml + badges.join('');
+
+        // Update clear button style
+        const hasFilters = fermentation.length > 0 || abv.length > 0 || ibu.length > 0 ||
+            container.querySelectorAll('.ruler-badge').length > 0;
+
+        if (clearBtn) {
+            if (hasFilters) {
+                clearBtn.classList.add('has-active-filters');
+            } else {
+                clearBtn.classList.remove('has-active-filters');
+            }
+        }
     }
 
     clearAllFilters() {
@@ -142,6 +222,21 @@ export class Sidebar {
             searchInput.value = '';
             if (searchClear) searchClear.style.display = 'none';
             document.dispatchEvent(new CustomEvent('searchChanged', { detail: { query: '' } }));
+        }
+
+        // Clear ruler filters
+        document.dispatchEvent(new CustomEvent('clearRulerFilters'));
+
+        // Clear active ruler filters display
+        const activeRulerFilters = document.getElementById('active-ruler-filters');
+        if (activeRulerFilters) {
+            activeRulerFilters.innerHTML = '';
+        }
+
+        // Remove red styling from button
+        const clearBtn = document.getElementById('clear-filters-btn');
+        if (clearBtn) {
+            clearBtn.classList.remove('has-active-filters');
         }
 
         // Dispatch filter event
