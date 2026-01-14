@@ -14,8 +14,8 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/variables.css?v=32">
-    <link rel="stylesheet" href="css/styles.css?v=32">
+    <link rel="stylesheet" href="css/variables.css?v=33">
+    <link rel="stylesheet" href="css/styles.css?v=33">
     <style>
         /* Full width layout */
         .top-brands-main {
@@ -317,16 +317,102 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        /* Hero Carousel (Inlined for reliability) */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            /* Mobile height */
+            overflow: hidden;
+            background: #000;
+            flex-shrink: 0;
+            /* Prevent flex crushing */
+        }
+
+        @media (min-width: 1024px) {
+            .hero-container {
+                height: 200px;
+                /* Desktop height */
+            }
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero-dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-dot:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-dot.active {
+            background: white;
+            transform: scale(1.2);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
     </style>
 
-    <script type="module" src="js/app.js?v=31" defer></script>
-    <script type="module" src="js/top-brands.js?v=31" defer></script>
+    <script type="module" src="js/app.js?v=33" defer></script>
+    <script type="module" src="js/top-brands.js?v=33" defer></script>
 </head>
 
 <body>
     <div class="app-container">
         <!-- Header (Sticky) -->
         <header id="main-header" class="main-header"></header>
+
+        <!-- Hero Carousel -->
+        <div class="hero-container" id="hero-carousel">
+            <div class="hero-slide active">
+                <img src="images/hero-banner-1.jpg" alt="Beer SL Banner">
+            </div>
+            <div class="hero-slide">
+                <img src="images/hero-banner-2.jpg" alt="Beer Detail">
+            </div>
+            <div class="hero-dots" id="hero-dots">
+                <div class="hero-dot active" data-index="0"></div>
+                <div class="hero-dot" data-index="1"></div>
+            </div>
+        </div>
 
         <!-- Main Content -->
         <main class="top-brands-main">

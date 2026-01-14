@@ -503,3 +503,53 @@ document.addEventListener('DOMContentLoaded', () => {
     populateFilters();
     renderGrid();
 });
+
+/* Hero Carousel Logic */
+function initHeroCarousel() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
+    const intervalTime = 30000; // 30 seconds
+    let slideInterval;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        if (slides[index]) {
+            slides[index].classList.add('active');
+        }
+        if (dots[index]) {
+            dots[index].classList.add('active');
+        }
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    }
+
+    // Start auto rotation
+    function startRotation() {
+        if (slideInterval) clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    startRotation();
+
+    // Dots click event
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.dataset.index);
+            showSlide(index);
+            startRotation(); // Reset timer
+        });
+    });
+}
+
+// Initialise carousel when DOM is ready
+document.addEventListener('DOMContentLoaded', initHeroCarousel);
