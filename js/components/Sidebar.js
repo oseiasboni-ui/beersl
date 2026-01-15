@@ -37,7 +37,7 @@ export class Sidebar {
                     <input 
                         type="text" 
                         id="sidebar-search-input" 
-                        placeholder="Pesquisar estilos de..." 
+                        placeholder="${i18n.t('sidebar.search_placeholder')}" 
                         autocomplete="off"
                     >
                 </div>
@@ -45,7 +45,7 @@ export class Sidebar {
 
             <!-- Clear Filters Button -->
             <button id="clear-filters-btn" class="sidebar-clear-btn" style="display: none;">
-                <span class="clear-icon">✕</span> LIMPAR FILTROS
+                <span class="clear-icon">✕</span> ${i18n.t('sidebar.clear_filters')}
             </button>
             
             <!-- Active Filters Badges (Abbreviated) -->
@@ -56,7 +56,7 @@ export class Sidebar {
             <!-- Fermentation Section -->
             <div class="filter-section fermentation-section">
                 <div class="section-header">
-                    <span class="header-pill">FERMENTAÇÃO</span>
+                    <span class="header-pill">${i18n.t('sidebar.fermentation')}</span>
                     <div class="header-line"></div>
                 </div>
                 <ul class="filter-options">
@@ -64,28 +64,28 @@ export class Sidebar {
                         <label class="custom-checkbox">
                             <input type="checkbox" value="ale">
                             <span class="checkmark"></span>
-                            <span class="label-text">Ale</span>
+                            <span class="label-text">${i18n.t('sidebar.ale')}</span>
                         </label>
                     </li>
                     <li>
                         <label class="custom-checkbox">
                             <input type="checkbox" value="lager">
                             <span class="checkmark"></span>
-                            <span class="label-text">Lager</span>
+                            <span class="label-text">${i18n.t('sidebar.lager')}</span>
                         </label>
                     </li>
                     <li>
                         <label class="custom-checkbox">
                             <input type="checkbox" value="hibrida">
                             <span class="checkmark"></span>
-                            <span class="label-text">Híbrida</span>
+                            <span class="label-text">${i18n.t('sidebar.hybrid')}</span>
                         </label>
                     </li>
                     <li>
                         <label class="custom-checkbox">
                             <input type="checkbox" value="wild">
                             <span class="checkmark"></span>
-                            <span class="label-text">Selvagem</span>
+                            <span class="label-text">${i18n.t('sidebar.wild')}</span>
                         </label>
                     </li>
                 </ul>
@@ -96,7 +96,7 @@ export class Sidebar {
             <!-- ABV Section -->
             <div class="filter-section abv-section">
                 <div class="section-header">
-                    <span class="header-pill">TEOR ALCOÓLICO (ABV)</span>
+                    <span class="header-pill">${i18n.t('sidebar.abv')}</span>
                     <div class="header-line"></div>
                 </div>
                 <ul class="filter-options">
@@ -104,28 +104,28 @@ export class Sidebar {
                         <label class="custom-checkbox">
                             <input type="checkbox" value="session">
                             <span class="checkmark"></span>
-                            <span class="label-text">Baixo: < 4.0%</span>
+                            <span class="label-text">${i18n.t('sidebar.abv.low')}</span>
                         </label>
                     </li>
                     <li>
                         <label class="custom-checkbox">
                             <input type="checkbox" value="standard">
                             <span class="checkmark"></span>
-                            <span class="label-text">Normal: 4.0% - 6.0%</span>
+                            <span class="label-text">${i18n.t('sidebar.abv.normal')}</span>
                         </label>
                     </li>
                     <li>
                         <label class="custom-checkbox">
                             <input type="checkbox" value="high">
                             <span class="checkmark"></span>
-                            <span class="label-text">Alto: 6.0% - 9.0%</span>
+                            <span class="label-text">${i18n.t('sidebar.abv.high')}</span>
                         </label>
                     </li>
                     <li>
                         <label class="custom-checkbox">
                             <input type="checkbox" value="very-high">
                             <span class="checkmark"></span>
-                            <span class="label-text">Muito Alto: > 9.0%</span>
+                            <span class="label-text">${i18n.t('sidebar.abv.very_high')}</span>
                         </label>
                     </li>
                 </ul>
@@ -136,7 +136,7 @@ export class Sidebar {
             <!-- IBU Section -->
             <div class="filter-section ibu-section">
                 <div class="section-header">
-                    <span class="header-pill">IBU (AMARGOR)</span>
+                    <span class="header-pill">${i18n.t('sidebar.ibu')}</span>
                     <div class="header-line"></div>
                 </div>
                 <ul class="filter-options ibu-options">
@@ -302,25 +302,34 @@ export class Sidebar {
 
         // Abbreviate and collect badges - logic simplified, styles in CSS (green text)
         fermentation.forEach(f => {
-            const label = f.charAt(0).toUpperCase() + f.slice(1);
-            badges.push(`<span class="filter-badge">Ferm: ${label}</span>`);
+            const labelKey = `sidebar.${f.toLowerCase()}`;
+            const label = i18n.t(labelKey);
+            badges.push(`<span class="filter-badge">${i18n.t('sidebar.fermentation')}: ${label}</span>`);
         });
 
         abv.forEach(f => {
-            const labels = { 'session': '<4%', 'standard': '4-6%', 'high': '6-9%', 'very-high': '>9%' };
-            badges.push(`<span class="filter-badge">ABV: ${labels[f] || f}</span>`);
+            // Map values to existing keys just for consistency or create short versions? 
+            // Reuse the full text keys for now as they are descriptive: "Baixo: < 4.0%"
+            // Or maybe just show the range part? User said "names are buggy".
+            // Let's use the full keys we added
+            let key = 'sidebar.abv.low';
+            if (f === 'standard') key = 'sidebar.abv.normal';
+            if (f === 'high') key = 'sidebar.abv.high';
+            if (f === 'very-high') key = 'sidebar.abv.very_high';
+
+            badges.push(`<span class="filter-badge">${i18n.t('sidebar.abv')}: ${i18n.t(key)}</span>`);
         });
 
         ibu.forEach(f => {
-            badges.push(`<span class="filter-badge">IBU: ${f}</span>`);
+            badges.push(`<span class="filter-badge">${i18n.t('sidebar.ibu')}: ${f}</span>`);
         });
 
         // Add Ruler Badges
         if (this.rulerState.srmLabel) {
-            badges.push(`<span class="filter-badge">Cor: ${this.rulerState.srmLabel}</span>`);
+            badges.push(`<span class="filter-badge">${i18n.t('modal.color')}: ${this.rulerState.srmLabel}</span>`);
         }
         if (this.rulerState.ftuLabel) {
-            badges.push(`<span class="filter-badge">Claridade: ${this.rulerState.ftuLabel}</span>`);
+            badges.push(`<span class="filter-badge">${i18n.t('modal.clarity_label')}: ${this.rulerState.ftuLabel}</span>`);
         }
 
         if (badges.length > 0) {

@@ -64,7 +64,7 @@ export class Grid {
                         <h3>${displayName}</h3>
                         <span class="card-origin-flag">${beer.origin || '🌍'}</span>
                     </div>
-                    <div class="family">${fermentationType}</div>
+                    <div class="family">${i18n.t('sidebar.' + fermentationType.toLowerCase())}</div>
                     <div class="card-stats">
                         <span class="stat-badge">ABV: ${beer.abv || '?'}</span>
                         <span class="stat-badge">IBU: ${beer.specs?.ibu || '?'}</span>

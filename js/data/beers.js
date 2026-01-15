@@ -6015,9 +6015,9 @@ export const beers = [
             foam: 'beer.autumn-seasonal-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.autumn-seasonal-beer.sensory.aroma',
-            flavor: 'beer.autumn-seasonal-beer.sensory.flavor',
-            bitterness: 'beer.autumn-seasonal-beer.sensory.bitterness'
+            malte: 60,
+            lupulo: 20,
+            levedura: 20
         },
         mouthfeel: {
             body: 'beer.autumn-seasonal-beer.mouthfeel.body',
@@ -6075,9 +6075,9 @@ export const beers = [
             foam: 'beer.winter-seasonal-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.winter-seasonal-beer.sensory.aroma',
-            flavor: 'beer.winter-seasonal-beer.sensory.flavor',
-            bitterness: 'beer.winter-seasonal-beer.sensory.bitterness'
+            malte: 70,
+            lupulo: 15,
+            levedura: 15
         },
         mouthfeel: {
             body: 'beer.winter-seasonal-beer.mouthfeel.body',
@@ -6136,9 +6136,9 @@ export const beers = [
             foam: 'beer.specialty-spice-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.specialty-spice-beer.sensory.aroma',
-            flavor: 'beer.specialty-spice-beer.sensory.flavor',
-            bitterness: 'beer.specialty-spice-beer.sensory.bitterness'
+            malte: 40,
+            lupulo: 30,
+            levedura: 30
         },
         mouthfeel: {
             body: 'beer.specialty-spice-beer.mouthfeel.body',
@@ -6194,9 +6194,9 @@ export const beers = [
             foam: 'beer.alternative-grain-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.alternative-grain-beer.sensory.aroma',
-            flavor: 'beer.alternative-grain-beer.sensory.flavor',
-            bitterness: 'beer.alternative-grain-beer.sensory.bitterness'
+            malte: 50,
+            lupulo: 25,
+            levedura: 25
         },
         mouthfeel: {
             body: 'beer.alternative-grain-beer.mouthfeel.body',
@@ -6255,9 +6255,9 @@ export const beers = [
             foam: 'beer.alternative-sugar-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.alternative-sugar-beer.sensory.aroma',
-            flavor: 'beer.alternative-sugar-beer.sensory.flavor',
-            bitterness: 'beer.alternative-sugar-beer.sensory.bitterness'
+            malte: 40,
+            lupulo: 20,
+            levedura: 40
         },
         mouthfeel: {
             body: 'beer.alternative-sugar-beer.mouthfeel.body',
@@ -6314,9 +6314,9 @@ export const beers = [
             foam: 'beer.classic-style-smoked-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.classic-style-smoked-beer.sensory.aroma',
-            flavor: 'beer.classic-style-smoked-beer.sensory.flavor',
-            bitterness: 'beer.classic-style-smoked-beer.sensory.bitterness'
+            malte: 80,
+            lupulo: 15,
+            levedura: 5
         },
         mouthfeel: {
             body: 'beer.classic-style-smoked-beer.mouthfeel.body',
@@ -6374,9 +6374,9 @@ export const beers = [
             foam: 'beer.specialty-smoked-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.specialty-smoked-beer.sensory.aroma',
-            flavor: 'beer.specialty-smoked-beer.sensory.flavor',
-            bitterness: 'beer.specialty-smoked-beer.sensory.bitterness'
+            malte: 70,
+            lupulo: 20,
+            levedura: 10
         },
         mouthfeel: {
             body: 'beer.specialty-smoked-beer.mouthfeel.body',
@@ -6434,9 +6434,9 @@ export const beers = [
             foam: 'beer.wood-aged-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.wood-aged-beer.sensory.aroma',
-            flavor: 'beer.wood-aged-beer.sensory.flavor',
-            bitterness: 'beer.wood-aged-beer.sensory.bitterness'
+            malte: 60,
+            lupulo: 15,
+            levedura: 25
         },
         mouthfeel: {
             body: 'beer.wood-aged-beer.mouthfeel.body',
@@ -6494,9 +6494,9 @@ export const beers = [
             foam: 'beer.specialty-wood-aged-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.specialty-wood-aged-beer.sensory.aroma',
-            flavor: 'beer.specialty-wood-aged-beer.sensory.flavor',
-            bitterness: 'beer.specialty-wood-aged-beer.sensory.bitterness'
+            malte: 60,
+            lupulo: 15,
+            levedura: 25
         },
         mouthfeel: {
             body: 'beer.specialty-wood-aged-beer.mouthfeel.body',
@@ -6554,9 +6554,9 @@ export const beers = [
             foam: 'beer.commercial-specialty-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.commercial-specialty-beer.sensory.aroma',
-            flavor: 'beer.commercial-specialty-beer.sensory.flavor',
-            bitterness: 'beer.commercial-specialty-beer.sensory.bitterness'
+            malte: 40,
+            lupulo: 30,
+            levedura: 30
         },
         mouthfeel: {
             body: 'beer.commercial-specialty-beer.mouthfeel.body',
@@ -6613,9 +6613,9 @@ export const beers = [
             foam: 'beer.mixed-style-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.mixed-style-beer.sensory.aroma',
-            flavor: 'beer.mixed-style-beer.sensory.flavor',
-            bitterness: 'beer.mixed-style-beer.sensory.bitterness'
+            malte: 50,
+            lupulo: 25,
+            levedura: 25
         },
         mouthfeel: {
             body: 'beer.mixed-style-beer.mouthfeel.body',
@@ -6672,9 +6672,9 @@ export const beers = [
             foam: 'beer.experimental-beer.appearance.foam'
         },
         sensory: {
-            aroma: 'beer.experimental-beer.sensory.aroma',
-            flavor: 'beer.experimental-beer.sensory.flavor',
-            bitterness: 'beer.experimental-beer.sensory.bitterness'
+            malte: 33,
+            lupulo: 33,
+            levedura: 34
         },
         mouthfeel: {
             body: 'beer.experimental-beer.mouthfeel.body',

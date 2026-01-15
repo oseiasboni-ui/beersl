@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Initialize Modal
-    new Modal('modal-container');
+    new Modal('modal-container', beers);
 
     // Hide filters bar
     const filtersBar = document.getElementById('filters-bar');

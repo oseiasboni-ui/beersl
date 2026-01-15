@@ -36,6 +36,21 @@ export const translations = {
         "footer.top_brands": "Top Marcas de Cerveja",
         "top_brands.content_placeholder": "Conteúdo em breve...",
 
+        // Sidebar
+        "sidebar.search_placeholder": "Pesquisar estilos de...",
+        "sidebar.clear_filters": "LIMPAR FILTROS",
+        "sidebar.fermentation": "FERMENTAÇÃO",
+        "sidebar.abv": "TEOR ALCOÓLICO (ABV)",
+        "sidebar.ibu": "IBU (AMARGOR)",
+        "sidebar.ale": "Ale",
+        "sidebar.lager": "Lager",
+        "sidebar.hybrid": "Híbrida",
+        "sidebar.wild": "Selvagem",
+        "sidebar.abv.low": "Baixo: < 4.0%",
+        "sidebar.abv.normal": "Normal: 4.0% - 6.0%",
+        "sidebar.abv.high": "Alto: 6.0% - 9.0%",
+        "sidebar.abv.very_high": "Muito Alto: > 9.0%",
+
 
 
         // Top Brands Filters & UI
@@ -2757,6 +2772,21 @@ export const translations = {
         "footer.top_brands": "Top Beer Brands",
         "top_brands.content_placeholder": "Content coming soon...",
 
+        // Sidebar
+        "sidebar.search_placeholder": "Search styles...",
+        "sidebar.clear_filters": "CLEAR FILTERS",
+        "sidebar.fermentation": "FERMENTATION",
+        "sidebar.abv": "ALCOHOL (ABV)",
+        "sidebar.ibu": "IBU (BITTERNESS)",
+        "sidebar.ale": "Ale",
+        "sidebar.lager": "Lager",
+        "sidebar.hybrid": "Hybrid",
+        "sidebar.wild": "Wild",
+        "sidebar.abv.low": "Low: < 4.0%",
+        "sidebar.abv.normal": "Standard: 4.0% - 6.0%",
+        "sidebar.abv.high": "High: 6.0% - 9.0%",
+        "sidebar.abv.very_high": "Very High: > 9.0%",
+
         // Top Brands Filters & UI
         "filters.search_label": "Search",
         "filters.search_placeholder": "Search beers...",
@@ -5448,6 +5478,21 @@ export const translations = {
         "theme.dark": "Dunkel",
         "header.title": "Top Marken",
         "header.language": "Sprache",
+
+        // Sidebar
+        "sidebar.search_placeholder": "Stile suchen...",
+        "sidebar.clear_filters": "FILTER LÖSCHEN",
+        "sidebar.fermentation": "GÄRUNG",
+        "sidebar.abv": "ALKOHOL (ABV)",
+        "sidebar.ibu": "IBU (BITTERKEIT)",
+        "sidebar.ale": "Ale",
+        "sidebar.lager": "Lager",
+        "sidebar.hybrid": "Hybrid",
+        "sidebar.wild": "Wild",
+        "sidebar.abv.low": "Niedrig: < 4.0%",
+        "sidebar.abv.normal": "Standard: 4.0% - 6.0%",
+        "sidebar.abv.high": "Hoch: 6.0% - 9.0%",
+        "sidebar.abv.very_high": "Sehr Hoch: > 9.0%",
         "lang.pt": "Portugiesisch",
         "lang.en": "Englisch",
         "lang.de": "Deutsch",

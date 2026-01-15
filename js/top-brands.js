@@ -1,7 +1,7 @@
 import { top250Beers } from './data/top-250-beers.js?v=40';
 import { getBeerInfo } from './data/beer-parent-companies.js?v=40';
 import { popularityRanking } from './data/ranking.js?v=40';
-import { i18n } from './i18n/i18n.js?v=40';
+import { i18n } from './i18n/i18n.js';
 import { beerHistoriesEn } from './data/beer-histories-en.js?v=40';
 import { beerHistoriesDe } from './data/beer-histories-de.js?v=40';
 import { translateRegion, translateOrigin } from './i18n/data-translations.js?v=40';
