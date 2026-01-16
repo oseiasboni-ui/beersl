@@ -18,6 +18,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/variables.css?v=46">
     <link rel="stylesheet" href="css/styles.css?v=46">
+    <!-- Cropper.js for image cropping -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
 
     <script type="module" src="js/app.js" defer></script>
 </head>
@@ -123,6 +125,30 @@
         <!-- Theme menu removed -->
     </aside>
     <div id="sidebar-overlay" class="sidebar-overlay" onclick="window.beerslCloseMenu()"></div>
+
+    <!-- Hidden file input for beer style image upload -->
+    <input type="file" id="beer-style-image-input" accept="image/*" style="display: none;">
+
+    <!-- Image Crop Modal -->
+    <div id="style-upload-modal" class="upload-modal">
+        <div class="upload-modal-content">
+            <div class="upload-modal-header">
+                <h3>Crop Image</h3>
+                <button id="style-btn-close" class="upload-modal-close">&times;</button>
+            </div>
+            <div class="upload-modal-body">
+                <img id="style-image-to-crop" src="" alt="Image to crop">
+            </div>
+            <div class="upload-modal-footer">
+                <button id="style-btn-rotate" class="upload-btn secondary">↻ Rotate</button>
+                <button id="style-btn-discard" class="upload-btn secondary">Discard</button>
+                <button id="style-btn-save" class="upload-btn primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cropper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 
     <script type="module">
         import { i18n } from './js/i18n/i18n.js';

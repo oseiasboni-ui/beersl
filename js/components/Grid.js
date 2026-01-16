@@ -57,9 +57,10 @@ export class Grid {
         const translatedName = i18n.t(translationKey);
         const displayName = translatedName !== translationKey ? translatedName : beer.name;
 
-        // Check if beer has a custom uploaded image
-        const hasCustomImage = beer.image && !beer.image.includes('placeholder');
-        const imageUrl = hasCustomImage ? beer.image : null;
+        // Check localStorage for custom uploaded image first
+        const storedImage = localStorage.getItem(`beer-style-image-${beer.id}`);
+        const hasCustomImage = storedImage || (beer.image && !beer.image.includes('placeholder'));
+        const imageUrl = storedImage || (hasCustomImage ? beer.image : null);
 
         // Get fermentation type (Ale, Lager, Hybrid, Wild) from category
         const getFermentationType = (category) => {

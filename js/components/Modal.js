@@ -6,6 +6,8 @@ export class Modal {
         this.container = document.getElementById(targetId);
         this.beers = beers;
         this.currentIndex = -1;
+        this.currentBeer = null; // Track current beer for image upload
+        this.cropper = null; // Cropper.js instance
         this.renderShell();
 
         // Bind methods to ensure 'this' context logic
@@ -27,6 +29,11 @@ export class Modal {
             if (e.target.closest('.modal-next-btn')) {
                 this.navigate(1);
             }
+            // Handle upload button click
+            if (e.target.closest('.modal-upload-btn')) {
+                const fileInput = document.getElementById('beer-style-image-input');
+                if (fileInput) fileInput.click();
+            }
         });
 
         // Touch handling state
@@ -40,6 +47,9 @@ export class Modal {
         document.addEventListener('openModal', (e) => {
             this.open(e.detail);
         });
+
+        // Setup image upload handlers
+        this.setupImageUpload();
     }
 
     renderShell() {
@@ -155,6 +165,8 @@ export class Modal {
     async open(beer) {
         if (!beer) return;
 
+        this.currentBeer = beer; // Store reference for image upload
+
         // Find index of current beer to establish context for navigation
         if (this.beers.length > 0) {
             this.currentIndex = this.beers.findIndex(b => b.id === beer.id);
@@ -255,9 +267,12 @@ export class Modal {
     }
 
     renderContent(beer) {
-        // Determine image URL
-        const hasCustomImage = beer.image && !beer.image.includes('placeholder');
-        const imageUrl = hasCustomImage ? beer.image : null;
+        this.currentBeer = beer; // Update current beer reference
+
+        // Check localStorage for custom uploaded image first
+        const storedImage = localStorage.getItem(`beer-style-image-${beer.id}`);
+        const hasCustomImage = storedImage || (beer.image && !beer.image.includes('placeholder'));
+        const imageUrl = storedImage || (hasCustomImage ? beer.image : null);
 
         // Determine fermentation type (Ale, Lager, Hybrid, Wild)
         const getFermentationType = (category) => {
@@ -270,17 +285,27 @@ export class Modal {
         };
         const fermentationType = getFermentationType(beer.category);
 
+        const uploadButtonHtml = `
+            <button class="modal-upload-btn" title="Upload Image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+            </button>
+        `;
+
         const leftContent = `
             <div class="modal-info-tag">${fermentationType}</div>
             
-            ${imageUrl ? `
-                <div style="text-align: center; margin: 2rem 0;">
+            <div class="modal-image-container" style="text-align: center; margin: 2rem 0; position: relative;">
+                ${uploadButtonHtml}
+                ${imageUrl ? `
                     <img src="${imageUrl}" alt="${beer.name}" 
                          style="max-width: 100%; max-height: 250px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                </div>
-            ` : `
-                <div class="beer-detail-glass" style="background-color: ${beer.appearance?.colorHex || '#f1c40f'}"></div>
-            `}
+                ` : `
+                    <div class="beer-detail-glass" style="background-color: ${beer.appearance?.colorHex || '#f1c40f'}"></div>
+                `}
+            </div>
             
             <div style="margin-top: 2rem; text-align: center; font-size: 0.8rem; opacity: 0.7;">
                 ${this.currentIndex + 1} / ${this.beers.length || 139}
@@ -391,6 +416,94 @@ export class Modal {
 
         document.getElementById('modal-left').innerHTML = leftContent;
         document.getElementById('modal-right').innerHTML = rightContent;
+    }
+
+    setupImageUpload() {
+        const fileInput = document.getElementById('beer-style-image-input');
+        const uploadModal = document.getElementById('style-upload-modal');
+        const imageToCrop = document.getElementById('style-image-to-crop');
+        const btnSave = document.getElementById('style-btn-save');
+        const btnDiscard = document.getElementById('style-btn-discard');
+        const btnRotate = document.getElementById('style-btn-rotate');
+        const btnClose = document.getElementById('style-btn-close');
+
+        if (!fileInput || !uploadModal || !imageToCrop) return;
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (evt) => {
+                    imageToCrop.src = evt.target.result;
+                    uploadModal.classList.add('open');
+
+                    if (this.cropper) {
+                        this.cropper.destroy();
+                    }
+
+                    this.cropper = new Cropper(imageToCrop, {
+                        aspectRatio: 1, // Square crop for beer styles
+                        viewMode: 1,
+                        autoCropArea: 1,
+                    });
+                };
+                reader.readAsDataURL(file);
+            }
+            // Reset input so same file can be selected again
+            e.target.value = '';
+        });
+
+        // Close/Discard handlers
+        const closeUploadModal = () => {
+            uploadModal.classList.remove('open');
+            if (this.cropper) {
+                this.cropper.destroy();
+                this.cropper = null;
+            }
+        };
+
+        btnDiscard.addEventListener('click', closeUploadModal);
+        btnClose.addEventListener('click', closeUploadModal);
+
+        // Rotate handler
+        btnRotate.addEventListener('click', () => {
+            if (this.cropper) {
+                this.cropper.rotate(90);
+            }
+        });
+
+        // Save handler
+        btnSave.addEventListener('click', () => {
+            if (this.cropper && this.currentBeer) {
+                const canvas = this.cropper.getCroppedCanvas({
+                    width: 500,
+                    height: 500
+                });
+
+                const croppedImage = canvas.toDataURL('image/jpeg', 0.9);
+
+                // Save to localStorage
+                localStorage.setItem(`beer-style-image-${this.currentBeer.id}`, croppedImage);
+
+                // Update current beer in-memory
+                this.currentBeer.hasCustomImage = true;
+                this.currentBeer.customImage = croppedImage;
+
+                // Update modal view
+                this.renderContent(this.currentBeer);
+
+                // Dispatch update event for grid
+                const updateEvent = new CustomEvent('beerUpdated', {
+                    detail: {
+                        ...this.currentBeer,
+                        image: croppedImage
+                    }
+                });
+                document.dispatchEvent(updateEvent);
+
+                closeUploadModal();
+            }
+        });
     }
 
     renderSensoryBar(label, value, type) {

@@ -3280,3 +3280,137 @@ html[lang="pt-BR"] .site-subtitle {
     padding: 3px 10px;
     font-weight: 700;
 }
+/* ========================================
+   BEER STYLE IMAGE UPLOAD MODAL
+   ======================================== */
+
+.upload-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-modal.open {
+    display: flex;
+}
+
+.upload-modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.upload-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.upload-modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.upload-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    padding: 0 0.5rem;
+}
+
+.upload-modal-close:hover {
+    color: #333;
+}
+
+.upload-modal-body {
+    padding: 1.5rem;
+    max-height: 60vh;
+    overflow: hidden;
+}
+
+.upload-modal-body img {
+    max-width: 100%;
+    display: block;
+}
+
+.upload-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+    background: #f8f9fa;
+}
+
+.upload-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.upload-btn.primary {
+    background: #f97316;
+    color: white;
+}
+
+.upload-btn.primary:hover {
+    background: #ea580c;
+}
+
+.upload-btn.secondary {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.upload-btn.secondary:hover {
+    background: #d1d5db;
+}
+
+/* Upload button in modal */
+.modal-upload-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10;
+    color: #4b5563;
+}
+
+.modal-upload-btn:hover {
+    background: white;
+    color: #f97316;
+    transform: scale(1.1);
+}
+
+.modal-image-container {
+    position: relative;
+    display: inline-block;
+}
