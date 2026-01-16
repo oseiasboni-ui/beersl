@@ -343,8 +343,15 @@ function renderGrid() {
     // Only beer name with hover handler for popup
     grid.innerHTML = filteredBeers.map(beer => {
         const info = getBeerInfo(beer);
+        const storedImage = localStorage.getItem(`brand-image-${beer}`);
+        const hasImage = !!storedImage;
+
         return `
-            <div class="brand-item" data-beer="${beer}" style="border-left: 4px solid ${info.color};">
+            <div class="brand-item ${hasImage ? 'has-image' : ''}" data-beer="${beer}" style="border-left: 4px solid ${info.color};">
+                <button class="edit-image-btn" title="Upload Image" data-beer="${beer.replace(/'/g, "\\'")}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                </button>
+                ${hasImage ? `<img src="${storedImage}" alt="${beer}" class="brand-image-preview">` : ''}
                 <span class="brand-name">${beer}</span>
             </div>
         `;
@@ -355,51 +362,155 @@ function renderGrid() {
         grid.innerHTML = `<div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 2rem; color: #6b7280;">${i18n.t('brands.no_results')}</div>`;
     }
 
-    // Add hover handlers with 500ms delay
-    grid.querySelectorAll('.brand-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
+
+
+    // Hide popup when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.brand-item') &&
+            !e.target.closest('.beer-popup') &&
+            !e.target.closest('.upload-modal') &&
+            !e.target.closest('.cropper-container')) {
+            hidePopup();
+        }
+    });
+
+
+}
+
+// Global state for upload
+let currentUploadBeer = null;
+let cropper = null;
+
+// New robust event delegation system
+function initializeInteractions() {
+    const mainContainer = document.querySelector('.top-brands-container');
+
+    if (mainContainer) {
+        // 1. Hover Delegation (Popup)
+        mainContainer.addEventListener('mouseover', (e) => {
+            const item = e.target.closest('.brand-item');
+            if (!item) return;
+
             const beerName = item.dataset.beer;
 
-            // Clear any existing timeout
-            if (hoverTimeout) {
-                clearTimeout(hoverTimeout);
-            }
-
-            // Hide any existing popup
+            if (hoverTimeout) clearTimeout(hoverTimeout);
             hidePopup();
 
-            // Set timeout for 500ms before showing popup
             hoverTimeout = setTimeout(() => {
                 showPopup(beerName, item);
             }, 500);
         });
 
-        item.addEventListener('mouseleave', (e) => {
-            // Clear the timeout if mouse leaves before 500ms
+        mainContainer.addEventListener('mouseout', (e) => {
+            const item = e.target.closest('.brand-item');
+            if (!item) return;
+
             if (hoverTimeout) {
                 clearTimeout(hoverTimeout);
                 hoverTimeout = null;
             }
 
-            // Check if mouse moved to popup
             const relatedTarget = e.relatedTarget;
             if (relatedTarget && relatedTarget.closest('.beer-popup')) {
-                return; // Don't hide if moving to popup
+                return;
             }
 
-            // Small delay before hiding to allow moving to popup
             setTimeout(() => {
                 if (currentPopup && !currentPopup.matches(':hover') && !item.matches(':hover')) {
                     hidePopup();
                 }
             }, 100);
         });
-    });
 
-    // Hide popup when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.brand-item') && !e.target.closest('.beer-popup')) {
-            hidePopup();
+        // 2. Click Delegation (Upload)
+        mainContainer.addEventListener('click', (e) => {
+            const btn = e.target.closest('.edit-image-btn');
+            if (btn) {
+                const beerName = btn.dataset.beer;
+                currentUploadBeer = beerName;
+
+                const fileInput = document.getElementById('brand-image-input');
+                if (fileInput) fileInput.click();
+            }
+        });
+    }
+
+    // 3. File Input Change Logic
+    const fileInput = document.getElementById('brand-image-input');
+    const modal = document.getElementById('upload-modal');
+    const imageElement = document.getElementById('image-to-crop');
+
+    if (fileInput && modal && imageElement) {
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    imageElement.src = e.target.result;
+                    modal.classList.add('open');
+                    if (cropper) cropper.destroy();
+
+                    imageElement.onload = function () {
+                        cropper = new Cropper(imageElement, {
+                            aspectRatio: 1,
+                            viewMode: 1,
+                            autoCropArea: 0.8
+                        });
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+            fileInput.value = '';
+        });
+    }
+}
+
+// Initialize global handlers once
+// Initialize global handlers immediately (script is defer/module so DOM is ready)
+initializeInteractions();
+const modal = document.getElementById('upload-modal');
+const btnSave = document.getElementById('btn-save');
+const btnDiscard = document.getElementById('btn-discard');
+const btnRotate = document.getElementById('btn-rotate');
+
+if (btnSave) {
+    btnSave.addEventListener('click', () => {
+        if (cropper && currentUploadBeer) {
+            const canvas = cropper.getCroppedCanvas({
+                width: 300,
+                height: 300
+            });
+
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+
+            // Save to localStorage
+            localStorage.setItem(`brand-image-${currentUploadBeer}`, dataUrl);
+
+            // Update grid
+            renderGrid();
+
+            // Close modal
+            modal.classList.remove('open');
+            cropper.destroy();
+            cropper = null;
+        }
+    });
+}
+
+if (btnDiscard) {
+    btnDiscard.addEventListener('click', () => {
+        modal.classList.remove('open');
+        if (cropper) {
+            cropper.destroy();
+            cropper = null;
+        }
+    });
+}
+
+if (btnRotate) {
+    btnRotate.addEventListener('click', () => {
+        if (cropper) {
+            cropper.rotate(90);
         }
     });
 }
