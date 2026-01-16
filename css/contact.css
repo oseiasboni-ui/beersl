@@ -1,0 +1,12 @@
+        /* Contact Page Styles */
+        .app-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-main {
+            flex: 1;
+        }
+
+        /* Footer styles removed */

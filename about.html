@@ -18,69 +18,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/variables.css?v=46">
     <link rel="stylesheet" href="css/styles.css?v=46">
-    <style>
-        /* Embedded CSS for About Page Specifics */
-        .about-main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4rem 2rem;
-            min-height: calc(100vh - var(--header-height));
-            background-image: url('img/about-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-
-        .about-main::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .about-container {
-            max-width: 800px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            background: transparent;
-            padding: 3rem;
-            border-radius: 0;
-            box-shadow: none;
-            margin-top: -1cm;
-        }
-
-        .about-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .about-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .about-text:last-of-type {
-            margin-bottom: 0;
-        }
-
-        /* Footer styles removed (moved to global styles) */
-    </style>
+    <link rel="stylesheet" href="css/about.css?v=1">
 
     <script type="module" src="js/app.js" defer></script>
 </head>
