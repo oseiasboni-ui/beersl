@@ -4,14 +4,6 @@ export class Hero {
     constructor(targetId) {
         this.target = document.getElementById(targetId);
         this.timers = [];
-        this.bannerIndex = 0;
-        this.phrases = [
-            { id: 'phrase1', color: '#ff9e00' }, // Amber
-            { id: 'phrase2', color: '#ff006e' }, // Hot Pink
-            { id: 'phrase3', color: '#3a86ff' }, // Blue
-            { id: 'phrase4', color: '#8338ec' }, // Purple
-            { id: 'phrase5', color: '#fb5607' }  // Orange Red
-        ];
     }
 
     render() {
@@ -21,13 +13,8 @@ export class Hero {
             <div class="hero-image-container">
                 <img src="img/hero.png" alt="BeerSL Hero" class="hero-img">
                 
-                <!-- Rotating Banner (Top Left) -->
-                <div class="hero-banner-container">
-                    <div id="hero-rotating-text" class="rotating-text">
-                        <div class="banner-line title"></div>
-                        <div class="banner-line subtitle"></div>
-                    </div>
-                </div>
+                <!-- Rotating Banner (Top Left) - REMOVED -->
+
                 
                 <!-- Animated Text Overlays -->
                 <span class="hero-text-overlay hero-word-1" id="hero-word-1"></span>
@@ -42,11 +29,9 @@ export class Hero {
         // Listen for language changes to update text/restart loop
         window.addEventListener('languageChanged', () => {
             this.restartAnimation();
-            this.updateBannerText();
         });
 
         this.startAnimation();
-        this.startBannerRotation();
     }
 
     updateText() {
@@ -127,36 +112,5 @@ export class Hero {
     addTimer(fn, delay) {
         const t = setTimeout(fn, delay);
         this.timers.push(t);
-    }
-
-    // --- Banner Rotation ---
-    startBannerRotation() {
-        if (this.bannerTimer) clearTimeout(this.bannerTimer);
-        this.runBannerCycle();
-    }
-
-    runBannerCycle() {
-        const container = this.target.querySelector('#hero-rotating-text');
-        if (!container) return;
-
-        const phrase = this.phrases[this.bannerIndex];
-        const titleEl = container.querySelector('.title');
-        const subtitleEl = container.querySelector('.subtitle');
-
-        const titleText = i18n.t(`banner.${phrase.id}.title`);
-        const subtitleText = i18n.t(`banner.${phrase.id}.subtitle`);
-
-        titleEl.textContent = titleText || "Start Advertising";
-        subtitleEl.textContent = subtitleText || "Grow your brand today.";
-        titleEl.style.color = phrase.color;
-
-        this.bannerTimer = setTimeout(() => {
-            this.bannerIndex = (this.bannerIndex + 1) % this.phrases.length;
-            this.runBannerCycle();
-        }, 6000);
-    }
-
-    updateBannerText() {
-        this.startBannerRotation();
     }
 }

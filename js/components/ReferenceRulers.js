@@ -38,6 +38,10 @@ export class ReferenceRulers {
             this.selectedSrmIndex = null;
             this.selectedClarityIndex = null;
             this.render();
+            // Removed: this.emitFilterChange() should only be emitted when user interacts with ruler directly?
+            // Actually, if sidebar clears it, we just update UI. The sidebar already knows filters are cleared.
+            // But if we want to be safe, we can emit or just let sidebar handle it.
+            // Keeping it consistent with previous behavior but cleaner.
             this.emitFilterChange();
         });
     }
@@ -101,22 +105,12 @@ export class ReferenceRulers {
                 </div>
             </div>
 
-             <!-- Active Filters & Clear Button Container -->
-            <div id="ruler-active-filters-container" class="ruler-active-filters-container" style="display: none; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-top: 1rem; gap: 0.5rem;">
-                 <!-- Clear Filters Button -->
-                <button id="clear-ruler-filters" class="sidebar-clear-btn" style="display: none; width: auto; padding: 0.5rem 1rem; margin: 0;">
-                    <span class="clear-icon">✕</span> <span data-i18n="filters.clear">LIMPAR FILTROS</span>
-                </button>
-                
-                <!-- Active Filters Badges -->
-                <div id="active-ruler-badges" class="active-filters-badges" style="justify-content: center;"></div>
+                </div>
             </div>
         </div>
         `;
 
         this.attachEventListeners();
-        this.updateActiveFiltersDisplay();
-        this.checkClearButtonVisibility();
     }
 
     attachEventListeners() {
@@ -154,61 +148,9 @@ export class ReferenceRulers {
                 this.emitFilterChange();
             });
         });
-
-        // Clear filters button
-        const clearBtn = this.target.querySelector('#clear-ruler-filters');
-        if (clearBtn) {
-            clearBtn.addEventListener('click', () => {
-                this.selectedSrmIndex = null;
-                this.selectedClarityIndex = null;
-                this.render();
-                this.emitFilterChange();
-            });
-        }
     }
 
-    updateActiveFiltersDisplay() {
-        const container = this.target.querySelector('#active-ruler-badges');
-        const mainContainer = this.target.querySelector('#ruler-active-filters-container');
 
-        if (!container || !mainContainer) return;
-
-        container.innerHTML = '';
-        const badges = [];
-
-        // Add Ruler Badges
-        if (this.selectedSrmIndex !== null) {
-            const srm = this.srmColors[this.selectedSrmIndex];
-            const label = `${srm.range} (${i18n.t(srm.key)})`;
-            badges.push(`<span class="filter-badge">Cor: ${label}</span>`);
-        }
-
-        if (this.selectedClarityIndex !== null) {
-            const ftu = this.clarityLevels[this.selectedClarityIndex];
-            const label = i18n.t(ftu.key);
-            badges.push(`<span class="filter-badge">Claridade: ${label}</span>`);
-        }
-
-        if (badges.length > 0) {
-            container.innerHTML = badges.join('');
-            container.style.display = 'flex';
-            mainContainer.style.display = 'flex';
-        } else {
-            container.style.display = 'none';
-            mainContainer.style.display = 'none';
-        }
-    }
-
-    checkClearButtonVisibility() {
-        const clearBtn = this.target.querySelector('#clear-ruler-filters');
-        if (clearBtn) {
-            if (this.hasActiveFilters()) {
-                clearBtn.style.display = 'flex';
-            } else {
-                clearBtn.style.display = 'none';
-            }
-        }
-    }
 
     hasActiveFilters() {
         return this.selectedSrmIndex !== null || this.selectedClarityIndex !== null;
